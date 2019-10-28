@@ -1,0 +1,50 @@
+[
+  {
+    "name": "grant_type",
+    "htmlType": "text",
+    "validations": "required",
+    "fillable": true,
+    "inForm": true,
+    "inView": true
+  },
+  {
+    "name": "client_id",
+    "htmlType": "text",
+    "validations": "required",
+    "fillable": true,
+    "inForm": true,
+    "inView": true
+  },
+  {
+    "name": "client_secret",
+    "htmlType": "text",
+    "validations": "required",
+    "fillable": true,
+    "inForm": true,
+    "inView": true
+  },
+  {
+    "name": "username",
+    "htmlType": "text",
+    "validations": "required",
+    "fillable": true,
+    "inForm": true,
+    "inView": true
+  },
+  {
+    "name": "password",
+    "htmlType": "text",
+    "validations": "required",
+    "fillable": true,
+    "inForm": true,
+    "inView": true
+  },
+  {
+    "name": "scope",
+    "htmlType": "text",
+    "validations": "required",
+    "fillable": true,
+    "inForm": true,
+    "inView": true
+  }
+]

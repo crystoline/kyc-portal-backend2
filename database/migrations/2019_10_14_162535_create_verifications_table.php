@@ -15,24 +15,30 @@ class CreateVerificationsTable extends Migration
     {
         Schema::create('verifications', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedTinyInteger('is_first_registration')->default(0)->comment('0=No,1=Yes');
             $table->unsignedBigInteger('agent_id');
+            $table->unsignedBigInteger('parent_agent_id')->nullable();
+            /* Agent Information */
+            $table->string('type', 50)->nullable()->default('agent')->comment('principal-agent, sole-agent');
+            $table->unsignedTinyInteger('is_app_only')->nullable()->default(0)->comment('0=No,1=Yes');
+            $table->string('first_name', 180)->nullable();
+            $table->string('last_name', 180)->nullable();
+            $table->string('user_name', 180)->nullable();
+            $table->string('gender', 20)->nullable()->comment('male, female');
+            $table->date('date_of_birth')->nullable();
+            $table->string('passport', 255)->nullable();
+            /* */
             $table->unsignedBigInteger('verified_by')->nullable();
             $table->unsignedBigInteger('approved_by')->nullable();
-            $table->unsignedBigInteger('personal_information_id')->nullable();
-            $table->unsignedBigInteger('gaurantors_information_id')->nullable();
             $table->date('date')->nullable();
-            $table->unsignedTinyInteger('status')->default('2')->comment('2=Pending, 1=Approved, 0=Declined,3=discarded');
-
+            $table->unsignedTinyInteger('status')->default('2')->comment('2=Pending, 1=Approved, 0=Declined,3=discarded, 9=Awaiting Approval');
             $table->timestamps();
 
 
             $table->foreign('agent_id')->references('id')->on('agents');
+            $table->foreign('parent_agent_id')->references('id')->on('agents');
             $table->foreign('verified_by')->references('id')->on('users');
             $table->foreign('approved_by')->references('id')->on('users');
-            $table->foreign('personal_information_id')->references('id')->on('personal_informations');
-            $table->foreign('gaurantors_information_id')->references('id')->on('gaurantors_informations');
-        });
+           });
     }
 
     /**

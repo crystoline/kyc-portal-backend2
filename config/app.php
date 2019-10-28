@@ -228,5 +228,8 @@ return [
         'Flash'     => Laracasts\Flash\Flash::class,
 
     ],
+    're-verification-interval' =>  'P6M', //6 month
+    'default_password' => 'password',
+    'reset-password-token-expiry' => 3600
 
 ];

@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\Group;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Collection;
 
 class DatabaseSeeder extends Seeder
 {
@@ -9,12 +12,13 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
-        // $this->call(UsersTableSeeder::class);
-        //groups
-        //Admin user user
-        //state
-        //lga
+        print 'seeding groups';
+        $this->call(GroupSeeder::class);
+        print 'seeding admin user';
+        $this->call(UserSeeder::class);
+        print 'seeding state data';
+        $this->call(StateSeeder::class);
     }
 }

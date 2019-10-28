@@ -13,8 +13,9 @@ class CreateGaurantorsInformationTable extends Migration
      */
     public function up()
     {
-        Schema::create('gaurantors_information', function (Blueprint $table) {
+        Schema::create('guarantors_information', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('verification_id');
             $table->string('full_name', 200)->nullable();
             $table->string('occupation', 200)->nullable()->comment('Profession/Occupation');
             $table->string('business_name', 200)->nullable()->comment('Business/Office Name');
@@ -37,6 +38,8 @@ class CreateGaurantorsInformationTable extends Migration
             $table->string('witness_email', 200)->nullable();
 
             $table->timestamps();
+
+            $table->foreign('verification_id')->references('id')->on('verifications');
         });
     }
 

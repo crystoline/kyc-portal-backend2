@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="62daa034-dca2-4f2a-82bf-8f8e5e1e37a5" name="Kyc Test" url="http://upltest.com.ng">
+        <fileTransfer host="upltest.com.ng" port="22" rootFolder="/home/upltestcomng//kyc-system/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

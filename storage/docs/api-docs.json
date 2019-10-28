@@ -1,0 +1,2258 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Laravel Generator APIs",
+        "version": "1.0.0"
+    },
+    "basePath": "/api/v1",
+    "paths": {
+        "/agents": {
+            "get": {
+                "tags": [
+                    "Agent"
+                ],
+                "summary": "Get a listing of the Agents.",
+                "description": "Get all Agents",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "paginate",
+                        "in": "query",
+                        "description": "Yes to paginate",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Agent"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Agent"
+                ],
+                "summary": "Store a newly created Agent in storage",
+                "description": "Store Agent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Agent that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/CreatAgentRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Agent"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/agents/{id}": {
+            "get": {
+                "tags": [
+                    "Agent"
+                ],
+                "summary": "Display the specified Agent",
+                "description": "Get Agent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Agent",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Agent"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Agent"
+                ],
+                "summary": "Update the specified Agent in storage",
+                "description": "Update Agent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Agent",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Agent that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/CreatAgentRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Agent"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/token": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Login",
+                "description": "Login with username and password , return auth token",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Auth token request",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/AuthTokenRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "schema": {
+                            "$ref": "#/definitions/AuthTokenResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "$ref": "#/definitions/AuthTokenResponseFailed"
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/token?": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Refresh Token",
+                "description": "Refresh previous token, return auth token",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Refresh token request",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/RefreshTokenRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful",
+                        "schema": {
+                            "$ref": "#/definitions/AuthTokenResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "$ref": "#/definitions/AuthTokenResponseFailed"
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/logout": {
+            "get": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Logout",
+                "description": "Log out from device",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/logout-all": {
+            "get": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Logout from all devices",
+                "description": "Log out from all device",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/reset-password": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Reset password",
+                "description": "Sent password reset email",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "email": {
+                                    "type": "string"
+                                },
+                                "return_url": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/auth/complete-password-reset": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Complete password reset",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "password": {
+                                    "type": "string"
+                                },
+                                "reset_code": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/groups": {
+            "get": {
+                "tags": [
+                    "Group"
+                ],
+                "summary": "Get a listing of the Groups.",
+                "description": "Get all Groups",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Group"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Group"
+                ],
+                "summary": "Store a newly created Group in storage",
+                "description": "Store Group",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Group that should be stored",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/CreateGroupRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Group"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/groups/{id}": {
+            "get": {
+                "tags": [
+                    "Group"
+                ],
+                "summary": "Display the specified Group",
+                "description": "Get Group",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Group",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Group"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Group"
+                ],
+                "summary": "Update the specified Group in storage",
+                "description": "Update Group",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Group",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Group that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/CreateGroupRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Group"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users": {
+            "get": {
+                "tags": [
+                    "User Management"
+                ],
+                "summary": "Get a listing of the Users.",
+                "description": "Get all Users",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/User"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "User Management"
+                ],
+                "summary": "Store a newly created User in Database",
+                "description": "Create new user",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "User that should be registered",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateUserRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/User"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{id}": {
+            "get": {
+                "tags": [
+                    "User Management"
+                ],
+                "summary": "Display the specified User",
+                "description": "Get User",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of User",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/User"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "User Management"
+                ],
+                "summary": "Update the specified User in storage",
+                "description": "Update User",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of User",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "User that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/CreateUserRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/User"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{id}/toggle-status": {
+            "post": {
+                "tags": [
+                    "User Management"
+                ],
+                "summary": "Toggle user status",
+                "description": "",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of User",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/verifications": {
+            "get": {
+                "tags": [
+                    "Agents Verification"
+                ],
+                "summary": "Get a listing of the Verifications.",
+                "description": "Get all Verifications",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "paginate",
+                        "in": "query",
+                        "description": "Yes to paginate",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Verification"
+                                    }
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Agents Verification"
+                ],
+                "summary": "Store a newly created Verification in storage",
+                "description": "Store Verification",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Verification that should be stored",
+                        "schema": {
+                            "$ref": "#/definitions/CreateVerificationRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Verification"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/verifications/{id}": {
+            "get": {
+                "tags": [
+                    "Agents Verification"
+                ],
+                "summary": "Display the specified Verification",
+                "description": "Get Verification",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Verification",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Verification"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Agents Verification"
+                ],
+                "summary": "Update the specified Verification in storage",
+                "description": "Update Verification",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Verification",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Verification that should be updated",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/Verification"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "properties": {
+                                "success": {
+                                    "type": "boolean"
+                                },
+                                "data": {
+                                    "$ref": "#/definitions/Verification"
+                                },
+                                "message": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Agent": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "parent_agent_id": {
+                    "description": "Parent agent id",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "principal agent, sole agent",
+                    "type": "string"
+                },
+                "is_app_only": {
+                    "description": "0=No,1=Yes",
+                    "type": "boolean"
+                },
+                "first_name": {
+                    "description": "first_name",
+                    "type": "string"
+                },
+                "code": {
+                    "description": "Agent unique code",
+                    "type": "string"
+                },
+                "last_name": {
+                    "description": "last_name",
+                    "type": "string"
+                },
+                "user_name": {
+                    "description": "user_name",
+                    "type": "string"
+                },
+                "gender": {
+                    "description": "Male, Female",
+                    "type": "string"
+                },
+                "date_of_birth": {
+                    "description": "date_of_birth",
+                    "type": "string",
+                    "format": "date"
+                },
+                "passport": {
+                    "description": "passport",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "2=Pending, 1=Verified, 0=Re-Verification",
+                    "type": "boolean"
+                },
+                "last_verification_date": {
+                    "description": "Date of the previuos verification",
+                    "type": "date-time"
+                },
+                "Verification_status": {
+                    "description": "Reverivication status",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "Document": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "verification_id": {
+                    "description": "verification_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "title": {
+                    "description": "title",
+                    "type": "string"
+                },
+                "path": {
+                    "description": "path",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "Group": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "role": {
+                    "description": "URL friendly Group slug",
+                    "type": "string"
+                },
+                "enabled": {
+                    "description": "1=Enabled, 0=Disabled, 2=Pending Disable, 3=Pending Enabled",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "deleted_at": {
+                    "description": "deleted_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "GaurantorsInformation": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "verification_id": {
+                    "description": "verification_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "full_name": {
+                    "description": "full_name",
+                    "type": "string"
+                },
+                "occupation": {
+                    "description": "Profession/Occupation",
+                    "type": "string"
+                },
+                "business_name": {
+                    "description": "Business/Office Name",
+                    "type": "string"
+                },
+                "office_address": {
+                    "description": "office_address",
+                    "type": "string"
+                },
+                "position": {
+                    "description": "Position/Status",
+                    "type": "string"
+                },
+                "department": {
+                    "description": "Deparment or Unit",
+                    "type": "string"
+                },
+                "telephone_number": {
+                    "description": "telephone_number",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "email",
+                    "type": "string"
+                },
+                "residential_address": {
+                    "description": "residential_address",
+                    "type": "string"
+                },
+                "mobile_number": {
+                    "description": "mobile_number",
+                    "type": "string"
+                },
+                "relationship": {
+                    "description": "Relationship to the Applicant:",
+                    "type": "string"
+                },
+                "no_of_relations_ship_years": {
+                    "description": "Number of Years you have known the applicant?",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "signature": {
+                    "description": "signature",
+                    "type": "string"
+                },
+                "witness_signature": {
+                    "description": "witness_signature",
+                    "type": "string"
+                },
+                "witness_full_name": {
+                    "description": "witness_full_name",
+                    "type": "string"
+                },
+                "witness_occupation": {
+                    "description": "Profession/Occupation",
+                    "type": "string"
+                },
+                "witness__address": {
+                    "description": "witness__address",
+                    "type": "string"
+                },
+                "witness_telephone_number": {
+                    "description": "witness_telephone_number",
+                    "type": "string"
+                },
+                "witness_email": {
+                    "description": "witness_email",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "Lga": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "state_id": {
+                    "description": "state_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "code": {
+                    "description": "code",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "Modules": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "description",
+                    "type": "string"
+                },
+                "visibility": {
+                    "description": "Can this task be seen or not",
+                    "type": "string"
+                },
+                "order": {
+                    "description": "order",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "icon": {
+                    "description": "icon",
+                    "type": "string"
+                }
+            }
+        },
+        "Permission": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "group_id": {
+                    "description": "group_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "task_id": {
+                    "description": "task_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "deleted_at": {
+                    "description": "deleted_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "PersonalInformation": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "verification_id": {
+                    "description": "verification_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "email": {
+                    "description": "email",
+                    "type": "string"
+                },
+                "phone_number": {
+                    "description": "phone_number",
+                    "type": "string"
+                },
+                "phone_number2": {
+                    "description": "phone_number2",
+                    "type": "string"
+                },
+                "imei": {
+                    "description": "imei",
+                    "type": "string"
+                },
+                "bvn": {
+                    "description": "bvn",
+                    "type": "string"
+                },
+                "bank_account_name": {
+                    "description": "bank_account_name",
+                    "type": "string"
+                },
+                "bank_account_number": {
+                    "description": "bank_account_number",
+                    "type": "string"
+                },
+                "product_of_interest": {
+                    "description": "Money Transfer/Withdrawal Bill Payment Gaming ",
+                    "type": "string"
+                },
+                "designation": {
+                    "description": "Principal Agent, Sole Agent",
+                    "type": "string"
+                },
+                "occupation": {
+                    "description": "Profession/Occupation",
+                    "type": "string"
+                },
+                "home_address": {
+                    "description": "home_address",
+                    "type": "string"
+                },
+                "outlet_address": {
+                    "description": "outlet_address",
+                    "type": "string"
+                },
+                "outlet_type": {
+                    "description": "Shop,Office,Kiosk,Umbrella,Mobile,Others ",
+                    "type": "string"
+                },
+                "landmark": {
+                    "description": "landmark",
+                    "type": "string"
+                },
+                "lga_id": {
+                    "description": "lga_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "state_id": {
+                    "description": "state_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "latitude": {
+                    "description": "latitude",
+                    "type": "string"
+                },
+                "name_of_acquirer": {
+                    "description": "Name of Acquirer/TP",
+                    "type": "string"
+                },
+                "android_phone": {
+                    "description": "0=No, 1=Yes",
+                    "type": "boolean"
+                },
+                "bluetooth_printer": {
+                    "description": "0=No, 1=Yes",
+                    "type": "boolean"
+                },
+                "signature": {
+                    "description": "signature",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "State": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "code": {
+                    "description": "code",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "Task": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "module_id": {
+                    "description": "module_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "parent_task_id": {
+                    "description": "Parent task if any default is 0 meaning no parent",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "route": {
+                    "description": "Matching laravel route name for this task",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "task_type": {
+                    "description": "0=Menu, 1=Action, 2=Plugin Menu, 3=Plugin Action",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "description",
+                    "type": "string"
+                },
+                "visibility": {
+                    "description": "Can this task be seen or not",
+                    "type": "string"
+                },
+                "order": {
+                    "description": "order",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "icon": {
+                    "description": "icon",
+                    "type": "string"
+                },
+                "extra": {
+                    "description": "extra",
+                    "type": "string"
+                }
+            }
+        },
+        "User": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "group_id": {
+                    "description": "group_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "first_name": {
+                    "description": "first_name",
+                    "type": "string"
+                },
+                "last_name": {
+                    "description": "last_name",
+                    "type": "string"
+                },
+                "gender": {
+                    "description": "gender",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "email",
+                    "type": "string"
+                },
+                "email_verified_at": {
+                    "description": "email_verified_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "status": {
+                    "description": "status",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "password": {
+                    "description": "password",
+                    "type": "string"
+                },
+                "remember_token": {
+                    "description": "remember_token",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "Verification": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "agent_id": {
+                    "description": "agent_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "parent_agent_id": {
+                    "description": "Parent agent id",
+                    "type": "string"
+                },
+                "verified_by": {
+                    "description": "verified_by",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "approved_by": {
+                    "description": "approved_by",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "date": {
+                    "description": "date",
+                    "type": "string",
+                    "format": "date"
+                },
+                "status": {
+                    "description": "2=Pending, 1=Approved, 0=Declined,3=discarded",
+                    "type": "boolean"
+                },
+                "type": {
+                    "description": "principal agent, sole agent",
+                    "type": "string"
+                },
+                "is_app_only": {
+                    "description": "0=No,1=Yes",
+                    "type": "boolean"
+                },
+                "first_name": {
+                    "description": "first_name",
+                    "type": "string"
+                },
+                "last_name": {
+                    "description": "last_name",
+                    "type": "string"
+                },
+                "user_name": {
+                    "description": "user_name",
+                    "type": "string"
+                },
+                "gender": {
+                    "description": "Male, Female",
+                    "type": "string"
+                },
+                "date_of_birth": {
+                    "description": "date_of_birth",
+                    "type": "string",
+                    "format": "date"
+                },
+                "passport": {
+                    "description": "passport",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "VerificationApproval": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "id": {
+                    "description": "id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "verification_id": {
+                    "description": "verification_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "user_id": {
+                    "description": "user_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "status": {
+                    "description": "3=discarded, 1=Approved, 0=Declined",
+                    "type": "boolean"
+                },
+                "comment": {
+                    "description": "comment",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "AuthTokenRequest": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "grant_type": {
+                    "description": "Grant Type",
+                    "type": "string",
+                    "default": "password"
+                },
+                "client_id": {
+                    "description": "Client ID",
+                    "type": "string"
+                },
+                "client_secret": {
+                    "description": "Client Secret",
+                    "type": "string"
+                },
+                "username": {
+                    "description": "Username",
+                    "type": "string"
+                },
+                "password": {
+                    "description": "User password",
+                    "type": "string"
+                },
+                "scope": {
+                    "description": "All = *",
+                    "type": "string"
+                }
+            }
+        },
+        "AuthTokenResponse": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "token_type": {
+                    "description": "Token Type",
+                    "type": "string"
+                },
+                "expires_in": {
+                    "description": "Expiry",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "access_token": {
+                    "description": "Client access token",
+                    "type": "string"
+                },
+                "refresh_token": {
+                    "description": "Refresh Token",
+                    "type": "string"
+                }
+            }
+        },
+        "AuthTokenResponseFailed": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "error": {
+                    "type": "string"
+                },
+                "error_description": {
+                    "type": "string"
+                },
+                "hint": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "CreatAgentRequest": {
+            "required": [
+                "type",
+                "is_app_only",
+                "first_name",
+                "last_name",
+                "user_name",
+                "gender",
+                "date_of_birth"
+            ],
+            "properties": {
+                "code": {
+                    "description": "Agent's unique code",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "principal-agent, sole-agent",
+                    "type": "string"
+                },
+                "is_app_only": {
+                    "description": "0=No,1=Yes",
+                    "type": "boolean"
+                },
+                "first_name": {
+                    "description": "first_name",
+                    "type": "string"
+                },
+                "last_name": {
+                    "description": "last_name",
+                    "type": "string"
+                },
+                "user_name": {
+                    "description": "user_name",
+                    "type": "string"
+                },
+                "gender": {
+                    "description": "Male, Female",
+                    "type": "string"
+                },
+                "date_of_birth": {
+                    "description": "date_of_birth",
+                    "type": "string",
+                    "format": "date"
+                },
+                "passport": {
+                    "description": "passport",
+                    "type": "string"
+                }
+            }
+        },
+        "CreateGroupRequest": {
+            "required": [
+                "name,role"
+            ],
+            "properties": {
+                "name": {
+                    "description": "name",
+                    "type": "string"
+                },
+                "role": {
+                    "description": "URL friendly Group slug",
+                    "type": "string"
+                }
+            }
+        },
+        "CreateUserRequest": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "group_id": {
+                    "description": "group_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "first_name": {
+                    "description": "first_name",
+                    "type": "string"
+                },
+                "last_name": {
+                    "description": "last_name",
+                    "type": "string"
+                },
+                "gender": {
+                    "description": "gender",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "email",
+                    "type": "string"
+                }
+            }
+        },
+        "CreateVerificationRequest": {
+            "required": [
+                "code",
+                "parent_agent_id",
+                "date",
+                "type"
+            ],
+            "properties": {
+                "code": {
+                    "description": "agent code",
+                    "type": "string"
+                },
+                "parent_agent_id": {
+                    "description": "Parent agent id|code",
+                    "type": "string"
+                },
+                "date": {
+                    "description": "date",
+                    "type": "string",
+                    "format": "date"
+                },
+                "type": {
+                    "description": "principal agent, sole agent",
+                    "type": "string"
+                },
+                "is_app_only": {
+                    "description": "0=No,1=Yes",
+                    "type": "boolean"
+                },
+                "first_name": {
+                    "description": "first_name",
+                    "type": "string"
+                },
+                "last_name": {
+                    "description": "last_name",
+                    "type": "string"
+                },
+                "user_name": {
+                    "description": "user_name",
+                    "type": "string"
+                },
+                "gender": {
+                    "description": "Male, Female",
+                    "type": "string"
+                },
+                "date_of_birth": {
+                    "description": "date_of_birth",
+                    "type": "string",
+                    "format": "date"
+                },
+                "passport": {
+                    "description": "passport",
+                    "type": "string"
+                },
+                "personal_information": {
+                    "properties": {
+                        "verification_id": {
+                            "description": "verification_id",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "email": {
+                            "description": "email",
+                            "type": "string"
+                        },
+                        "phone_number": {
+                            "description": "phone_number",
+                            "type": "string"
+                        },
+                        "phone_number2": {
+                            "description": "phone_number2",
+                            "type": "string"
+                        },
+                        "imei": {
+                            "description": "imei",
+                            "type": "string"
+                        },
+                        "bvn": {
+                            "description": "bvn",
+                            "type": "string"
+                        },
+                        "bank_account_name": {
+                            "description": "bank_account_name",
+                            "type": "string"
+                        },
+                        "bank_account_number": {
+                            "description": "bank_account_number",
+                            "type": "string"
+                        },
+                        "product_of_interest": {
+                            "description": "Money Transfer/Withdrawal Bill Payment Gaming ",
+                            "type": "string"
+                        },
+                        "designation": {
+                            "description": "Principal Agent, Sole Agent",
+                            "type": "string"
+                        },
+                        "occupation": {
+                            "description": "Profession/Occupation",
+                            "type": "string"
+                        },
+                        "home_address": {
+                            "description": "home_address",
+                            "type": "string"
+                        },
+                        "outlet_address": {
+                            "description": "outlet_address",
+                            "type": "string"
+                        },
+                        "outlet_type": {
+                            "description": "Shop,Office,Kiosk,Umbrella,Mobile,Others ",
+                            "type": "string"
+                        },
+                        "landmark": {
+                            "description": "landmark",
+                            "type": "string"
+                        },
+                        "lga_id": {
+                            "description": "lga_id",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "state_id": {
+                            "description": "state_id",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "latitude": {
+                            "description": "latitude",
+                            "type": "string"
+                        },
+                        "name_of_acquirer": {
+                            "description": "Name of Acquirer/TP",
+                            "type": "string"
+                        },
+                        "android_phone": {
+                            "description": "0=No, 1=Yes",
+                            "type": "boolean"
+                        },
+                        "bluetooth_printer": {
+                            "description": "0=No, 1=Yes",
+                            "type": "boolean"
+                        },
+                        "signature": {
+                            "description": "signature",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "guarantor_information": {
+                    "required": [
+                        "verification_id",
+                        "full_name",
+                        "occupation",
+                        "business_name",
+                        "office_address",
+                        "position",
+                        "department",
+                        "telephone_number",
+                        "email",
+                        "residential_address",
+                        "mobile_number",
+                        "relationship",
+                        "no_of_relations_ship_years",
+                        "signature",
+                        "witness_signature",
+                        "witness_full_name",
+                        "witness_occupation",
+                        "witness__address",
+                        "witness_telephone_number",
+                        "witness_email"
+                    ],
+                    "properties": {
+                        "verification_id": {
+                            "description": "verification_id",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "full_name": {
+                            "description": "full_name",
+                            "type": "string"
+                        },
+                        "occupation": {
+                            "description": "Profession/Occupation",
+                            "type": "string"
+                        },
+                        "business_name": {
+                            "description": "Business/Office Name",
+                            "type": "string"
+                        },
+                        "office_address": {
+                            "description": "office_address",
+                            "type": "string"
+                        },
+                        "position": {
+                            "description": "Position/Status",
+                            "type": "string"
+                        },
+                        "department": {
+                            "description": "Deparment or Unit",
+                            "type": "string"
+                        },
+                        "telephone_number": {
+                            "description": "telephone_number",
+                            "type": "string"
+                        },
+                        "email": {
+                            "description": "email",
+                            "type": "string"
+                        },
+                        "residential_address": {
+                            "description": "residential_address",
+                            "type": "string"
+                        },
+                        "mobile_number": {
+                            "description": "mobile_number",
+                            "type": "string"
+                        },
+                        "relationship": {
+                            "description": "Relationship to the Applicant:",
+                            "type": "string"
+                        },
+                        "no_of_relations_ship_years": {
+                            "description": "Number of Years you have known the applicant?",
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "signature": {
+                            "description": "signature",
+                            "type": "string"
+                        },
+                        "witness_signature": {
+                            "description": "witness_signature",
+                            "type": "string"
+                        },
+                        "witness_full_name": {
+                            "description": "witness_full_name",
+                            "type": "string"
+                        },
+                        "witness_occupation": {
+                            "description": "Profession/Occupation",
+                            "type": "string"
+                        },
+                        "witness__address": {
+                            "description": "witness__address",
+                            "type": "string"
+                        },
+                        "witness_telephone_number": {
+                            "description": "witness_telephone_number",
+                            "type": "string"
+                        },
+                        "witness_email": {
+                            "description": "witness_email",
+                            "type": "string"
+                        },
+                        "created_at": {
+                            "description": "created_at",
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "updated_at": {
+                            "description": "updated_at",
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    "type": "object"
+                }
+            }
+        },
+        "GuarantorsInformationRequest": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "verification_id": {
+                    "description": "verification_id",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "full_name": {
+                    "description": "full_name",
+                    "type": "string"
+                },
+                "occupation": {
+                    "description": "Profession/Occupation",
+                    "type": "string"
+                },
+                "business_name": {
+                    "description": "Business/Office Name",
+                    "type": "string"
+                },
+                "office_address": {
+                    "description": "office_address",
+                    "type": "string"
+                },
+                "position": {
+                    "description": "Position/Status",
+                    "type": "string"
+                },
+                "department": {
+                    "description": "Deparment or Unit",
+                    "type": "string"
+                },
+                "telephone_number": {
+                    "description": "telephone_number",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "email",
+                    "type": "string"
+                },
+                "residential_address": {
+                    "description": "residential_address",
+                    "type": "string"
+                },
+                "mobile_number": {
+                    "description": "mobile_number",
+                    "type": "string"
+                },
+                "relationship": {
+                    "description": "Relationship to the Applicant:",
+                    "type": "string"
+                },
+                "no_of_relations_ship_years": {
+                    "description": "Number of Years you have known the applicant?",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "signature": {
+                    "description": "signature",
+                    "type": "string"
+                },
+                "witness_signature": {
+                    "description": "witness_signature",
+                    "type": "string"
+                },
+                "witness_full_name": {
+                    "description": "witness_full_name",
+                    "type": "string"
+                },
+                "witness_occupation": {
+                    "description": "Profession/Occupation",
+                    "type": "string"
+                },
+                "witness__address": {
+                    "description": "witness__address",
+                    "type": "string"
+                },
+                "witness_telephone_number": {
+                    "description": "witness_telephone_number",
+                    "type": "string"
+                },
+                "witness_email": {
+                    "description": "witness_email",
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "created_at",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "description": "updated_at",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "RefreshTokenRequest": {
+            "required": [
+                ""
+            ],
+            "properties": {
+                "grant_type": {
+                    "description": "Grant Type",
+                    "type": "string",
+                    "default": "refresh_token"
+                },
+                "client_id": {
+                    "description": "Client ID",
+                    "type": "string",
+                    "default": "1"
+                },
+                "client_secret": {
+                    "description": "Client Secret",
+                    "type": "string"
+                },
+                "refresh_token": {
+                    "description": "Refresh Token",
+                    "type": "string"
+                },
+                "scope": {
+                    "description": "All = *",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
