@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'basic' => [
+   /* 'basic' => [
         'title' => 'Basic Setting',
         'desc' => 'Basic Setting',
         'icon' => 'glyphicon glyphicon-sunglasses',
@@ -38,7 +38,7 @@ return [
             ]
         ],
 
-    ],
+    ],*/
     'sms' => [
         'title' => 'SMS Setting',
         'desc' => 'SMS API Settings',

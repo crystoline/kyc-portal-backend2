@@ -3547,7 +3547,8 @@
                 },
                 "last_verification_date": {
                     "description": "Date of the previuos verification",
-                    "type": "date-time"
+                    "type": "string",
+                    "format": "date-time"
                 },
                 "Verification_status": {
                     "description": "Reverivication status",

@@ -785,6 +785,9 @@ class VerificationController extends AppBaseController
             if ($telephone_verification) {
                 //TODO Send Verification code to number
                 //$telephone_verification
+                $from = config('app.name');
+                $token =
+                send_sms_infobip($from, $telephone, "This is you verification code {$telephone_verification->code}");
                 $data = config('app.env') === 'local' ? $telephone_verification->only(['code']) : null;
                 return $this->sendResponse($data, 'Verification code was sent');
             }
