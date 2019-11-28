@@ -31,7 +31,7 @@ class DeviceOwnerAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/device_owners,
+     *      path="/device_owners",
      *      summary="Get a listing of the DeviceOwners.",
      *      tags={"DeviceOwner"},
      *      description="Get all DeviceOwners",
@@ -80,7 +80,7 @@ class DeviceOwnerAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/device_owners,
+     *      path="/device_owners",
      *      summary="Store a newly created DeviceOwner in storage",
      *      tags={"DeviceOwner"},
      *      description="Store DeviceOwner",
@@ -133,7 +133,7 @@ class DeviceOwnerAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/deviceOwners/{id}",
+     *      path="/device_owners/{id}",
      *      summary="Display the specified DeviceOwner",
      *      tags={"DeviceOwner"},
      *      description="Get DeviceOwner",
@@ -190,7 +190,7 @@ class DeviceOwnerAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Put(
-     *      path="/deviceOwners/{id}",
+     *      path="/device_owners/{id}",
      *      summary="Update the specified DeviceOwner in storage",
      *      tags={"DeviceOwner"},
      *      description="Update DeviceOwner",
@@ -254,10 +254,10 @@ class DeviceOwnerAPIController extends AppBaseController
 
     /**
      * @param int $id
-     * @return JsonResponse
+     * @return Response
      *
      * @SWG\Delete(
-     *      path="/deviceOwners/{id}",
+     *      path="/device_owners/{id}",
      *      summary="Remove the specified DeviceOwner from storage",
      *      tags={"DeviceOwner"},
      *      description="Delete DeviceOwner",
@@ -296,7 +296,7 @@ class DeviceOwnerAPIController extends AppBaseController
      *      )
      * )
      */
-    public function destroy($id): JsonResponse
+    public function destroy($id)
     {
         /** @var DeviceOwner $deviceOwner */
         $deviceOwner = $this->deviceOwnerRepository->find($id);
