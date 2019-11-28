@@ -12,20 +12,19 @@ use InfyOm\Generator\Utils\ResponseUtil;
  *   @SWG\Info(
  *     title="Laravel Generator APIs",
  *     version="1.0.0",
- *   )
+ *   ),
+ *      produces={"application/json", "application/xml"},
+ *      @SWG\Parameter(
+ *          type="string",
+ *          name="Accept",
+ *          in="header",
+ *          default="application/json"
+ *     )
  * )
  * This class should be parent class for other API controllers
  * Class AppBaseController
  */
 class AppBaseController extends Controller
 {
-    public function sendResponse($result, $message): JsonResponse
-    {
-        return Response::json(ResponseUtil::makeResponse($message, $result));
-    }
-
-    public function sendError($error, $code = 404): JsonResponse
-    {
-        return Response::json(ResponseUtil::makeError($error), $code);
-    }
+   use AppBaseTrait;
 }

@@ -17,7 +17,7 @@ class GroupSeeder extends Seeder
             'field_officer' => 'Field Officer',
             'kyc_analyst' => 'KYC Analyst',
             'creation_unit' => 'Creation unit',
-            'customer_experience_uni' => 'Customer Experience Uni'
+            'customer_experience_unit' => 'Customer Experience Unit'
         ]);
         $group_list->each(static function ($value, $key){
             Group::query()->firstOrCreate([

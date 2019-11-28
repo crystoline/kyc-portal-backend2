@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Util\Sql;
+use Illuminate\Support\Str;
 
 class TaskGenerate extends Command
 {
@@ -68,8 +69,12 @@ class TaskGenerate extends Command
         }*/
 
         //Lets cache these values incase a failure occurs
-        if(Cache::get('temp.task_list')) $task_list = Cache::get('temp.task_list');
-        else Cache::forever('temp.task_list',$task_list);
+        if(Cache::get('temp.task_list')) {
+            $task_list = Cache::get('temp.task_list');
+        }
+        else {
+            Cache::forever('temp.task_list', $task_list);
+        }
 
 //        if(Cache::get('temp.auth_task_list')) $auth_task_list = Cache::get('temp.auth_task_list');
 //        else Cache::forever('temp.auth_task_list',$auth_task_list);
@@ -81,17 +86,17 @@ class TaskGenerate extends Command
        // else Cache::forever('temp.perm_auth_task_list',$perm_auth_task_list);
 
         DB::connection($this->option('connection'))->table('tasks')->delete();
-        $sql->resetAutoIncrement("tasks");
+        $sql->resetAutoIncrement('tasks');
 
         DB::connection($this->option('connection'))->table('modules')->delete();
-        $sql->resetAutoIncrement("modules");
+        $sql->resetAutoIncrement('modules');
 
         DB::connection($this->option('connection'))->statement($sql->enableChecks);
 
         $object=Route::getRoutes();
 
-        $pattern = ["/destroy/", "/index/","/create/", "/store/", "/(^me$)/"];
-        $replacement = ["delete", "list", "create","/store/", "my"];
+        $pattern = ['/destroy/', '/index/', '/create/', '/store/', '/(^me$)/'];
+        $replacement = ['delete', 'list', 'create', '/register/', 'my'];
 
         $task_order = [null=>1];
         $parent_task = [];
@@ -111,23 +116,32 @@ class TaskGenerate extends Command
 
             $route = $value->getName();
 
-            if(!empty($task_permit) and empty(array_intersect($task_permit,$value->middleware()))) continue;
+            if(!empty($task_permit) && empty(array_intersect($task_permit,$value->middleware()))) {
+                continue;
+            }
 
-            if(!$route) continue;
+            if(!$route) {
+                continue;
+            }
 
             $method = $value->methods[0];
-            if(!$method == "PATCH") continue;
+            if(!$method == "PATCH") {
+                continue;
+            }
 
             $controller = explode("@",$value->getActionName());
 
-            if(!isset($controller[1])) continue;
+            if(!isset($controller[1])) {
+                continue;
+            }
 
             $controller_name = $controller[0];
             $controller_method = $controller[1];
 
             try{
-                if (!in_array($controller_method, get_class_methods($controller_name)))
+                if (!in_array($controller_method, get_class_methods($controller_name))) {
                     continue;
+                }
             }
             catch(\Exception $e){
                 die($controller_name." does not exist. on line ". $e->getLine());
@@ -141,11 +155,17 @@ class TaskGenerate extends Command
                         break;
                     }
                 }
-                if(!$allowed) continue;
+                if(!$allowed) {
+                    continue;
+                }
             }
 
-            if(!empty(trim($base_namespace,"\\"))) $name = str_replace("App\\Http\\Controllers\\".trim($base_namespace,"\\")."\\","",$controller_name);
-            else $name = str_replace("App\\Http\\Controllers\\","",$controller_name);
+            if(!empty(trim($base_namespace,"\\"))) {
+                $name = str_replace("App\\Http\\Controllers\\" . trim($base_namespace, "\\") . "\\", '', $controller_name);
+            }
+            else {
+                $name = str_replace("App\\Http\\Controllers\\", '', $controller_name);
+            }
 
             $names = explode("\\",$name);
             $controller_name = $names[count($names) - 1];
@@ -153,7 +173,9 @@ class TaskGenerate extends Command
 
             $mn = implode('-',$names);
 
-            if(in_array($mn,static::$excluded_modules)) continue;
+            if(in_array($mn,static::$excluded_modules)) {
+                continue;
+            }
 
             $module_name = $module_id = null;
             $i = 0;
@@ -165,7 +187,7 @@ class TaskGenerate extends Command
                     $module_name = $mn;
                     $module_id = DB::connection($this->option('connection'))->table('modules')->insertGetId([
                         'name'=> $module_name,
-                        'description'=> $module_name." Module",
+                        'description'=> $module_name. ' Module',
                         'visibility'=>'1',
                         'order'=>$i,
                         'icon'=>'fa fa-circle-o',
@@ -185,27 +207,27 @@ class TaskGenerate extends Command
 
             $order = $task_order[$module_id];
 
-            $cname = str_replace("Controller","",$controller_name);
+            $cname = str_replace('Controller', '',$controller_name);
             $controller_method = preg_replace($pattern,$replacement,$controller_method);
-            $name = self::normalCase($controller_method." ".$cname);
-            $task_type = ($method == "PUT" or $method == "DELETE" or !empty($value->parameterNames()))?"1":"0";
+            $name = self::normalCase($controller_method. ' ' .$cname);
+            $task_type = ($method == "PUT" or $method == "DELETE" or !empty($value->parameterNames()))? '1' : '0';
 
             $task_id = DB::connection($this->option('connection'))->table('tasks')->insertGetId(
                 [
                     'module_id' => $module_id,
                     'route' => $route,
-                    'name' => $name,
+                    'name' => str_replace(' Api', '',$name),
                     'task_type' => $task_type,
-                    'description' => static::getTaskName($name,$controller_method,$cname,$module_name,$method),
+                    'description' => str_replace(' Api','', static::getTaskName($name,$controller_method,$cname,$module_name,$method)),
                     'visibility' => 1,
                     'order' => $order,
                 ]
             );
 
-            if(strstr($route,"index")){
-                $routeArray = explode(".",$route);
+            if(false !== strpos($route, 'index')){
+                $routeArray = explode('.',$route);
                 array_pop($routeArray);
-                $parent_task[implode(".",$routeArray)] = $task_id;
+                $parent_task[implode('.',$routeArray)] = $task_id;
             }
 
             $task_order[$module_id]++;
@@ -231,37 +253,36 @@ class TaskGenerate extends Command
         }*/
 
         if(!empty($perm_task_list)){
-            print "\n";
-            print "Regenerating ".(count($perm_task_list))." permissions";
+
+            $this->info('Regenerating ' . count($perm_task_list) . ' permissions. ');
 
             $data = [];
             foreach($perm_task_list as $row){
-                if(isset($task_list[$row->task_id]) and isset($new_task_list[$task_list[$row->task_id]]))
-                    $data[] = ['group_id'=>$row->group_id,'task_id'=>$new_task_list[$task_list[$row->task_id]],'created_at'=>now(),'updated_at'=>now()];
+                if(isset($task_list[$row->task_id], $new_task_list[$task_list[$row->task_id]])) {
+                    $data[] = ['group_id' => $row->group_id, 'task_id' => $new_task_list[$task_list[$row->task_id]], 'created_at' => now(), 'updated_at' => now()];
+                }
             }
 
             DB::connection($this->option('connection'))->table('permissions')->insert($data);
             Cache::forget('temp.perm_task_list');
         }
 
-       /* if(!empty($perm_auth_task_list)){
-            print "\n";
-            print "Regenerating ".(count($perm_auth_task_list))." authorizer permissions";
+        if(!empty($perm_auth_task_list)){
+            $this->info('Regenerating ' . count($perm_auth_task_list) . ' authorizer permissions');
 
             $data = [];
             foreach($perm_auth_task_list as $row){
                 if(isset($task_list[$row->task_id]) and isset($new_task_list[$task_list[$row->task_id]]))
                     $data[] = ['group_id'=>$row->group_id,'task_id'=>$new_task_list[$task_list[$row->task_id]],'created_at'=>now(),'updated_at'=>now()];
-            }*/
+            }
 
-            /*DB::connection($this->option('connection'))->table('permission_authorizers')->insert($data);
-            Cache::forget('temp.perm_auth_task_list');*/
-        //}
+            DB::connection($this->option('connection'))->table('permission_authorizers')->insert($data);
+            Cache::forget('temp.perm_auth_task_list');
+        }
 
         Cache::forget('temp.task_list');
 
-        print "\n".(count($task_order) - 1)." module(s) and $count task(s) were generated";
-        print "\n";
+        $this->info((count($task_order) - 1)."module(s) and {$count} task(s) were generated");
     }
 
     public static function getTaskName($name,$controller_method,$controller,$module,$method){
@@ -293,7 +314,7 @@ class TaskGenerate extends Command
             else{
                 if(strtolower($controller_method) == "list"){
                     $controller_method = "View";
-                    $controller = str_plural($controller);
+                    $controller = Str::plural($controller);
                 }
                 elseif(strtolower($controller_method) == "show"){
                     $module = $module." Detail";
@@ -307,8 +328,8 @@ class TaskGenerate extends Command
         }
 
         if(strtolower($controller_method) == "list"){
-            $controller = str_plural($controller);
-            $name = str_replace($controller,$controller,str_replace("List ","View ",$name));
+            $controller = Str::plural($controller);
+            $name = str_replace(array('List ', $controller), array('View ', $controller), $name);
         }
         elseif(strtolower($controller_method) == "show"){
             $name = $name." Detail";
@@ -321,7 +342,7 @@ class TaskGenerate extends Command
      *
      * @return string
      */
-    public static function normalCase($str)
+    public static function normalCase($str): string
     {
         $str = preg_replace(['/(App\\\)+/', '/(:|-|_|\(|\))/'], ['', ' $1 '], $str);
 

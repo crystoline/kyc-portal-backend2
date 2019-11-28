@@ -1,25 +1,23 @@
 <?php
 
-namespace App\Models\School;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\BaseModel;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
-use Ndexondeck\Lauditor\Model\Audit;
+use Illuminate\Support\Facades\Storage;
 
-/**
- * Class Setting
- * @package App\School
- */
-class Setting extends Audit
+
+class Setting extends BaseModel
 {
-    protected $connection = 'mysql_school';
     /**
      * The attributes that aren't mass assignable.
      *
      * @var array
      */
     protected $guarded = [];
+    protected $hidden = ['path'];
+    protected $fillable = [ 'name', 'val', 'type', 'path'];
 
     /**
      * Add a settings value
@@ -27,15 +25,15 @@ class Setting extends Audit
      * @param $key
      * @param $val
      * @param string $type
+     * @param string $path
      * @return bool
      */
-    public static function add($key, $val, $type = 'string')
+    public static function add($key, $val, $type = 'string', $path=''): bool
     {
         if ( self::has($key) ) {
             return self::set($key, $val, $type);
         }
-
-        return self::create(['name' => $key, 'val' => $val, 'type' => $type]) ? $val : false;
+        return self::query()->create(['name' => $key, 'val' => $val, 'type' => $type, 'path' => $path]) ? $val : false;
     }
 
     /**
@@ -63,16 +61,19 @@ class Setting extends Audit
      * @param string $type
      * @return bool
      */
-    public static function set($key, $val, $type = 'string')
+    public static function set($key, $val, $type = 'string',$path=''): bool
     {
-        $val = ($type == 'array')? json_encode($val) :$val;
+        $val = ($type === 'array')? json_encode($val) :$val;
         //dump($type);
 
-        if ( $setting = self::getAllSettings()->where('name', $key)->first() ) {
+        /** @var Setting $setting */
+        $setting = self::getAllSettings()->where('name', $key)->first();
+        if ($setting !== null ) {
             return $setting->update([
                 'name' => $key,
                 'val' => $val,
-                'type' => $type
+                'type' => $type,
+                'path' => $path
             ]) ? $val : false;
         }
 
@@ -85,10 +86,10 @@ class Setting extends Audit
      * @param $key
      * @return bool
      */
-    public static function remove($key)
+    public static function remove($key): bool
     {
         if( self::has($key) ) {
-            return self::whereName($key)->delete();
+            return self::query()->where('name', $key)->delete();
         }
 
         return false;
@@ -100,7 +101,7 @@ class Setting extends Audit
      * @param $key
      * @return bool
      */
-    public static function has($key)
+    public static function has($key): bool
     {
         return (boolean) self::getAllSettings()->whereStrict('name', $key)->count();
     }
@@ -110,11 +111,11 @@ class Setting extends Audit
      *
      * @return array
      */
-    public static function getValidationRules()
+    public static function getValidationRules(): array
     {
         return self::getDefinedSettingFields()->pluck('rules', 'name')
-            ->reject(function ($val) {
-                return is_null($val);
+            ->reject(static function ($val) {
+                return $val === null;
             })->toArray();
     }
 
@@ -130,7 +131,7 @@ class Setting extends Audit
             ->pluck('data', 'name')
             ->get($field);
 
-        return is_null($type) ? 'string' : $type;
+        return $type ?? 'string';
     }
 
     /**
@@ -155,7 +156,7 @@ class Setting extends Audit
      */
     private static function getDefaultValue($key, $default)
     {
-        return is_null($default) ? self::getDefaultValueForField($key) : $default;
+        return $default ?? self::getDefaultValueForField($key);
     }
 
     /**
@@ -163,7 +164,7 @@ class Setting extends Audit
      *
      * @return Collection
      */
-    private static function getDefinedSettingFields()
+    private static function getDefinedSettingFields(): Collection
     {
         return collect(config('settings'))->pluck('elements')->flatten(1);
     }
@@ -180,15 +181,15 @@ class Setting extends Audit
         switch ($castTo) {
             case 'int':
             case 'integer':
-                return intval($val);
+                return (int)$val;
                 break;
             case 'array':
-                return json_decode($val);
+                return json_decode($val, true);
                 break;
 
             case 'bool':
             case 'boolean':
-                return boolval($val);
+                return (bool)$val;
                 break;
 
             default:
@@ -200,9 +201,10 @@ class Setting extends Audit
 
     /**
      * Get all setting
-     * @return Collection
+     * @return array
      */
-    public static function settings(){
+    public static function settings(): array
+    {
         $collection =  new Collection();
         $settings = config('settings');
         foreach ($settings as $section => $fields){
@@ -210,6 +212,8 @@ class Setting extends Audit
 
                 foreach ($fields['elements'] as $index => $element) {
                     $fields['elements'][$index]['value'] = setting($element['name']);
+                    $name = $element['name'];
+                    $fields['elements'][$index] = self::afterFetchSetting($fields['elements'][$index]);
                 }
             }
 
@@ -227,16 +231,35 @@ class Setting extends Audit
      */
     public static function getAllSettings()
     {
-        return self::all();
-        return Cache::rememberForever('settings.all', function() {
+        //return self::all();
+        return Cache::rememberForever('settings.all', static function() {
             return self::all();
         });
     }
 
     /**
+     * @param array $item
+     * @return array
+     */
+    public static function afterFetchSetting(array $item): array
+    {
+        $name = $item['name']?? null;
+        if ($name === 'field_officer_role') {
+
+            $item['options'] = Group::query()->get()->map(static function (Group $group) {
+                return [
+                    'value' => $group->role,
+                    'name' => $group->name
+                ];
+            })->values();
+        }
+        return $item;
+    }
+
+    /**
      * Flush the cache
      */
-    public static function flushCache()
+    public static function flushCache(): void
     {
         Cache::forget('settings.all');
     }
@@ -246,15 +269,15 @@ class Setting extends Audit
      *
      * @return void
      */
-    protected static function boot()
+    protected static function boot(): void
     {
         parent::boot();
 
-        static::updated(function () {
+        static::updated(static function () {
             self::flushCache();
         });
 
-        static::created(function() {
+        static::created(static function() {
             self::flushCache();
         });
     }

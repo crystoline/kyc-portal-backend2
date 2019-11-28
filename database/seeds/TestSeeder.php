@@ -16,5 +16,8 @@ class TestSeeder extends Seeder
 
         print 'Seeding Agents';
         $this->call(AgentSeeder::class);
+        $this->call(DeviceOwnerSeeder::class);
+        $this->call(TerritoriesSeeder::class);
+        $this->call(VerificationPeriodSeeder::class);
     }
 }

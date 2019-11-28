@@ -1,29 +1,29 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\API\CreateAgentAPIRequest;
-use App\Http\Requests\API\UpdateAgentAPIRequest;
-use App\Models\Agent;
-use App\Repositories\AgentRepository;
+use App\Http\Requests\API\CreateGroupAPIRequest;
+use App\Http\Requests\API\UpdateGroupAPIRequest;
+use App\Models\Group;
+use App\Repositories\GroupRepository;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
-use Swagger\Annotations as SWG;
+use Response;
 
 /**
- * Class AgentController
- * @package App\Http\Controllers\API
+ * Class GroupController
+ * @package App\Http\Controllers\Api
  */
 
-class AgentAPIController extends AppBaseController
+class GroupController extends AppBaseController
 {
-    /** @var  AgentRepository */
-    private $agentRepository;
+    /** @var  GroupRepository */
+    private $groupRepository;
 
-    public function __construct(AgentRepository $agentRepo)
+    public function __construct(GroupRepository $groupRepo)
     {
-        $this->agentRepository = $agentRepo;
+        $this->groupRepository = $groupRepo;
     }
 
     /**
@@ -31,18 +31,18 @@ class AgentAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/agents",
-     *      summary="Get a listing of the Agents.",
-     *      tags={"Agent"},
-     *      description="Get all Agents",
+     *      path="/groups",
+     *      summary="Get a listing of the Groups.",
+     *      tags={"Group"},
+     *      description="Get all Groups",
      *      produces={"application/json"},
-     *     @SWG\Parameter(
-     *          name="paginate",
-     *          description="Yes to paginate",
+     *      @SWG\Parameter(
      *          type="string",
-     *          required=false,
-     *          in="query"
-     *      ),
+     *          name="Authorization",
+    *          description="bearer token",
+     *          in="header",
+     *          required=true
+     *     ),
      *      @SWG\Response(
      *          response=200,
      *          description="successful operation",
@@ -55,7 +55,7 @@ class AgentAPIController extends AppBaseController
      *              @SWG\Property(
      *                  property="data",
      *                  type="array",
-     *                  @SWG\Items(ref="#/definitions/Agent")
+     *                  @SWG\Items(ref="#/definitions/Group")
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -67,31 +67,38 @@ class AgentAPIController extends AppBaseController
      */
     public function index(Request $request): JsonResponse
     {
-        $agents = $this->agentRepository->all(
+        $groups = $this->groupRepository->all(
             $request->except(['skip', 'limit']),
             $request->get('skip'),
             $request->get('limit')
         );
 
-        return $this->sendResponse($agents->toArray(), 'Agents retrieved successfully');
+        return $this->sendResponse($groups->toArray(), 'Groups retrieved successfully');
     }
 
     /**
-     * @param CreateAgentAPIRequest $request
+     * @param CreateGroupAPIRequest $request
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/agents",
-     *      summary="Store a newly created Agent in storage",
-     *      tags={"Agent"},
-     *      description="Store Agent",
+     *      path="/groups",
+     *      summary="Store a newly created Group in storage",
+     *      tags={"Group"},
+     *      description="Store Group",
      *      produces={"application/json"},
+     *      @SWG\Parameter(
+     *          type="string",
+     *          name="Authorization",
+    *          description="bearer token",
+     *          in="header",
+     *          required=true
+     *     ),
      *      @SWG\Parameter(
      *          name="body",
      *          in="body",
-     *          description="Agent that should be stored",
+     *          description="Group that should be stored",
      *          required=false,
-     *          @SWG\Schema(ref="#/definitions/CreatAgentRequest")
+     *          @SWG\Schema(ref="#/definitions/CreateGroupRequest")
      *      ),
      *      @SWG\Response(
      *          response=200,
@@ -104,7 +111,7 @@ class AgentAPIController extends AppBaseController
      *              ),
      *              @SWG\Property(
      *                  property="data",
-     *                  ref="#/definitions/Agent"
+     *                  ref="#/definitions/Group"
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -114,13 +121,13 @@ class AgentAPIController extends AppBaseController
      *      )
      * )
      */
-    public function store(CreateAgentAPIRequest $request): JsonResponse
+    public function store(CreateGroupAPIRequest $request): JsonResponse
     {
         $input = $request->all();
 
-        $agent = $this->agentRepository->create($input);
+        $group = $this->groupRepository->create($input);
 
-        return $this->sendResponse($agent->toArray(), 'Agent saved successfully');
+        return $this->sendResponse($group->toArray(), 'Group saved successfully');
     }
 
     /**
@@ -128,14 +135,21 @@ class AgentAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/agents/{id}",
-     *      summary="Display the specified Agent",
-     *      tags={"Agent"},
-     *      description="Get Agent",
+     *      path="/groups/{id}",
+     *      summary="Display the specified Group",
+     *      tags={"Group"},
+     *      description="Get Group",
      *      produces={"application/json"},
      *      @SWG\Parameter(
+     *          type="string",
+     *          name="Authorization",
+    *          description="bearer token",
+     *          in="header",
+     *          required=true
+     *     ),
+     *      @SWG\Parameter(
      *          name="id",
-     *          description="id of Agent",
+     *          description="id of Group",
      *          type="integer",
      *          required=true,
      *          in="path"
@@ -151,7 +165,7 @@ class AgentAPIController extends AppBaseController
      *              ),
      *              @SWG\Property(
      *                  property="data",
-     *                  ref="#/definitions/Agent"
+     *                  ref="#/definitions/Group"
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -163,30 +177,37 @@ class AgentAPIController extends AppBaseController
      */
     public function show($id): JsonResponse
     {
-        /** @var Agent $agent */
-        $agent = $this->agentRepository->find($id);
+        /** @var Group $group */
+        $group = $this->groupRepository->find($id);
 
-        if ($agent === null) {
-            return $this->sendError('Agent not found');
+        if ($group === null) {
+            return $this->sendError('Group not found');
         }
 
-        return $this->sendResponse($agent->toArray(), 'Agent retrieved successfully');
+        return $this->sendResponse($group->toArray(), 'Group retrieved successfully');
     }
 
     /**
      * @param int $id
-     * @param UpdateAgentAPIRequest $request
+     * @param UpdateGroupAPIRequest $request
      * @return JsonResponse
      *
      * @SWG\Put(
-     *      path="/agents/{id}",
-     *      summary="Update the specified Agent in storage",
-     *      tags={"Agent"},
-     *      description="Update Agent",
+     *      path="/groups/{id}",
+     *      summary="Update the specified Group in storage",
+     *      tags={"Group"},
+     *      description="Update Group",
      *      produces={"application/json"},
      *      @SWG\Parameter(
+     *          type="string",
+     *          name="Authorization",
+    *          description="bearer token",
+     *          in="header",
+     *          required=true
+     *     ),
+     *      @SWG\Parameter(
      *          name="id",
-     *          description="id of Agent",
+     *          description="id of Group",
      *          type="integer",
      *          required=true,
      *          in="path"
@@ -194,9 +215,9 @@ class AgentAPIController extends AppBaseController
      *      @SWG\Parameter(
      *          name="body",
      *          in="body",
-     *          description="Agent that should be updated",
+     *          description="Group that should be updated",
      *          required=false,
-     *          @SWG\Schema(ref="#/definitions/CreatAgentRequest")
+     *          @SWG\Schema(ref="#/definitions/CreateGroupRequest")
      *      ),
      *      @SWG\Response(
      *          response=200,
@@ -209,7 +230,7 @@ class AgentAPIController extends AppBaseController
      *              ),
      *              @SWG\Property(
      *                  property="data",
-     *                  ref="#/definitions/Agent"
+     *                  ref="#/definitions/Group"
      *              ),
      *              @SWG\Property(
      *                  property="message",
@@ -219,20 +240,20 @@ class AgentAPIController extends AppBaseController
      *      )
      * )
      */
-    public function update($id, UpdateAgentAPIRequest $request): JsonResponse
+    public function update($id, UpdateGroupAPIRequest $request): JsonResponse
     {
-        $input = $request->except(['status']);
+        $input = $request->all();
 
-        /** @var Agent $agent */
-        $agent = $this->agentRepository->find($id);
+        /** @var Group $group */
+        $group = $this->groupRepository->find($id);
 
-        if ($agent === null) {
-            return $this->sendError('Agent not found');
+        if ($group === null) {
+            return $this->sendError('Group not found');
         }
 
-        $agent = $this->agentRepository->update($input, $id);
+        $group = $this->groupRepository->update($input, $id);
 
-        return $this->sendResponse($agent->toArray(), 'Agent updated successfully');
+        return $this->sendResponse($group->toArray(), 'Group updated successfully');
     }
 
 }

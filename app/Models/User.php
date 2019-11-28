@@ -15,6 +15,9 @@ use Laravel\Passport\HasApiTokens;
 /**
  * @property integer id
  * @property integer status
+ * @property string email
+ * @property string first_name
+ * @property string last_name
  * @SWG\Definition(
  *      definition="User",
  *      required={""},
@@ -88,7 +91,7 @@ use Laravel\Passport\HasApiTokens;
  */
 class User extends  Authenticatable
 {
-    use HasApiTokens, Notifiable, HasApiTokens;
+    use HasApiTokens, Notifiable;
     // use SoftDeletes;
 
     private static $stringPassword;
@@ -149,7 +152,15 @@ class User extends  Authenticatable
         'password' => 'sometimes'
     ];
 
-    public function AuthAccessToken(): HasMany
+    /**
+     * @return mixed
+     */
+    public static function getStringPassword()
+    {
+        return self::$stringPassword;
+    }
+
+    public function authAccessToken(): HasMany
     {
         return $this->hasMany(OauthAccessToken::class);
     }

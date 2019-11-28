@@ -21,6 +21,16 @@ use Swagger\Annotations as SWG;
  *          type="string"
  *      ),
  *      @SWG\Property(
+ *          property="territory_id",
+ *          description="territory id",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="device_owner_id",
+ *          description="device owner id",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
  *          property="date",
  *          description="date",
  *          type="string",
@@ -70,12 +80,6 @@ use Swagger\Annotations as SWG;
  *     @SWG\Property(
  *          property="personal_information",
  *          type="object",
- *          @SWG\Property(
- *              property="verification_id",
- *              description="verification_id",
- *              type="integer",
- *              format="int32"
- *          ),
  *          @SWG\Property(
  *              property="email",
  *              description="email",
@@ -188,12 +192,6 @@ use Swagger\Annotations as SWG;
  *          property="guarantor_information",
  *          type="object",
  *          required={"verification_id","full_name","occupation","business_name","office_address","position","department","telephone_number","email","residential_address","mobile_number","relationship","no_of_relations_ship_years","signature","witness_signature","witness_full_name","witness_occupation","witness__address","witness_telephone_number","witness_email"},
- *          @SWG\Property(
- *              property="verification_id",
- *              description="verification_id",
- *              type="integer",
- *              format="int32"
- *          ),
  *          @SWG\Property(
  *              property="full_name",
  *              description="full_name",

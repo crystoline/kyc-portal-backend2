@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Models;
-
-use Eloquent as Model;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
+ * @property string path
+ * @property Verification verification
  * @SWG\Definition(
  *      definition="Document",
  *      required={""},
@@ -47,15 +49,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Document extends Model
 {
-    // use SoftDeletes;
+    //use SoftDeletes;
 
     public $table = 'documents';
     
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
+//    const CREATED_AT = 'created_at';
+//    const UPDATED_AT = 'updated_at';
 
 
     protected $dates = ['deleted_at'];
+
 
 
     public $fillable = [
@@ -82,16 +85,25 @@ class Document extends Model
      * @var array
      */
     public static $rules = [
-        'verification_id' => 'required',
+        //'verification_id' => 'required',
         'title' => 'required',
-        'path' => 'required'
+        'doc' => 'required|file|mimes:jpeg,bmp,png,pdf,doc|max:200',
+    ];
+
+    protected $appends = [
+        'url'
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      **/
-    public function verification()
+    public function verification(): BelongsTo
     {
-        return $this->belongsTo(\App\Models\Verification::class, 'verification_id');
+        return $this->belongsTo(Verification::class, 'verification_id');
+    }
+
+    public function getUrlAttribute(): string
+    {
+        return asset(str_replace('public/', 'storage/', $this->path));
     }
 }

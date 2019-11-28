@@ -20,5 +20,9 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         print 'seeding state data';
         $this->call(StateSeeder::class);
+        print 'seeding bank data';
+        $this->call(BankSeeder::class);
+        print 'seeding agent types';
+        $this->call(AgentTypeSeeder::class);
     }
 }

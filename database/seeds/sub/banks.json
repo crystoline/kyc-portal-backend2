@@ -1,0 +1,192 @@
+[{
+		"name": "Access Bank",
+		"nibss_code": "044",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Citibank",
+		"nibss_code": "023",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Diamond Bank",
+		"nibss_code": "063",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Ecobank",
+		"nibss_code": "050",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Fidelity Bank",
+		"nibss_code": "070",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "First Bank",
+		"nibss_code": "011",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "First City Monument Bank",
+		"nibss_code": "214",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Guaranty Trust Bank",
+		"nibss_code": "058",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Heritage Bank",
+		"nibss_code": "030",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Keystone Bank",
+		"nibss_code": "082",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Mainstreet Bank",
+		"nibss_code": "014",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Skye Bank",
+		"nibss_code": "076",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Spring Bank",
+		"nibss_code": "084",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Stanbic IBTC Bank",
+		"nibss_code": "221",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Standard Chartered Bank",
+		"nibss_code": "068",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Sterling Bank",
+		"nibss_code": "232",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Union Bank",
+		"nibss_code": "032",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "United Bank for Africa",
+		"nibss_code": "033",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Unity Bank",
+		"nibss_code": "215",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Wema Bank",
+		"nibss_code": "035",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Zenith Bank",
+		"nibss_code": "057",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Ekimogun Microfinance Bank",
+		"nibss_code": "401",
+		"isw_code": null,
+		"type": "MicroFinance Bank"
+	}, {
+		"name": "Enterprise Bank",
+		"nibss_code": "402",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "Ileoluji Microfinance Bank Limited",
+		"nibss_code": "403",
+		"isw_code": null,
+		"type": "MicroFinance Bank"
+	}, {
+		"name": "Newage Microfinance Bank",
+		"nibss_code": "404",
+		"isw_code": null,
+		"type": "MicroFinance Bank"
+	}, {
+		"name": "Oakland Microfinance Bank",
+		"nibss_code": "405",
+		"isw_code": null,
+		"type": "MicroFinance Bank"
+	}, {
+		"name": "Okeagbe Microfinance Bank",
+		"nibss_code": "406",
+		"isw_code": null,
+		"type": "MicroFinance Bank"
+	}, {
+		"name": "Oroke Microfinance Bank",
+		"nibss_code": "407",
+		"isw_code": null,
+		"type": "MicroFinance Bank"
+	}, {
+		"name": "Ijare Microfinance Bank",
+		"nibss_code": "408",
+		"isw_code": null,
+		"type": "MicroFinance Bank"
+	}, {
+		"name": "COMMUNITY BANK ILARAMOKIN",
+		"nibss_code": "409",
+		"isw_code": null,
+		"type": "MicroFinance Bank"
+	}, {
+		"name": "CENTRAL BANK",
+		"nibss_code": "001",
+		"isw_code": null,
+		"type": "Commercial Bank"
+	}, {
+		"name": "OREDEGBE MFB",
+		"nibss_code": "411",
+		"isw_code": "411",
+		"type": "MicroFinance Bank"
+	}, {
+		"name": "AOGO MFB",
+		"nibss_code": "412",
+		"isw_code": "412",
+		"type": "MicroFinance Bank"
+	}, {
+		"name": "AJUTA MFB",
+		"nibss_code": "413",
+		"isw_code": "413",
+		"type": "MicroFinance Bank"
+	}, {
+		"name": "NPF MICROFINANCE BANK",
+		"nibss_code": "414",
+		"isw_code": "414",
+		"type": "MicroFinance Bank"
+	}, {
+		"name": "Layelu Microfinance Bank Limited",
+		"nibss_code": "416",
+		"isw_code": "416",
+		"type": "MicroFinance Bank"
+	}, {
+		"name": "Korede Microfinance Bank Limited",
+		"nibss_code": "417",
+		"isw_code": "417",
+		"type": "MicroFinance Bank"
+	}, {
+		"name": "Ilutuntun-Osoro Microfinance Bank Limited",
+		"nibss_code": "418",
+		"isw_code": "418",
+		"type": "MicroFinance Bank"
+	}
+]

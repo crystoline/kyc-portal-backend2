@@ -2,26 +2,32 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\AppBaseController;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AppBaseTrait;
 use App\Http\Requests\API\CompletePasswordResetRequest;
 use App\Http\Requests\API\ResetPasswordRequest;
+use App\Mail\PasswordReset;
+use App\Mail\PasswordResetSuccessful;
 use App\Models\User;
 use Exception;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Response;
 use InfyOm\Generator\Utils\ResponseUtil;
+use Laravel\Passport\Http\Controllers\AccessTokenController;
+use Psr\Http\Message\ServerRequestInterface;
 use Swagger\Annotations as SWG;
 
-class AuthController extends AppBaseController
+class AuthController extends AccessTokenController
 {
+    use AppBaseTrait;
 
     /**
      * @param Request $request
-     * @return Response
+     * @return JsonResponse
      * @SWG\Post(
      *      path="/auth/token",
      *      summary="Login",
@@ -47,7 +53,33 @@ class AuthController extends AppBaseController
      *      )
      * )
      */
-    public function auth(Request $request): Response{
+    public function auth(ServerRequestInterface $request): JsonResponse
+    {
+        try {
+            // issue token
+            $tokenResponse = $this->issueToken($request);
+            //convert response to json string
+            $content = $tokenResponse->getContent();
+            //convert json to array
+            $data = json_decode($content, true);
+            if (!isset($data['error'])) {
+                $token_data = collect($data);
+                //get username (default is :email)
+                $username = $request->getParsedBody()['username'];
+                /** @var User $user */
+                $user = User::query()->with(['group.tasks'])->where('email', $username)->firstOrFail();
+                $token_data->put('user', $user->toArray());
+                return Response::json($token_data);
+            }
+
+            return Response::json($data, 401);
+
+        } catch (ModelNotFoundException $e) { // email notfound
+            return $this->sendError('User not found', '404');
+        } catch (Exception $e) {
+            return $this->sendError('"Unknown error' . $e->getMessage(), '500');
+        }
+
     }
 
     /**
@@ -78,7 +110,9 @@ class AuthController extends AppBaseController
      *      )
      * )
      */
-    public function refresh(Request $request): Response{
+    public function refresh(Request $request): Response
+    {
+
     }
 
     /**
@@ -91,6 +125,7 @@ class AuthController extends AppBaseController
      *      @SWG\Parameter(
      *          type="string",
      *          name="Authorization",
+     *          description="bearer token",
      *          in="header",
      *          required=true
      *     ),
@@ -115,11 +150,14 @@ class AuthController extends AppBaseController
     public function logout(): JsonResponse
     {
         if (Auth::check()) {
-            try{
+            try {
+                die(print_r(Auth::user()->token(), true));
                 /** @var User $user */
                 Auth::user()->token()->revoke();
+
                 return $this->sendResponse(null, 'Successfully logged out');
-            }catch (Exception $exception){}
+            } catch (Exception $exception) {
+            }
         }
         return $this->sendError(null, 'Logged failed');
     }
@@ -135,6 +173,7 @@ class AuthController extends AppBaseController
      *      @SWG\Parameter(
      *          type="string",
      *          name="Authorization",
+     *          description="bearer token",
      *          in="header",
      *          required=true
      *     ),
@@ -162,10 +201,10 @@ class AuthController extends AppBaseController
             try {
                 /** @var User $user */
                 $user = Auth::user();
-                $user->AuthAccessToken()->delete();
+                $user->authAccessToken()->delete();
                 return $this->sendResponse(null, 'Successfully logged out all devices');
-            }catch (Exception $exception){
-               // return $this->sendError('Logged failed'.$exception->getMessage(), 403);
+            } catch (Exception $exception) {
+                // return $this->sendError('Logged failed'.$exception->getMessage(), 403);
             }
         }
         return $this->sendError('Logged failed', 403);
@@ -220,20 +259,23 @@ class AuthController extends AppBaseController
         $code = null;
         $email = $request->input('email');
         $return_url = $request->input('return_url');
-        try{
+        try {
             /** @var User $user */
             $user = User::query()->where('email', $email)->firstOrFail();
             $code = random_int(100000, 999999);
-            Cache::put('reset-password-user-'.$code, $user->id, config('app.reset-password-token-expiry', 3600));
-        }catch (Exception $exception){
-            return Response::json(ResponseUtil::makeError('Could not reset password'), 400);
-        }
+            Cache::put('reset-password-user-' . $code, $user->id, config('app.reset-password-token-expiry', 3600));
 
-        // TODO send reset email
-        $response_data = ['success' => true, 'message' => 'Password reset email sent'];
-        if(config('app.env') !== 'production'){
-            $response_data['reset_code**tmp'] = $code;
-            return  Response::json($response_data);
+
+            // send reset email
+            Mail::to($user->email)
+                ->send(new PasswordReset($user, $code, $return_url));
+            $response_data = ['success' => true, 'message' => 'Password reset email sent'];
+            if (config('app.env') !== 'production') {
+                $response_data['reset_code**tmp'] = $code;
+                return Response::json($response_data);
+            }
+        } catch (Exception $exception) {
+            return Response::json(ResponseUtil::makeError('Could not reset password. '.$exception->getMessage()), 400);
         }
     }
 
@@ -285,18 +327,21 @@ class AuthController extends AppBaseController
     {
         $reset_code = $request->input('reset_code');
         $password = $request->input('password');
-        $user_id = Cache::pull('reset-password-user-'.$reset_code);
-        if(!$user_id){
+        $user_id = Cache::pull('reset-password-user-' . $reset_code);
+        if (!$user_id) {
             return Response::json(ResponseUtil::makeError('Reset code is not valid'), 400);
         }
 
-        try{
+        try {
             /** @var User $user */
             $user = User::query()->find($user_id);
+            //send password successful
+            Mail::to($user->email)
+                ->send(new PasswordResetSuccessful($user ));
             $user->update(['password' => $password]);
-        }catch (Exception $exception){
+        } catch (Exception $exception) {
             return Response::json(ResponseUtil::makeError('Could not reset password'), 400);
         }
-        return  Response::json(['success' => true, 'message' => 'Password reset successful']);
+        return Response::json(['success' => true, 'message' => 'Password reset successful']);
     }
 }

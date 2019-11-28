@@ -25,12 +25,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
-        Passport::routes(function (RouteRegistrar $registrar){
-            $registrar->all();
-        }, [ 'prefix' => 'api/v1/auth','middleware' => ['api']]);
+        Passport::routes(static function (RouteRegistrar $registrar){
+            //$registrar->forTransientTokens();
+        }, [ 'prefix' => 'api/v1/auth','middleware' => ['api',], 'as' => 'refresh-token']);
     }
 
     /**
@@ -72,7 +70,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::prefix('api/v1')
             ->middleware('api')
-            ->as('api.')
+            //->as('api.')
             ->namespace($this->namespace."\\Api")
             ->group(base_path('routes/api.php'));
     }

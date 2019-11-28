@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * @property int status
  * @property Verification verification
+ * @property string status_text
  * @SWG\Definition(
  *      definition="VerificationApproval",
  *      required={""},
@@ -66,6 +67,9 @@ class VerificationApproval extends Model
 
     protected $dates = ['deleted_at'];
 
+    protected $appends = [
+        'status_text'
+    ];
 
     public $fillable = [
         'verification_id',
@@ -83,7 +87,7 @@ class VerificationApproval extends Model
         'id' => 'integer',
         'verification_id' => 'integer',
         'user_id' => 'integer',
-        'status' => 'boolean',
+        'status' => 'integer',
         'comment' => 'string'
     ];
 
@@ -93,7 +97,7 @@ class VerificationApproval extends Model
      * @var array
      */
     public static $rules = [
-        'verification_id' => 'required',
+        //'verification_id' => 'required',
         'user_id' => 'required',
         'status' => 'required'
     ];
@@ -114,4 +118,16 @@ class VerificationApproval extends Model
         return $this->belongsTo(Verification::class, 'verification_id');
     }
 
+    /**
+     * @return string
+     */
+    public function getStatusTextAttribute(): string
+    {
+        switch ($this->status){
+            case 0: return 'Rejected';
+            case 1: return 'Approved';
+            case 2: return 'Discarded';
+        }
+        return 'Unknown';
+    }
 }

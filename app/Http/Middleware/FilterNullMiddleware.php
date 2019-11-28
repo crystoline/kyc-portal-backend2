@@ -21,6 +21,7 @@ class FilterNullMiddleware
     }
     private static function filterNullInput(array $data, $parent = null): void
     {
+        //die(json_encode($data));
         foreach ($data as $key => $value){
             $key = $parent !== null? "{$parent}.{$key}": $key;
             //die(print_r($key, true));
@@ -28,7 +29,7 @@ class FilterNullMiddleware
                 if(is_array($value)){
                     self::filterNullInput($value, $key);
                 }
-                elseif(request()->input($key) === null){
+                elseif(request()->input($key) == null){
                     request()->request->remove($key);
                 }
             }

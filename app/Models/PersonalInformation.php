@@ -3,9 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
+ * @property string phone_number
+ * @property string bvn
+ * @property string email
+ * @property integer lga_id
+ * @property integer state_id
  * @SWG\Definition(
  *      definition="PersonalInformation",
  *      required={""},
@@ -146,18 +151,33 @@ class PersonalInformation extends Model
 {
     // use SoftDeletes;
 
-    public $table = 'personal_information';
-    
+    /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        /** Agent Information  */
+        'type' => 'required|in:principal-agent,sole-agent',
+        'is_app_only' => 'required|in:0,1',
+        'first_name' => 'required',
+        'last_name' => 'required',
+        'user_name' => 'required|unique:agents',
+        'code' => 'required|unique:agents',
+        'gender' => 'required|in:male,female',
+        'date_of_birth' => 'required|date',
+        /** End Agent Information */
+
+        'verification_id' => 'required',
+        'android_phone' => 'required',
+        'bluetooth_printer' => 'required'
+    ];
+
 //    const CREATED_AT = 'created_at';
 //    const UPDATED_AT = 'updated_at';
-
-
-    protected $dates = ['deleted_at'];
-
-
+    public $table = 'personal_information';
     public $fillable = [
 
-       
 
         'verification_id',
         'email',
@@ -165,10 +185,11 @@ class PersonalInformation extends Model
         'phone_number2',
         'imei',
         'bvn',
+        'bank_id',
         'bank_account_name',
         'bank_account_number',
         'product_of_interest',
-        'designation',
+       // 'designation',
         'occupation',
         'home_address',
         'outlet_address',
@@ -176,13 +197,14 @@ class PersonalInformation extends Model
         'landmark',
         'lga_id',
         'state_id',
-        'latitude',
+        'location',
         'name_of_acquirer',
         'android_phone',
         'bluetooth_printer',
         'signature'
     ];
-
+    protected $hidden = ['designation'];
+    protected $dates = ['deleted_at'];
     /**
      * The attributes that should be casted to native types.
      *
@@ -215,48 +237,34 @@ class PersonalInformation extends Model
     ];
 
     /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public static $rules = [
-        /** Agent Information  */
-        'type' => 'required|in:principal-agent,sole-agent',
-        'is_app_only' => 'required|in:0,1',
-        'first_name' => 'required',
-        'last_name' => 'required',
-        'user_name' => 'required|unique:agents',
-        'code' => 'required|unique:agents',
-        'gender' => 'required|in:male,female',
-        'date_of_birth' => 'required|date',
-        /** End Agent Information */
-
-        'verification_id' => 'required',
-        'android_phone' => 'required',
-        'bluetooth_printer' => 'required'
-    ];
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      **/
     public function lga()
     {
-        return $this->belongsTo(\App\Models\Lga::class, 'lga_id');
+        return $this->belongsTo(Lga::class, 'lga_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      **/
-    public function state()
+    public function state(): BelongsTo
     {
-        return $this->belongsTo(\App\Models\State::class, 'state_id');
+        return $this->belongsTo(State::class, 'state_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      **/
-    public function verification()
+    public function verification(): BelongsTo
     {
-        return $this->belongsTo(\App\Models\Verification::class, 'verification_id');
+        return $this->belongsTo(Verification::class, 'verification_id');
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function banks(): BelongsTo
+    {
+        return $this->belongsTo(Bank::class);
     }
 }

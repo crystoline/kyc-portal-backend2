@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('group_id');
+            $table->unsignedBigInteger('territory_id')->nullable();
             $table->string('first_name', 180);
             $table->string('last_name', 180);
             $table->string('gender', 20);
@@ -27,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
 
             $table->foreign('group_id')->references('id')->on('groups');
+            $table->foreign('territory_id')->references('id')->on('territories');
         });
     }
 

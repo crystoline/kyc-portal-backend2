@@ -26,9 +26,12 @@ class CreatePersonalInformationTable extends Migration
 
             $table->string('imei', 50)->nullable();
             $table->string('bvn', 50)->nullable();
+            $table->unsignedBigInteger('bank_id')->nullable();
             $table->string('bank_account_name', 100)->nullable();
             $table->string('bank_account_number', 50)->nullable();
             $table->string('product_of_interest', 200)->nullable()->comment('Money Transfer/Withdrawal Bill Payment Gaming ');
+           // $table->text('product_of_interest')->nullable()
+             //   ->comment('Money Transfer/Withdrawal Bill Payment Gaming ');
 
             $table->string('designation')->nullable()->comment('Principal Agent, Sole Agent');
             $table->string('occupation')->nullable()->comment('Profession/Occupation');
@@ -39,7 +42,7 @@ class CreatePersonalInformationTable extends Migration
             $table->string('landmark', 200)->nullable();
             $table->unsignedBigInteger('lga_id')->nullable();
             $table->unsignedBigInteger('state_id')->nullable();
-            $table->string('latitude', 100)->nullable();
+            $table->string('location', 100)->nullable();
             $table->string('name_of_acquirer', 200)->nullable()->comment('Name of Acquirer/TP');
 
             $table->unsignedTinyInteger('android_phone')->default('0')->comment('0=No, 1=Yes');
@@ -49,6 +52,7 @@ class CreatePersonalInformationTable extends Migration
 
             $table->timestamps();
             $table->foreign('verification_id')->references('id')->on('verifications');
+            $table->foreign('bank_id')->references('id')->on('banks');
             $table->foreign('lga_id')->references('id')->on('lgas');
             $table->foreign('state_id')->references('id')->on('states');
 

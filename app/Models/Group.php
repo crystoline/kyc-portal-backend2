@@ -5,10 +5,15 @@ namespace App\Models;
 use App\Http\Requests\API\UpdateGroupAPIRequest;
 use App\Http\Requests\API\UpdateUserAPIRequest;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
+ * @property Permission permissions
+ * @property string role
+ * @property string name
  * @SWG\Definition(
  *      definition="Group",
  *      required={""},
@@ -44,12 +49,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          description="updated_at",
  *          type="string",
  *          format="date-time"
- *      ),
- *      @SWG\Property(
- *          property="deleted_at",
- *          description="deleted_at",
- *          type="string",
- *          format="date-time"
  *      )
  * )
  */
@@ -63,7 +62,7 @@ class Group extends Model
     const UPDATED_AT = 'updated_at';*/
 
 
-    protected $dates = ['deleted_at'];
+  protected $dates = ['created_at', 'updated_at'];
 
 
     public $fillable = [
@@ -111,7 +110,7 @@ class Group extends Model
      **/
     public function permissions(): HasMany
     {
-        return $this->hasMany(Permission::class, 'group_id');
+        return $this->hasMany(Permission::class);
     }
 
     /**
@@ -120,5 +119,13 @@ class Group extends Model
     public function users(): HasMany
     {
         return $this->hasMany(User::class, 'group_id');
+    }
+
+    /**
+     * @return BelongsToMany
+     */
+    public function tasks(): BelongsToMany
+    {
+        return $this->belongsToMany(Task::class, 'permissions');
     }
 }

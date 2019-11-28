@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Eloquent as Model;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -47,16 +47,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Lga extends Model
 {
-    // use SoftDeletes;
+    //use SoftDeletes;
 
     public $table = 'lgas';
     
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
+  /*  const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';*/
 
 
     protected $dates = ['deleted_at'];
 
+    protected $hidden = [
+        'created_at', 'updated_at', 'code'
+    ];
 
     public $fillable = [
         'state_id',

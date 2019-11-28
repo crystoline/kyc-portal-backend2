@@ -4,13 +4,38 @@ namespace App\Models;
 
 use App\Http\Requests\API\UpdateAgentAPIRequest;
 use App\Http\Requests\API\UpdateVerificationAPIRequest;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 
 /**
  * @property int status
+ * @property string first_name
+ * @property User verifiedBy
+ * @property string passport
+ * @property string agent_id
+ * @property PersonalInformation personalInformation
+ * @property integer parent_agent_id
+ * @property Agent agent
+ * @property integer id
+ * @property integer territory_id
+ * @property integer device_owner_id
+ * @property integer verified_by
+ * @property integer verification_period_id
+ * @property integer approved_by
+ * @property Carbon date
+ * @property string type
+ * @property integer agent_type_id
+ * @property integer is_app_only
+ * @property string last_name
+ * @property string user_name
+ * @property string gender
+ * @property Carbon date_of_birth
+ * @property string home_address
  * @SWG\Definition(
  *      definition="Verification",
  *      required={""},
@@ -29,6 +54,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *      @SWG\Property(
  *          property="parent_agent_id",
  *          description="Parent agent id",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="territory_id",
+ *          description="territory id",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="device_owner_id",
+ *          description="device owner id",
  *          type="string"
  *      ),
  *
@@ -123,7 +158,10 @@ class Verification extends  Model
 
     public $fillable = [
         'agent_id',
+        'territory_id',
+        'device_owner_id',
         'verified_by',
+        'verification_period_id',
         'approved_by',
         'date',
         'status',
@@ -131,6 +169,7 @@ class Verification extends  Model
         /** Agent Info */
         'type',
         'parent_agent_id',
+        'agent_type_id',
         'is_app_only',
         'first_name',
         'last_name',
@@ -148,6 +187,9 @@ class Verification extends  Model
      */
     protected $casts = [
         'id' => 'integer',
+        'verification_period_id' => 'integer',
+        'territory_id' => 'integer',
+        'device_owner_id' => 'integer',
 
         /** Agent Information  */
         'type' => 'string',
@@ -161,7 +203,8 @@ class Verification extends  Model
         /** Agent Information */
 
         'parent_agent_id' => 'integer',
-        'status' => 'boolean',
+        'agent_type_id' => 'integer',
+        'status' => 'integer',
         'date' => 'date',
 
         'verified_by' => 'integer',
@@ -177,7 +220,10 @@ class Verification extends  Model
      */
     public static $rules = [
         'parent_agent_id' => 'sometimes|exists:agents,id', // TODO validation for parent agent code
-
+        'territory_id' => 'sometimes|exists:territories,id',
+        'device_owner_id' => 'sometimes|exists:device_owners,id',
+        'verification_period_id' => 'sometimes|exists:verification_periods,id', // TODO validation for parent agent code
+        'agent_type_id' => 'sometimes|exists:agent_types,id',
         'date' => 'required',
 
         'type' => 'required|in:principal-agent,sole-agent',
@@ -197,6 +243,9 @@ class Verification extends  Model
     {
         return [
             'parent_agent_id' => 'required|exists:agents,id', // TODO validation for parent agent code
+            'territory_id' => 'sometimes|exists:territories,id',
+            'device_owner_id' => 'sometimes|exists:device_owners,id',
+            'verification_period_id' => 'required|exists:verification_periods,id', // TODO validation for parent agent code
             'code' => 'sometimes|exists:agents,code',
             'date' => 'required',
 
@@ -216,7 +265,11 @@ class Verification extends  Model
      **/
     public function agent(): BelongsTo
     {
-        return $this->belongsTo(Agent::class, 'agent_id');
+        return $this->belongsTo(Agent::class);
+    }
+    public function parentAgent(): BelongsTo
+    {
+        return $this->belongsTo(Agent::class, 'parent_agent_id');
     }
 
     /**
@@ -244,19 +297,19 @@ class Verification extends  Model
     }
 
     /**
-     * @return HasMany
+     * @return HasOne
      **/
-    public function guarantorInformation(): HasMany
+    public function guarantorInformation(): HasOne
     {
-        return $this->hasMany(GuarantorsInformation::class, 'verification_id');
+        return $this->hasOne(GuarantorsInformation::class);
     }
 
     /**
-     * @return HasMany
+     * @return HasOne
      **/
-    public function personalInformation(): HasMany
+    public function personalInformation(): HasOne
     {
-        return $this->hasMany(PersonalInformation::class, 'verification_id');
+        return $this->hasOne(PersonalInformation::class);
     }
 
     /**
@@ -265,5 +318,62 @@ class Verification extends  Model
     public function verificationApprovals(): HasMany
     {
         return $this->hasMany(VerificationApproval::class, 'verification_id');
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function AgentType(): BelongsTo
+    {
+        return $this->belongsTo(AgentType::class);
+    }
+
+
+    public function territory(): BelongsTo
+    {
+        return $this->belongsTo(Territory::class);
+    }
+
+    public function deviceOwner(): BelongsTo
+    {
+        return $this->belongsTo(DeviceOwner::class);
+    }
+
+    public function verificationPeriod(): BelongsTo
+    {
+        return $this->belongsTo(VerificationPeriod::class);
+    }
+
+    public function getTelephoneVerificationStatusAttribute(): bool
+    {
+        $verified = TelephoneVerification::query()->where([
+            'telephone' => $this->personalInformation->phone_number?? '',
+            'agent_id' => $this->agent_id,
+            'status' => 1,
+        ])->first();
+        return $verified !== null;
+    }
+
+    public function getBvnVerificationStatusAttribute(): bool
+    {
+        $that = $this;
+        $verified = BvnVerification::query()->where([
+            'bvn' => $this->personalInformation->bvn?? '',
+            'status' => 1,
+        ])->where( static function(Builder $query) use ($that){
+            $query->where('agent_id', $that->agent_id)->orWhere('agent_id', $that->parent_agent_id);
+        })
+        ->first();
+        return $verified !== null;
+    }
+    public function getBvnIsForLinkedAgentAttribute(): bool
+    {
+        $that = $this;
+        $bvn = BvnVerification::query()->where([
+            'bvn' => $this->personalInformation->bvn?? '',
+            'agent_id' => $that->parent_agent_id
+        ])
+        ->first();
+        return $bvn !== null;
     }
 }

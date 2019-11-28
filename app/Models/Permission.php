@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
-use Eloquent as Model;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -53,8 +55,8 @@ class Permission extends Model
 
     public $table = 'permissions';
     
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
+   /* const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';*/
 
 
     protected $dates = ['deleted_at'];
@@ -87,18 +89,18 @@ class Permission extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsToMany
      **/
-    public function group()
+    public function group(): BelongsToMany
     {
-        return $this->belongsTo(\App\Models\Group::class, 'group_id');
+        return $this->belongsToMany(Group::class, 'group_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsToMany
      **/
-    public function task()
+    public function tasks(): BelongsToMany
     {
-        return $this->belongsTo(\App\Models\Task::class, 'task_id');
+        return $this->belongsToMany(Task::class, 'task_id');
     }
 }
