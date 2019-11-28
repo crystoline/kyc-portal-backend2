@@ -111,7 +111,8 @@ use Illuminate\Support\Carbon;
  *       @SWG\Property(
  *          property="last_verification_date",
  *          description="Date of the previuos verification",
- *          type="date-time"
+ *          type="string",
+ *          format="date-time"
  *      ),
  *       @SWG\Property(
  *          property="Verification_status",

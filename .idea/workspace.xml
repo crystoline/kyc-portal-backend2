@@ -2,60 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="675d336a-24a6-4598-a54f-4ebb6436d124" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/SettingController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AppBaseTrait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/Cors.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Util/Sql.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/permission.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/settings.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_03_04_092600_create_bank_types_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_03_05_092319_create_banks_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/sub/banks.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kyc-portal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kyc-portal.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/BaseModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/BaseModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/TaskGenerate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/TaskGenerate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AgentAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AgentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/GroupAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/GroupController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationAPIController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AppBaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppBaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/FilterNullMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/FilterNullMiddleware.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Agent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Agent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Document.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Document.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Group.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Group.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Lga.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Lga.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Permission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PersonalInformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PersonalInformation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/State.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/State.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Task.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Verification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Verification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/VerificationApproval.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/VerificationApproval.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Observers/VerificationApprovalObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/VerificationApprovalObserver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Swagger/Models/CreateVerificationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Swagger/Models/CreateVerificationRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/xModel/Setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Setting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/task-generator.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/task-generator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2018_03_06_075117_create_settings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2018_03_06_075117_create_settings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_14_162438_create_agents_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_14_162438_create_agents_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_14_162535_create_verifications_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_14_162535_create_verifications_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_14_162622_create_personal_information_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_14_162622_create_personal_information_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/TestSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TestSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/sub/GroupSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/sub/GroupSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/docs/api-docs.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/docs/api-docs.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AgentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="115" column="57" lean-forward="true" selection-start-line="115" selection-start-column="57" selection-end-line="115" selection-end-column="57" />
+            <state relative-caret-position="78">
+              <caret line="24" column="3" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
               <folding>
                 <element signature="e#827#939#0#PHP" />
                 <element signature="e#1103#2354#0#PHP" />
@@ -162,8 +110,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Models/Agent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="226" column="17" lean-forward="true" selection-start-line="226" selection-start-column="17" selection-end-line="226" selection-end-column="17" />
+            <state relative-caret-position="195">
+              <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
               <folding>
                 <element signature="e#30#78#0#PHP" expanded="true" />
               </folding>
@@ -258,7 +206,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>studly_case</find>
       <find>exclude</find>
       <find>name</find>
       <find>'name' =&gt;</find>
@@ -288,6 +235,7 @@
       <find>500</find>
       <find>agent</find>
       <find>verifiedBy</find>
+      <find>last_verification_date</find>
     </findStrings>
     <replaceStrings>
       <replace>// use SoftDeletes;</replace>
@@ -358,17 +306,17 @@
         <option value="$PROJECT_DIR$/app/Models/VerificationPeriod.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_14_162440_create_verification_periods_table.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/AgentController.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/helpers.php" />
         <option value="$PROJECT_DIR$/app/Models/PersonalInformation.php" />
-        <option value="$PROJECT_DIR$/app/Models/Agent.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/TerritoryAPIController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php" />
         <option value="$PROJECT_DIR$/app/Models/Verification.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php" />
         <option value="$PROJECT_DIR$/app/Observers/VerificationApprovalObserver.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/AgentController.php" />
+        <option value="$PROJECT_DIR$/app/Models/Agent.php" />
       </list>
     </option>
   </component>
@@ -531,14 +479,6 @@
               <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
               <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -628,12 +568,12 @@
       <workItem from="1571827996566" duration="191320000" />
       <workItem from="1573545686850" duration="60634000" />
       <workItem from="1574255873912" duration="41610000" />
-      <workItem from="1574760804801" duration="9799000" />
+      <workItem from="1574760804801" duration="11230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="366608000" />
+    <option name="totallyTimeSpent" value="368039000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -654,14 +594,14 @@
       <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.23200513" />
       <window_info id="Structure" order="4" weight="0.18337408" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="0" weight="0.11081442" />
-      <window_info anchor="bottom" id="File Transfer" order="1" visible="true" weight="0.38985315" />
+      <window_info anchor="bottom" id="File Transfer" order="1" weight="0.38985315" />
       <window_info anchor="bottom" id="Tail" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
       <window_info anchor="bottom" id="DB Execution Console" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5012854" side_tool="true" weight="0.5367156" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32925472" />
       <window_info anchor="bottom" id="Code Review" order="7" weight="0.32977304" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49871466" weight="0.3047831" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49871466" visible="true" weight="0.30440587" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="10" />
       <window_info anchor="bottom" id="Find" order="11" weight="0.32925472" />
@@ -1116,8 +1056,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AgentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="115" column="57" lean-forward="true" selection-start-line="115" selection-start-column="57" selection-end-line="115" selection-end-column="57" />
+        <state relative-caret-position="78">
+          <caret line="24" column="3" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
           <folding>
             <element signature="e#827#939#0#PHP" />
             <element signature="e#1103#2354#0#PHP" />
@@ -1130,8 +1070,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Agent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="226" column="17" lean-forward="true" selection-start-line="226" selection-start-column="17" selection-end-line="226" selection-end-column="17" />
+        <state relative-caret-position="195">
+          <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
           <folding>
             <element signature="e#30#78#0#PHP" expanded="true" />
           </folding>
