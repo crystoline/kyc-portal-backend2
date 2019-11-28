@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="675d336a-24a6-4598-a54f-4ebb6436d124" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/docs/api-docs.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/docs/api-docs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +56,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/api.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="90" column="37" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="37" />
+              <folding>
+                <element signature="e#7#29#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1313">
+              <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="36" column="54" lean-forward="true" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="267">
@@ -84,7 +113,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/settings.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="456">
@@ -139,52 +168,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/VerificationApproval.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-548">
-              <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Verification.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="285" column="30" selection-start-line="285" selection-start-column="20" selection-end-line="285" selection-end-column="30" />
-              <folding>
-                <element signature="e#30#78#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="254" column="7" selection-start-line="254" selection-start-column="7" selection-end-line="254" selection-end-column="7" />
-              <folding>
-                <element signature="e#756#1797#0#PHP" />
-                <element signature="e#1802#2173#0#PHP" />
-                <element signature="e#2179#3476#0#PHP" />
-                <element signature="e#3481#3788#0#PHP" />
-                <element signature="e#3794#4990#0#PHP" />
-                <element signature="e#4995#5407#0#PHP" />
-                <element signature="e#5413#6952#0#PHP" />
-                <element signature="e#6957#7537#0#PHP" />
-                <element signature="e#7543#8732#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>name</find>
       <find>'name' =&gt;</find>
       <find>Store</find>
       <find>str_replace(' Api', '',$name)</find>
@@ -214,6 +201,7 @@
       <find>verifiedBy</find>
       <find>last_verification_date</find>
       <find>sms</find>
+      <find>/deviceOwners&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>// use SoftDeletes;</replace>
@@ -227,6 +215,7 @@
       <replace>\</replace>
       <replace>'dashboard.all-agents'</replace>
       <replace>date_start</replace>
+      <replace>/device_owners</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\repo\kyc-portal\app</dir>
@@ -285,9 +274,7 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/helpers.php" />
         <option value="$PROJECT_DIR$/app/Models/PersonalInformation.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/TerritoryAPIController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php" />
         <option value="$PROJECT_DIR$/app/Models/Verification.php" />
         <option value="$PROJECT_DIR$/app/Observers/VerificationApprovalObserver.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/AgentController.php" />
@@ -295,6 +282,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2017_01_14_063439_create_groups_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php" />
         <option value="$PROJECT_DIR$/config/settings.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php" />
       </list>
     </option>
   </component>
@@ -417,9 +406,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="7" />
-    <option name="width" value="1600" />
-    <option name="height" value="870" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="886" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -438,7 +428,28 @@
             <path>
               <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
               <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
@@ -450,6 +461,11 @@
               <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
               <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
@@ -527,12 +543,12 @@
       <workItem from="1571827996566" duration="191320000" />
       <workItem from="1573545686850" duration="60634000" />
       <workItem from="1574255873912" duration="41610000" />
-      <workItem from="1574760804801" duration="16545000" />
+      <workItem from="1574760804801" duration="17409000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="373354000" />
+    <option name="totallyTimeSpent" value="374218000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -550,17 +566,17 @@
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="DB Browser" order="2" weight="0.32969153" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.23200513" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.22943445" />
       <window_info id="Structure" order="4" weight="0.18337408" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="0" weight="0.11081442" />
-      <window_info active="true" anchor="bottom" id="File Transfer" order="1" visible="true" weight="0.15086782" />
+      <window_info anchor="bottom" id="File Transfer" order="1" weight="0.3471295" />
       <window_info anchor="bottom" id="Tail" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
       <window_info anchor="bottom" id="DB Execution Console" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5012854" side_tool="true" weight="0.5367156" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32925472" />
       <window_info anchor="bottom" id="Code Review" order="7" weight="0.32977304" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49871466" weight="0.30440587" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49871466" visible="true" weight="0.30440587" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="10" />
       <window_info anchor="bottom" id="Find" order="11" weight="0.32925472" />
@@ -827,16 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="94" column="74" selection-start-line="94" selection-start-column="74" selection-end-line="94" selection-end-column="74" />
-          <folding>
-            <element signature="e#7#29#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Repositories/BaseRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3720">
@@ -885,62 +891,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="77" column="7" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
-          <folding>
-            <element signature="e#672#1678#0#PHP" />
-            <element signature="e#1683#2026#0#PHP" />
-            <element signature="e#2032#3273#0#PHP" />
-            <element signature="e#3278#3550#0#PHP" />
-            <element signature="e#3556#4710#0#PHP" />
-            <element signature="e#4715#5071#0#PHP" />
-            <element signature="e#5077#6553#0#PHP" />
-            <element signature="e#6558#7061#0#PHP" />
-            <element signature="e#7067#8221#0#PHP" />
-            <element signature="e#8226#8596#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/TerritoryAPIController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="299" column="23" selection-start-line="299" selection-start-column="23" selection-end-line="299" selection-end-column="23" />
-          <folding>
-            <element signature="e#648#1647#0#PHP" />
-            <element signature="e#1652#1989#0#PHP" />
-            <element signature="e#1995#3221#0#PHP" />
-            <element signature="e#3226#3487#0#PHP" />
-            <element signature="e#3493#4636#0#PHP" />
-            <element signature="e#4641#4979#0#PHP" />
-            <element signature="e#4985#6444#0#PHP" />
-            <element signature="e#6449#6929#0#PHP" />
-            <element signature="e#6935#8080#0#PHP" />
-            <element signature="e#8085#8437#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="254" column="7" selection-start-line="254" selection-start-column="7" selection-end-line="254" selection-end-column="7" />
-          <folding>
-            <element signature="e#756#1797#0#PHP" />
-            <element signature="e#1802#2173#0#PHP" />
-            <element signature="e#2179#3476#0#PHP" />
-            <element signature="e#3481#3788#0#PHP" />
-            <element signature="e#3794#4990#0#PHP" />
-            <element signature="e#4995#5407#0#PHP" />
-            <element signature="e#5413#6952#0#PHP" />
-            <element signature="e#6957#7537#0#PHP" />
-            <element signature="e#7543#8732#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1036,6 +986,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="90" column="37" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="37" />
+          <folding>
+            <element signature="e#7#29#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/TerritoryAPIController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-99">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1313">
+          <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="36" column="54" lean-forward="true" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
         </state>
       </provider>
     </entry>

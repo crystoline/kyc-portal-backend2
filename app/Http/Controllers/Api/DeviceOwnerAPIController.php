@@ -31,7 +31,7 @@ class DeviceOwnerAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/deviceOwners",
+     *      path="/device_owners,
      *      summary="Get a listing of the DeviceOwners.",
      *      tags={"DeviceOwner"},
      *      description="Get all DeviceOwners",
@@ -80,7 +80,7 @@ class DeviceOwnerAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/deviceOwners",
+     *      path="/device_owners,
      *      summary="Store a newly created DeviceOwner in storage",
      *      tags={"DeviceOwner"},
      *      description="Store DeviceOwner",
@@ -256,7 +256,6 @@ class DeviceOwnerAPIController extends AppBaseController
      * @param int $id
      * @return JsonResponse
      *
-     * @throws \Exception
      * @SWG\Delete(
      *      path="/deviceOwners/{id}",
      *      summary="Remove the specified DeviceOwner from storage",

@@ -31,7 +31,7 @@ class VerificationPeriodAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/verificationPeriods",
+     *      path="/verification_periods",
      *      summary="Get a listing of the VerificationPeriods.",
      *      tags={"VerificationPeriod"},
      *      description="Get all VerificationPeriods",
@@ -80,7 +80,7 @@ class VerificationPeriodAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/verificationPeriods",
+     *      path="/verification_periods",
      *      summary="Store a newly created VerificationPeriod in storage",
      *      tags={"VerificationPeriod"},
      *      description="Store VerificationPeriod",
@@ -133,7 +133,7 @@ class VerificationPeriodAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/verificationPeriods/{id}",
+     *      path="/verification_periods/{id}",
      *      summary="Display the specified VerificationPeriod",
      *      tags={"VerificationPeriod"},
      *      description="Get VerificationPeriod",
@@ -190,7 +190,7 @@ class VerificationPeriodAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Put(
-     *      path="/verificationPeriods/{id}",
+     *      path="/verification_periods/{id}",
      *      summary="Update the specified VerificationPeriod in storage",
      *      tags={"VerificationPeriod"},
      *      description="Update VerificationPeriod",
@@ -254,11 +254,10 @@ class VerificationPeriodAPIController extends AppBaseController
 
     /**
      * @param int $id
-     * @return JsonResponse
+     * @return Response
      *
-     * @throws \Exception
      * @SWG\Delete(
-     *      path="/verificationPeriods/{id}",
+     *      path="/verification_periods/{id}",
      *      summary="Remove the specified VerificationPeriod from storage",
      *      tags={"VerificationPeriod"},
      *      description="Delete VerificationPeriod",
@@ -297,12 +296,12 @@ class VerificationPeriodAPIController extends AppBaseController
      *      )
      * )
      */
-    public function destroy($id): JsonResponse
+    public function destroy($id)
     {
         /** @var VerificationPeriod $verificationPeriod */
         $verificationPeriod = $this->verificationPeriodRepository->find($id);
 
-        if ($verificationPeriod === null) {
+        if (empty($verificationPeriod)) {
             return $this->sendError('Verification Period not found');
         }
 
