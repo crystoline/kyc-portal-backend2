@@ -89,5 +89,13 @@ class State extends Model
         return $this->hasMany(Lga::class, 'state_id');
     }
 
+    /**
+     * @return HasMany
+     **/
+    public function territories(): HasMany
+    {
+        return $this->hasMany(Territory::class, 'state_id');
+    }
+
 
 }

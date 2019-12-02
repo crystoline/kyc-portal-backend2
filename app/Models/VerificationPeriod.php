@@ -111,7 +111,10 @@ class VerificationPeriod extends BaseModel
      */
     public static $rules = [
         'title' => 'required',
-        'date_start' => 'required'
+        'date_start' => 'required|date|max:19',
+        'territory_id' => 'sometimes|exists:territories,id',
+        'state_id' => 'sometimes|exists:states,id',
+        'lga_id' => 'sometimes|exists:lgas,id'
     ];
 
     /**

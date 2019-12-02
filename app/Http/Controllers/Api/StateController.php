@@ -65,7 +65,7 @@ class StateController extends AppBaseController
             $request->get('skip'),
             $request->get('limit')
         );
-        $states->load(['lgas']);
+        $states->load(['lgas','territories']);
 
         return $this->sendResponse($states->toArray(), 'States retrieved successfully');
     }
@@ -112,7 +112,7 @@ class StateController extends AppBaseController
     {
         /** @var State $state */
         $state = $this->stateRepository->find($id);
-        $state->load(['lgas']);
+        $state->load(['lgas','territories']);
         if ($state === null) {
             return $this->sendError('State not found');
         }

@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="675d336a-24a6-4598-a54f-4ebb6436d124" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/StateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/StateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Cors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/State.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/State.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Territory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Territory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/VerificationPeriod.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/VerificationPeriod.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_10_162432_create_territories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_10_162432_create_territories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/docs/api-docs.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/docs/api-docs.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,15 +53,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-50">
-              <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
@@ -66,11 +64,61 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Cors.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5561">
-              <caret line="259" column="32" selection-start-line="259" selection-start-column="32" selection-end-line="259" selection-end-column="32" />
+            <state relative-caret-position="191">
+              <caret line="29" column="34" selection-start-line="17" selection-start-column="8" selection-end-line="38" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Territory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-419">
+              <caret line="44" column="6" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+              <folding>
+                <element signature="e#30#69#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/StateController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="67" column="43" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
+              <folding>
+                <element signature="e#631#1611#0#PHP" />
+                <element signature="e#1987#3109#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/DeviceOwner.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-27">
+              <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/TerritoryAPIController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="176" column="24" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="24" />
+              <folding>
+                <element signature="e#682#1855#0#PHP" />
+                <element signature="e#1860#2211#0#PHP" />
+                <element signature="e#2217#3617#0#PHP" />
+                <element signature="e#3622#3897#0#PHP" />
+                <element signature="e#3903#5220#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,35 +126,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="36" column="54" lean-forward="true" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+            <state relative-caret-position="102">
+              <caret line="124" column="82" selection-start-line="124" selection-start-column="82" selection-end-line="124" selection-end-column="82" />
+              <folding>
+                <element signature="e#790#2006#0#PHP" />
+                <element signature="e#2011#2396#0#PHP" />
+                <element signature="e#2402#3874#0#PHP" />
+                <element signature="e#4206#5577#0#PHP" />
+                <element signature="e#5582#6010#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php">
+        <entry file="file://$PROJECT_DIR$/app/Models/VerificationPeriod.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="788" column="24" selection-start-line="788" selection-start-column="24" selection-end-line="788" selection-end-column="24" />
+            <state relative-caret-position="104">
+              <caret line="113" column="45" selection-start-line="113" selection-start-column="45" selection-end-line="113" selection-end-column="45" />
               <folding>
-                <element signature="e#44#87#0#PHP" expanded="true" />
-                <element signature="e#2216#3664#0#PHP" />
-                <element signature="e#3669#4075#0#PHP" />
-                <element signature="e#4081#5536#0#PHP" />
-                <element signature="e#5541#9010#0#PHP" />
-                <element signature="e#9016#10401#0#PHP" />
-                <element signature="e#10847#12596#0#PHP" />
-                <element signature="e#12601#14487#0#PHP" />
-                <element signature="e#14493#15891#0#PHP" />
-                <element signature="e#15896#16582#0#PHP" />
-                <element signature="e#16589#18571#0#PHP" />
-                <element signature="e#18576#19508#0#PHP" />
-                <element signature="e#19514#20985#0#PHP" />
-                <element signature="e#20990#21717#0#PHP" />
-                <element signature="e#21723#23776#0#PHP" />
-                <element signature="e#23781#24904#0#PHP" />
-                <element signature="e#32435#34466#0#PHP" />
+                <element signature="e#30#48#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,57 +160,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Observers/VerificationApprovalObserver.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="41" column="47" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AgentController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="24" column="3" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
-              <folding>
-                <element signature="e#827#939#0#PHP" />
-                <element signature="e#1103#2354#0#PHP" />
-                <element signature="e#2360#3722#0#PHP" />
-                <element signature="e#4065#5488#0#PHP" />
-                <element signature="e#5493#6069#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Agent.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
-              <folding>
-                <element signature="e#30#78#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2017_01_14_063439_create_groups_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Store</find>
       <find>str_replace(' Api', '',$name)</find>
       <find>Regenerating</find>
       <find>&quot;dashboard.all-agents&quot;</find>
@@ -200,6 +192,7 @@
       <find>last_verification_date</find>
       <find>sms</find>
       <find>/deviceOwners&quot;</find>
+      <find>/deviceOwners</find>
       <find>/verificationPeriods</find>
     </findStrings>
     <replaceStrings>
@@ -233,9 +226,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="&lt;62daa034-dca2-4f2a-82bf-8f8e5e1e37a5&gt;/.env" />
-        <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/Cors.php" />
         <option value="$PROJECT_DIR$/app/Imports/AgentsImport.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AppBaseController.php" />
@@ -253,9 +243,7 @@
         <option value="$PROJECT_DIR$/app/Console/TaskGenerate.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_10_162432_create_regions_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_14_162441_create_device_owners_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_08_10_162432_create_territories_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_12_000000_create_users_table.php" />
-        <option value="$PROJECT_DIR$/app/Models/Territory.php" />
         <option value="$PROJECT_DIR$/app/Models/DeviceOwner.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DashboardController.php" />
         <option value="$PROJECT_DIR$/app/BaseModel.php" />
@@ -268,7 +256,6 @@
         <option value="$PROJECT_DIR$/database/seeds/TerritoriesSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/VerificationPeriodSeeder.php" />
         <option value="$PROJECT_DIR$/database/factories/TerritoryFactory.php" />
-        <option value="$PROJECT_DIR$/app/Models/VerificationPeriod.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_14_162440_create_verification_periods_table.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/composer.json" />
@@ -282,8 +269,14 @@
         <option value="$PROJECT_DIR$/database/migrations/2017_01_14_063439_create_groups_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php" />
         <option value="$PROJECT_DIR$/config/settings.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/Cors.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_08_10_162432_create_territories_table.php" />
+        <option value="$PROJECT_DIR$/app/Models/State.php" />
+        <option value="$PROJECT_DIR$/app/Models/Territory.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php" />
+        <option value="$PROJECT_DIR$/app/Models/VerificationPeriod.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/StateController.php" />
       </list>
     </option>
   </component>
@@ -406,10 +399,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="886" />
+    <option name="x" value="3" />
+    <option name="y" value="5" />
+    <option name="width" value="1600" />
+    <option name="height" value="870" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -450,6 +443,12 @@
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
               <item name="Api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
@@ -543,12 +542,12 @@
       <workItem from="1571827996566" duration="191320000" />
       <workItem from="1573545686850" duration="60634000" />
       <workItem from="1574255873912" duration="41610000" />
-      <workItem from="1574760804801" duration="18157000" />
+      <workItem from="1574760804801" duration="26867000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="374966000" />
+    <option name="totallyTimeSpent" value="383676000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -566,7 +565,7 @@
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="DB Browser" order="2" weight="0.32969153" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.22943445" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.27763495" />
       <window_info id="Structure" order="4" weight="0.18337408" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="0" weight="0.11081442" />
       <window_info anchor="bottom" id="File Transfer" order="1" weight="0.3471295" />
@@ -576,7 +575,7 @@
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5012854" side_tool="true" weight="0.5367156" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32925472" />
       <window_info anchor="bottom" id="Code Review" order="7" weight="0.32977304" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49871466" visible="true" weight="0.30440587" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49871466" visible="true" weight="0.30440587" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="10" />
       <window_info anchor="bottom" id="Find" order="11" weight="0.32925472" />
@@ -607,58 +606,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_14_162441_create_device_owners_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_11_17_132646_create_telephone_verifications_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_10_162432_create_territories_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-96">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="30" column="77" selection-start-line="30" selection-start-column="77" selection-end-line="30" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Territory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="76" column="30" lean-forward="true" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
-          <folding>
-            <element signature="e#30#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/TelephoneVerification.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/DeviceOwner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/BankType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -717,13 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_14_162438_create_agents_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="45" column="85" selection-start-line="45" selection-start-column="85" selection-end-line="45" selection-end-column="85" />
         </state>
       </provider>
     </entry>
@@ -809,29 +749,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_14_162440_create_verification_periods_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/BaseModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding>
             <element signature="e#25#66#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/VerificationPeriod.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="86" column="19" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="19" />
-          <folding>
-            <element signature="e#30#48#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -989,17 +912,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/TerritoryAPIController.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_14_162438_create_agents_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        <state relative-caret-position="312">
+          <caret line="46" column="42" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Cors.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="29" column="34" selection-start-line="17" selection-start-column="8" selection-end-line="38" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_14_162440_create_verification_periods_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
-          <caret line="36" column="54" lean-forward="true" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5753">
+          <caret line="259" column="32" selection-start-line="259" selection-start-column="32" selection-end-line="259" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1013,10 +950,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/State.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5561">
-          <caret line="259" column="32" selection-start-line="259" selection-start-column="32" selection-end-line="259" selection-end-column="32" />
+        <state relative-caret-position="455">
+          <caret line="86" column="23" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/TerritoryAPIController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="176" column="24" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="24" />
+          <folding>
+            <element signature="e#682#1855#0#PHP" />
+            <element signature="e#1860#2211#0#PHP" />
+            <element signature="e#2217#3617#0#PHP" />
+            <element signature="e#3622#3897#0#PHP" />
+            <element signature="e#3903#5220#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/DeviceOwner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/VerificationPeriodRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="41" column="24" lean-forward="true" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="124" column="82" selection-start-line="124" selection-start-column="82" selection-end-line="124" selection-end-column="82" />
+          <folding>
+            <element signature="e#790#2006#0#PHP" />
+            <element signature="e#2011#2396#0#PHP" />
+            <element signature="e#2402#3874#0#PHP" />
+            <element signature="e#4206#5577#0#PHP" />
+            <element signature="e#5582#6010#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/VerificationPeriod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="113" column="45" selection-start-line="113" selection-start-column="45" selection-end-line="113" selection-end-column="45" />
+          <folding>
+            <element signature="e#30#48#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_10_162432_create_territories_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Territory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-419">
+          <caret line="44" column="6" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+          <folding>
+            <element signature="e#30#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/StateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="67" column="43" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
+          <folding>
+            <element signature="e#631#1611#0#PHP" />
+            <element signature="e#1987#3109#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>

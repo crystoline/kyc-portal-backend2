@@ -1274,7 +1274,7 @@
                 }
             }
         },
-        "/deviceOwners": {
+        "/device_owners": {
             "get": {
                 "tags": [
                     "DeviceOwner"
@@ -1362,7 +1362,7 @@
                 }
             }
         },
-        "/deviceOwners/{id}": {
+        "/device_owners/{id}": {
             "get": {
                 "tags": [
                     "DeviceOwner"
@@ -3249,7 +3249,7 @@
                 }
             }
         },
-        "/verificationPeriods": {
+        "/verification_periods": {
             "get": {
                 "tags": [
                     "VerificationPeriod"
@@ -3337,7 +3337,7 @@
                 }
             }
         },
-        "/verificationPeriods/{id}": {
+        "/verification_periods/{id}": {
             "get": {
                 "tags": [
                     "VerificationPeriod"
@@ -4218,6 +4218,11 @@
                 "name": {
                     "description": "name",
                     "type": "string"
+                },
+                "state_id": {
+                    "description": "state id",
+                    "type": "integer",
+                    "format": "int32"
                 },
                 "created_at": {
                     "description": "created_at",

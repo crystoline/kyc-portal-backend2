@@ -16,7 +16,11 @@ class CreateTerritoriesTable extends Migration
         Schema::create('territories', static function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 100);
+            $table->unsignedBigInteger('state_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('state_id')->references('id')->on('states');
+
         });
     }
 

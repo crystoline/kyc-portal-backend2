@@ -15,8 +15,7 @@ class Cors
      */
     public function handle($request, Closure $next)
     {
-	    //        return $next($request);
-	    header("Access-Control-Allow-Origin: *");
+	    header('Access-Control-Allow-Origin: *');
 
 	    // ALLOW OPTIONS METHOD
 	    $headers = [
@@ -25,13 +24,12 @@ class Cors
 	    ];
 
 
-	    if ($request->getMethod() == "OPTIONS") {
+	    if ($request->getMethod() === 'OPTIONS') {
 		    // The client-side application can set only headers allowed in Access-Control-Allow-Headers
 
 		    return \Response::make('OK', 200, $headers);
 	    }
-	   // dd($request);
-        //return response('', 200, $headers);
+
 	    $response = $next($request);
 	    if(method_exists($response,'header' )){
             foreach ($headers as $key => $value) {

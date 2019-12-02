@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -20,6 +21,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          property="name",
  *          description="name",
  *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="state_id",
+ *          description="state id",
+ *          type="integer",
+ *          format="int32"
  *      ),
  *      @SWG\Property(
  *          property="created_at",
@@ -47,7 +54,8 @@ class Territory extends Model
 
 
     public $fillable = [
-        'name'
+        'name',
+        'state_id'
     ];
 
     /**
@@ -57,6 +65,7 @@ class Territory extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'state_id' => 'integer',
         'name' => 'string'
     ];
 
@@ -66,7 +75,8 @@ class Territory extends Model
      * @var array
      */
     public static $rules = [
-        'name' => 'required'
+        'name' => 'required',
+        'state_id' => 'sometimes|exists:states,id'
     ];
 
     /**
@@ -76,4 +86,12 @@ class Territory extends Model
     {
         return $this->hasMany(VerificationPeriod::class, 'territory_id');
     }
+    /**
+     * @return BelongsTo
+     **/
+    public function state(): BelongsTo
+    {
+        return $this->belongsTo(State::class);
+    }
+
 }

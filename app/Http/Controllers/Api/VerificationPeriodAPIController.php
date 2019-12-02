@@ -122,9 +122,7 @@ class VerificationPeriodAPIController extends AppBaseController
     public function store(CreateVerificationPeriodAPIRequest $request): JsonResponse
     {
         $input = $request->all();
-
         $verificationPeriod = $this->verificationPeriodRepository->create($input);
-
         return $this->sendResponse($verificationPeriod->toArray(), 'Verification Period saved successfully');
     }
 
