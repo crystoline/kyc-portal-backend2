@@ -17,6 +17,8 @@ class CreateDocumentsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('verification_id');
             $table->string('title', 200);
+            $table->unsignedTinyInteger('page_number')->nullable();
+
             $table->string('path', 255);
             $table->timestamps();
 

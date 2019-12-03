@@ -27,7 +27,8 @@ class AgentRepository extends BaseRepository
         'gender',
         'date_of_birth',
         'passport',
-        'status'
+        'status',
+        'device_owner_id'
     ];
 
     /**

@@ -18,6 +18,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *          format="int32"
  *      ),
  *      @SWG\Property(
+ *          property="page_number",
+ *          description="page_number",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
  *          property="verification_id",
  *          description="verification_id",
  *          type="integer",
@@ -64,6 +70,7 @@ class Document extends Model
     public $fillable = [
         'verification_id',
         'title',
+        'page_number',
         'path'
     ];
 
@@ -75,6 +82,7 @@ class Document extends Model
     protected $casts = [
         'id' => 'integer',
         'verification_id' => 'integer',
+        'page_number' => 'integer',
         'title' => 'string',
         'path' => 'string'
     ];
@@ -85,7 +93,7 @@ class Document extends Model
      * @var array
      */
     public static $rules = [
-        //'verification_id' => 'required',
+        'page_number' => 'sometimes|number',
         'title' => 'required',
         'doc' => 'required|file|mimes:jpeg,bmp,png,pdf,doc|max:200',
     ];

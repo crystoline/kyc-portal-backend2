@@ -62,7 +62,10 @@ class VerificationController extends AppBaseController
                 return $hasMany->orderBy('created_at', 'DESC');
             },
 
-            'documents'
+            'documents' => static function(HasMany $hasMany){
+                 $hasMany->orderBy('title', 'ASC');
+                return $hasMany->orderBy('created_at', 'DESC');
+            }
         ])->append(['telephone_verification_status', 'bvn_verification_status', 'bvn_is_for_linked_agent']);
     }
 
