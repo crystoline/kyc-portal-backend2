@@ -239,13 +239,6 @@ class PersonalInformation extends Model
         'bluetooth_printer' => 'boolean',
         'signature' => 'string'
     ];
-    /**
-     * @return BelongsTo
-     **/
-    public function bank(): BelongsTo
-    {
-        return $this->belongsTo(Bank::class);
-    }
 
     /**
      * @return BelongsTo

@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="675d336a-24a6-4598-a54f-4ebb6436d124" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Bank.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Bank.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/BvnVerification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BvnVerification.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/PersonalInformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PersonalInformation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/AgentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/AgentRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/docs/api-docs.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/docs/api-docs.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,10 +45,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
+            <state relative-caret-position="101">
               <caret line="62" column="35" lean-forward="true" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
               <folding>
                 <element signature="e#44#87#0#PHP" expanded="true" />
@@ -109,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/PersonalInformation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-22">
-              <caret line="246" column="43" selection-start-line="246" selection-start-column="43" selection-end-line="246" selection-end-column="43" />
+            <state relative-caret-position="257">
+              <caret line="269" column="24" selection-start-line="269" selection-start-column="20" selection-end-line="269" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -212,9 +205,9 @@
       <find>bank_id</find>
       <find>user_id</find>
       <find>docum</find>
-      <find>bank</find>
       <find>ban</find>
       <find>state_id</find>
+      <find>bank</find>
     </findStrings>
     <replaceStrings>
       <replace>// use SoftDeletes;</replace>
@@ -568,12 +561,12 @@
       <workItem from="1571827996566" duration="191320000" />
       <workItem from="1573545686850" duration="60634000" />
       <workItem from="1574255873912" duration="41610000" />
-      <workItem from="1574760804801" duration="42186000" />
+      <workItem from="1574760804801" duration="42421000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398995000" />
+    <option name="totallyTimeSpent" value="399230000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -591,17 +584,17 @@
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="DB Browser" order="2" weight="0.32969153" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.16388175" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.16388175" />
       <window_info id="Structure" order="4" weight="0.18337408" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="0" weight="0.11081442" />
-      <window_info anchor="bottom" id="File Transfer" order="1" sideWeight="0.4993573" visible="true" weight="0.3471295" />
+      <window_info anchor="bottom" id="File Transfer" order="1" sideWeight="0.49871466" weight="0.3471295" />
       <window_info anchor="bottom" id="Tail" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
       <window_info anchor="bottom" id="DB Execution Console" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50064266" side_tool="true" visible="true" weight="0.3471295" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5012854" side_tool="true" weight="0.3471295" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32925472" />
       <window_info anchor="bottom" id="Code Review" order="7" weight="0.32977304" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49807197" weight="0.1989319" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4974293" visible="true" weight="0.1989319" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="10" />
       <window_info anchor="bottom" id="Find" order="11" weight="0.32925472" />
@@ -1021,9 +1014,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Verification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1300">
+          <caret line="149" column="23" lean-forward="true" selection-start-line="149" selection-start-column="23" selection-end-line="149" selection-end-column="23" />
+          <folding>
+            <element signature="e#30#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Bank.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="60" column="6" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/PersonalInformation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="269" column="24" selection-start-line="269" selection-start-column="20" selection-end-line="269" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
+        <state relative-caret-position="101">
           <caret line="62" column="35" lean-forward="true" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
           <folding>
             <element signature="e#44#87#0#PHP" expanded="true" />
@@ -1052,30 +1069,6 @@
             <element signature="e#36911#37032#0#PHP" />
             <element signature="e#37154#38914#0#PHP" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Verification.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1300">
-          <caret line="149" column="23" lean-forward="true" selection-start-line="149" selection-start-column="23" selection-end-line="149" selection-end-column="23" />
-          <folding>
-            <element signature="e#30#78#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Bank.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="60" column="6" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/PersonalInformation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="246" column="43" selection-start-line="246" selection-start-column="43" selection-end-line="246" selection-end-column="43" />
         </state>
       </provider>
     </entry>
