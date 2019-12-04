@@ -8,6 +8,7 @@ use App\Http\Requests\API\CreateVerificationAPIRequest;
 use App\Http\Requests\API\CreateVerificationApprovalRequest;
 use App\Http\Requests\API\UpdateVerificationAPIRequest;
 use App\Models\Agent;
+use App\Models\Bank;
 use App\Models\BvnVerification;
 use App\Models\Document;
 use App\Models\TelephoneVerification;
@@ -18,6 +19,8 @@ use App\Repositories\AgentRepository;
 use App\Repositories\DocumentRepository;
 use App\Repositories\VerificationRepository;
 use Exception;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Http\JsonResponse;
@@ -56,7 +59,7 @@ class VerificationController extends AppBaseController
         $verification->load([
             'agent', 'parentAgent', 'verifiedBy', 'approvedBy',
             'deviceOwner', 'territory', 'verificationPeriod',
-            'personalInformation',
+            'personalInformation.bank', 'personalInformation.lga',
             'guarantorInformation',
             'verificationApprovals' => static function (HasMany $hasMany) {
                 return $hasMany->orderBy('created_at', 'DESC');
@@ -788,9 +791,15 @@ class VerificationController extends AppBaseController
             if ($telephone_verification) {
                 //TODO Send Verification code to number
                 //$telephone_verification
-                $from = config('app.name');
-                $token =
-                send_sms_infobip($from, $telephone, "This is you verification code {$telephone_verification->code}");
+                //send_sms_infobip('CAPRICON', '')
+                $from = 'CAPRICON';//config('app.name');
+
+                $sms_user_id = 'CapricornD';//setting('sms_user_id', 'CapricornD');
+                $sms_password = 'P@$$w0rd2';//setting('sms_secret_key', 'P@$$w0rd2');
+                $token = base64_encode($sms_user_id.':'.$sms_password);
+               // die($token);
+                $response = send_sms_infobip($from, $telephone, "This is your verification code {$telephone_verification->code}", $token);
+                //die($response);
                 $data = config('app.env') === 'local' ? $telephone_verification->only(['code']) : null;
                 return $this->sendResponse($data, 'Verification code was sent');
             }
@@ -803,63 +812,63 @@ class VerificationController extends AppBaseController
     }
 
     /**
-     * @SWG\Post(
-     *      path="/verifications/{id}/telephone/verify",
-     *      summary="Confirm Verification code",
-     *      tags={"Agents Verification"},
-     *      description="Verification approval",
-     *      produces={"application/json"},
-     *      @SWG\Parameter(
-     *          type="string",
-     *          name="Authorization",
-     *          description="bearer token",
-     *          in="header",
-     *          required=true
-     *     ),
-     *      @SWG\Parameter(
-     *          name="id",
-     *          description="id of Verification",
-     *          type="integer",
-     *          required=true,
-     *          in="path"
-     *      ),
-     *      @SWG\Parameter(
-     *          name="body",
-     *          in="body",
-     *          description="Verification data",
-     *          @SWG\Schema(
-     *              @SWG\Property(
-     *                  property="code",
-     *                  description="Verification Code",
-     *                  type="string"
-     *              ),
-     *          ),
-     *     ),
-     *      @SWG\Response(
-     *          response=200,
-     *          description="successful operation",
-     *          @SWG\Schema(
-     *              type="object",
-     *              @SWG\Property(
-     *                  property="success",
-     *                  type="boolean"
-     *              ),
-     *              @SWG\Property(
-     *                  property="data",
-     *              ),
-     *              @SWG\Property(
-     *                  property="message",
-     *                  type="string"
-     *              )
-     *          )
-     *      )
-     * )
-     * @param $verification_id
-     * @param Request $request
-     * @return JsonResponse
-     * @throws ValidationException
-     */
-    public function verifyTelephoneConfirmation($verification_id, Request $request): JsonResponse
+ * @SWG\Post(
+ *      path="/verifications/{id}/telephone/verify",
+ *      summary="Confirm Verification code",
+ *      tags={"Agents Verification"},
+ *      description="Verification approval",
+ *      produces={"application/json"},
+ *      @SWG\Parameter(
+ *          type="string",
+ *          name="Authorization",
+ *          description="bearer token",
+ *          in="header",
+ *          required=true
+ *     ),
+ *      @SWG\Parameter(
+ *          name="id",
+ *          description="id of Verification",
+ *          type="integer",
+ *          required=true,
+ *          in="path"
+ *      ),
+ *      @SWG\Parameter(
+ *          name="body",
+ *          in="body",
+ *          description="Verification data",
+ *          @SWG\Schema(
+ *              @SWG\Property(
+ *                  property="code",
+ *                  description="Verification Code",
+ *                  type="string"
+ *              ),
+ *          ),
+ *     ),
+ *      @SWG\Response(
+ *          response=200,
+ *          description="successful operation",
+ *          @SWG\Schema(
+ *              type="object",
+ *              @SWG\Property(
+ *                  property="success",
+ *                  type="boolean"
+ *              ),
+ *              @SWG\Property(
+ *                  property="data",
+ *              ),
+ *              @SWG\Property(
+ *                  property="message",
+ *                  type="string"
+ *              )
+ *          )
+ *      )
+ * )
+ * @param $id
+ * @param Request $request
+ * @return JsonResponse
+ * @throws ValidationException
+ */
+    public function verifyTelephoneConfirmation($id, Request $request): JsonResponse
     {
         $this->validate($request, [
             'code' => 'required'
@@ -867,7 +876,7 @@ class VerificationController extends AppBaseController
         try {
 
             /** @var Verification $verification */
-            $verification = $this->verificationRepository->find($verification_id);
+            $verification = $this->verificationRepository->find($id);
             if ($verification === null) {
                 return $this->sendError('Verification data not found');
             }
@@ -906,13 +915,56 @@ class VerificationController extends AppBaseController
 
         return $this->sendError('Could complete telephone number verification', 500);
     }
-
-    public function bvnData($verification_id): JsonResponse
+    /**
+     * @SWG\Post(
+     *      path="/verifications/{id}/bvn_data",
+     *      summary="BVN Verification",
+     *      tags={"Agents Verification"},
+     *      description="BVN data",
+     *      produces={"application/json"},
+     *      @SWG\Parameter(
+     *          type="string",
+     *          name="Authorization",
+     *          description="bearer token",
+     *          in="header",
+     *          required=true
+     *     ),
+     *      @SWG\Parameter(
+     *          name="id",
+     *          description="id of Verification",
+     *          type="integer",
+     *          required=true,
+     *          in="path"
+     *      ),
+     *      @SWG\Response(
+     *          response=200,
+     *          description="successful operation",
+     *          @SWG\Schema(
+     *              type="object",
+     *              @SWG\Property(
+     *                  property="success",
+     *                  type="boolean"
+     *              ),
+     *              @SWG\Property(
+     *                  property="data",
+     *                  ref="#/definitions/BvnVerification"
+     *              ),
+     *              @SWG\Property(
+     *                  property="message",
+     *                  type="string"
+     *              )
+     *          )
+     *      )
+     * )
+     * @param $id
+     * @return JsonResponse
+     */
+    public function bvnData($id): JsonResponse
     {
 
         try {
             /** @var Verification $verification */
-            $verification = $this->verificationRepository->find($verification_id);
+            $verification = $this->verificationRepository->find($id);
             if ($verification === null) {
                 return $this->sendError('Verification data not found');
             }
@@ -936,7 +988,7 @@ class VerificationController extends AppBaseController
                 return $this->sendResponse($bvn_verification,'BVN data is available');
             }
 
-            //Fetch BVN Data
+            // todo Fetch BVN Data
             $bvn_data = [];
             if($bvn_data) {
                 /** @var BvnVerification $telephone_verification */
@@ -957,6 +1009,42 @@ class VerificationController extends AppBaseController
     }
 
     /**
+     * @SWG\Post(
+     *      path="/verifications/{bvn_verification_id}/verify_bvn",
+     *      summary="BVN Verification approve",
+     *      tags={"Agents Verification"},
+     *      description="BVN data",
+     *      produces={"application/json"},
+     *      @SWG\Parameter(
+     *          type="string",
+     *          name="Authorization",
+     *          description="bearer token",
+     *          in="header",
+     *          required=true
+     *     ),
+     *      @SWG\Parameter(
+     *          name="id",
+     *          description="id of BvnVerification",
+     *          type="integer",
+     *          required=true,
+     *          in="path"
+     *      ),
+     *      @SWG\Response(
+     *          response=200,
+     *          description="successful operation",
+     *          @SWG\Schema(
+     *              type="object",
+     *              @SWG\Property(
+     *                  property="success",
+     *                  type="boolean"
+     *              ),
+     *              @SWG\Property(
+     *                  property="message",
+     *                  type="string"
+     *              )
+     *          )
+     *      )
+     * )
      * @param $bvn_verification_id
      * @return JsonResponse
      */
@@ -985,6 +1073,144 @@ class VerificationController extends AppBaseController
 
         return $this->sendResponse($bvn_verification,'BVN data has been verified');
 
+    }
+
+    /**
+     * @SWG\Post(
+     *      path="/verifications/{id}/account_name_enquiry",
+     *      summary="Account name enquiry",
+     *      tags={"Agents Verification"},
+     *      description="Account name enquiry",
+     *      produces={"application/json"},
+     *      @SWG\Parameter(
+     *          type="string",
+     *          name="Authorization",
+     *          description="bearer token",
+     *          in="header",
+     *          required=true
+     *     ),
+     *      @SWG\Parameter(
+     *          name="id",
+     *          description="id of Verification",
+     *          type="integer",
+     *          required=true,
+     *          in="path"
+     *      ),
+     *      @SWG\Response(
+     *          response=200,
+     *          description="successful operation",
+     *          @SWG\Schema(
+     *              type="object",
+     *              @SWG\Property(
+     *                  property="success",
+     *                  type="boolean"
+     *              ),
+     *              @SWG\Property(
+     *                  property="data",
+     *                  type="object",
+     *                  @SWG\Property(
+     *                      property="status",
+     *                      type="string"
+     *                  ),
+     *                  @SWG\Property(
+     *                      property="surname",
+     *                      type="string"
+     *                  ),
+     *                  @SWG\Property(
+     *                      property="othernames",
+     *                      type="string"
+     *                  )
+     *              ),
+     *              @SWG\Property(
+     *                  property="message",
+     *                  type="string"
+     *              )
+     *          )
+     *      )
+     * )
+     * @param $id
+     * @return JsonResponse
+     */
+    public function nameEnquiry($id): ?JsonResponse
+    {
+        try {
+
+            /** @var Verification $verification */
+            $verification = $this->verificationRepository->find($id);
+            if ($verification === null) {
+                return $this->sendError('Verification data not found');
+            }
+            $bank = $verification->personalInformation->bank??null;
+            ///$bank_account_name = $verification->personalInformation->bank_account_name??null;
+            $bank_account_number = $verification->personalInformation->bank_account_number??null;
+            if($bank === null || $bank_account_number === null  /*|| $bank_account_name === null */){
+                return $this->sendError('Account information is not complete', 403);
+            }
+            $response = self::doNameEnquiry($bank, $bank_account_number);
+
+            return $this->sendResponse($response,'');
+
+        }catch (Exception $exception){
+
+        }
+        return $this->sendError('Could not fetch data');
+    }
+
+    /**
+     * @param Bank $bank
+     * @param string $account_no
+     * @return array
+     * @throws Exception
+     */
+    public static function doNameEnquiry(Bank $bank, $account_no = ''): array
+    {
+
+        // $wsdl = 'http://css.ng/v1prod/name_enquiry';
+        // $method = 'doNameEnquiry';
+        $client_id = setting('css_name_enquiry_client_id','LHV5P67658');
+        $secret_key = setting('css_name_enquiry_secret_key','_u3_-HGR3gP3j97dazt35CHE96__GD');   //Secret key issued to the merchant by Upperlink
+        $salt = random_int(100000, 1000000000);   //Unique salt to be generated by the client for each request (10 - 50 alphanumeric characters)
+        $str2hash = "{$client_id}-{$secret_key}-{$salt}";
+        $mac = hash('sha512', $str2hash);
+        $data = [
+            'enquiry_id' => '10001',
+            'client_id' => $client_id,
+            'bankcode' => $bank->nibss_code,
+            'accno' => $account_no,
+            'salt' => $salt,
+            'mac' => $mac
+        ];
+        // print (\json_encode($data));
+
+        $httpClient = new Client([
+            'verify' => false,
+            'headers' => [
+                'Content-Type' => 'application/json'
+            ]
+        ]);
+
+        $url = 'http://css.ng/v1prod/name_enquiry_rest';
+
+
+        try {
+            $response = $httpClient->request('POST', $url, [
+                'body' => json_encode($data),
+            ]);
+            $response_code = $response->getStatusCode();
+
+            if ($response_code == 200) {
+                $content = $response->getBody()->getContents();
+                return json_decode($content, true);
+            }
+            throw new Exception('Error '.$response_code);
+
+        } catch (GuzzleException $e) {
+
+        }catch (Exception $e) {
+            //die($e->getMessage());
+            //return ('EXCEPTION: --' . $e->getLine() . ' -- ' . $e->getMessage());
+        }
+        return [];
     }
 
 

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
+ * @property string nibss_code
  * @SWG\Definition(
  *      definition="Bank",
  *      required={""},

@@ -45,6 +45,9 @@ Route::group(['middleware' => 'auth:api'/*, 'filter-null'*/], static  function()
     Route::post('verifications/{id}/publish', 'VerificationController@publish')->name('verifications.publish');
     Route::post('verifications/{id}/telephone/send-code', 'VerificationController@verifyTelephone')->name('verifications.telephone.send-verification-code');
     Route::post('verifications/{id}/telephone/verify', 'VerificationController@verifyTelephoneConfirmation')->name('verifications.telephone.verify');
+    Route::post('verifications/{id}/bvn_data', 'VerificationController@bvnData')->name('verifications.bvn-data');
+    Route::post('verifications/bvn_verification_id}/verify_bvn', 'VerificationController@verifyBvn')->name('verifications.verify-bvn');
+    Route::post('verifications/{id}/account_name_enquiry', 'VerificationController@nameEnquiry')->name('verifications.account-name-enquiry');
     Route::resource('verifications', 'VerificationController')
         ->middleware([ 'create-verification'])->except('delete');
 

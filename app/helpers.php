@@ -2,6 +2,7 @@
 
 use App\Models\Setting;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Log;
 
 if (! function_exists('setting')) {
 
@@ -55,12 +56,12 @@ if(!function_exists('send_sms_infobip')){
             'to' => $to,
             'text' => $text,
         ];
-        $base_url = $is_test? '':'';
-
+        //$base_url = $is_test? 'https://portal.infobip.com':'https://portal.infobip.com';
+        $base_url = 'https://5v8e3g.api.infobip.com';
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "http://{$base_url}/sms/2/text/single",
+            CURLOPT_URL => "{$base_url}/sms/2/text/single",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -81,10 +82,11 @@ if(!function_exists('send_sms_infobip')){
         curl_close($curl);
 
         if ($err) {
-            echo /*"cURL Error #:" . */$err;
-        } else {
-            echo $response;
+            Log::error($response);
+            return /*"cURL Error #:" . */$err;
         }
+
+        return $response;
     }
 }
 

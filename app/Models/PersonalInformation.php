@@ -11,6 +11,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string email
  * @property integer lga_id
  * @property integer state_id
+ * @property integer bank_id
+ * @property string bank_account_name
+ * @property string bank_account_number
+ * @property Bank bank
  * @SWG\Definition(
  *      definition="PersonalInformation",
  *      required={""},
@@ -235,6 +239,13 @@ class PersonalInformation extends Model
         'bluetooth_printer' => 'boolean',
         'signature' => 'string'
     ];
+    /**
+     * @return BelongsTo
+     **/
+    public function bank(): BelongsTo
+    {
+        return $this->belongsTo(Bank::class);
+    }
 
     /**
      * @return BelongsTo
@@ -263,7 +274,7 @@ class PersonalInformation extends Model
     /**
      * @return BelongsTo
      */
-    public function banks(): BelongsTo
+    public function bank(): BelongsTo
     {
         return $this->belongsTo(Bank::class);
     }
