@@ -64,7 +64,7 @@ class AgentController extends AppBaseController
             }
             //die($path);
             Storage::disk('local')->put($path, $data);
-            request()->merge([(string)$input_key => $image_link]);
+            request()->merge([(string)$input_key => $image_link]); //todo
         }
     }
 

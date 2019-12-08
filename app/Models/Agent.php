@@ -58,6 +58,11 @@ use Illuminate\Support\Carbon;
  *          type="string"
  *      ),
  *      @SWG\Property(
+ *          property="device_serial_no",
+ *          description="device_serial_no",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
  *          property="type",
  *          description="principal agent, sole agent",
  *          type="string"
@@ -214,6 +219,7 @@ class Agent extends Model
         'first_name',
         'last_name',
         'user_name',
+        'device_serial_no',
         'gender',
         'date_of_birth',
         'passport',

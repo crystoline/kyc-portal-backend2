@@ -1,0 +1,3194 @@
+[
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Ikotun",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Egbe",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Ijegun",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Egbeda",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Ayobo",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Ipaja",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Idimu",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Ejigbo",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Shasha",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Dopemu",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Agege",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Abulegba",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Alakuko",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Agbado Ijaiye",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Ajah",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Lekki",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Epe",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Ibeju Lekki",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Lagos Island",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Ojo",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Apapa",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Badagry",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Ojodu Berger",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Mowe",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Ibafo",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Ikeja",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Oshodi",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Isolo",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Ajao Estate",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Mafoluku",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Shomolu",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Bariga",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Onipanu",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Obanikoro",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Yaba",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Ebute metta",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Surulere",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Mushin",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Ilupeju",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Lambe",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Lagos",
+    "Territory": "Lagos",
+    "Name": "Akute",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Ogun",
+    "Territory": "Ogun",
+    "Name": "Ijebu Ode",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Ogun",
+    "Territory": "Ogun",
+    "Name": "Sagamu",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Ogun",
+    "Territory": "Ogun",
+    "Name": "Abeokuta",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Ogun",
+    "Territory": "Ogun",
+    "Name": "Ilaro",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Ogun",
+    "Territory": "Ogun",
+    "Name": "Ilara",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Ogun",
+    "Territory": "Ogun",
+    "Name": "Otta",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Ogun",
+    "Territory": "Ogun",
+    "Name": "Sango",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Ogun",
+    "Territory": "Ogun",
+    "Name": "Ewekoro",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Ogun",
+    "Territory": "Ogun",
+    "Name": "Ifo",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Ogun",
+    "Territory": "Ogun",
+    "Name": "Ikene",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Ogun",
+    "Territory": "Ogun",
+    "Name": "Imeko",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Ogun",
+    "Territory": "Ogun",
+    "Name": "Odeda",
+    "Region": "Lagos"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "TSO-OLADIPO ASHA",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "OGBOMOSO NORTH",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "OGBOMOSO SOUTH",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "AFIJIO",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "OYO EAST",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "ATIBA",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "SURULERE",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "ORIRE",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "OGO OLUWA",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "OYOWEST",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "AKINYELE",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "EGBEDA",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "ATISBO",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "OORELOPE",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "ISEYIN",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "ITESIWAJU",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "KAJOLA",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "OLORUNSOGO",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "IBADAN NORTH",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "IBADAN NORTH EAST",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "IBADAN NORHWEST",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "IBADAN SOUTHWEST",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "IBADAN SOUTHEAST",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "IDO",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "LAGELU",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "OLUYOLE",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "ONA-ARA",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "IWAJOWA",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "SAKI EAST",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "SAKI WEST",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "IBARAPA EAST",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "IBARAPA  NORTH",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "IBARAPA CENTRAL",
+    "Region": "West"
+  },
+  {
+    "State": "Oyo",
+    "Territory": "Oyo",
+    "Name": "IREPO",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Ado Ekiti",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Ikere",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Efon",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Ekiti East",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Ekiti West",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Ekiti Southwest",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Emure",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Gbonyin",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Ido osi",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Ijero",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Ikole",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Ilejemeje",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Irepodun Ifelodun",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Ise/orun",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Moba",
+    "Region": "West"
+  },
+  {
+    "State": "Ekiti",
+    "Territory": "Ekiti",
+    "Name": "Oye",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Akoko North East",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Akoko North West",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Akoko South East",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Akoko South West",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Akure North",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Akure South",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Ese Odo",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Idanre",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Ifedore",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Ilaje",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Ileoluji/Okeigbo",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Irele",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Odigbo",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Okitipupa",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Ondo East",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Ondo West",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Ose",
+    "Region": "West"
+  },
+  {
+    "State": "Ondo",
+    "Territory": "Ondo",
+    "Name": "Owo",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Aiyedade",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Ayedire",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Atakumosa East",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Atakumosa West",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Boluwaduro",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Boripe",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Ede North",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Ede South",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Egbedore",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Ejigbo",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Ife Central",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Ife East",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Ife North",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Ife South",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Ifedayo",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Ifelodun",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Ila",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Ilesha East",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Ilesha West",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Irepodun",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Isokan",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Iwo",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Obokun",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Odo Otin",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Ola Oluwa",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Oriade",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Orolu",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Olorunda",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Osogbo",
+    "Region": "West"
+  },
+  {
+    "State": "Osun",
+    "Territory": "Osun",
+    "Name": "Irewole",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "AKOKO-EDO",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "EGOR",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "ESAN CENTRAL",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "ESAN NORTH",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "ESAN SOUTH EAST",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "ESAN WEST",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "ETSAKO CENTRAL",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "ETSAKO EAST",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "ETSAKO WEST",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "IGUEBEN",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "IKPOBA OKHA",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "ORADO",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "ORHIONMWON",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "OVIA NORTH-EAST",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "OVIA SOUTH-WEST",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "OWAN EAST",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "OWAN WEST",
+    "Region": "West"
+  },
+  {
+    "State": "Edo",
+    "Territory": "Edo",
+    "Name": "UHUNMWODE",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "ASA",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "BARUTEN",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "EDU",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "EKITI",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "IFELODUN",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "ILORIN SOUTH",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "ILORIN EAST",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "ILORIN WEST",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "IREPODUN",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "KAIAMA",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "MORO",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "OFFA",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "OYUN",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "ISIN",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "OKE-ERO",
+    "Region": "West"
+  },
+  {
+    "State": "Kwara",
+    "Territory": "Kwara",
+    "Name": "PATIGI",
+    "Region": "West"
+  },
+  {
+    "State": "Anambra",
+    "Territory": "Anambra",
+    "Name": "Nnewi",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Anambra",
+    "Territory": "Anambra",
+    "Name": "Awka",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Anambra",
+    "Territory": "Anambra",
+    "Name": "Onitsha",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Anambra",
+    "Territory": "Anambra",
+    "Name": "Otuocha",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Anambra",
+    "Territory": "Anambra",
+    "Name": "Abragana",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Anambra",
+    "Territory": "Anambra",
+    "Name": "Obosi",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Anambra",
+    "Territory": "Anambra",
+    "Name": "Ogidi",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Anambra",
+    "Territory": "Anambra",
+    "Name": "Okon Town",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Anambra",
+    "Territory": "Anambra",
+    "Name": "Umunze",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Anambra",
+    "Territory": "Anambra",
+    "Name": "Ufuma",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Anambra",
+    "Territory": "Anambra",
+    "Name": "Nibo",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Anambra",
+    "Territory": "Anambra",
+    "Name": "Nsugbe",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Delta",
+    "Territory": "Delta",
+    "Name": "Abraka",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Delta",
+    "Territory": "Delta",
+    "Name": "Burutu",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Delta",
+    "Territory": "Delta",
+    "Name": "Koko",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Delta",
+    "Territory": "Delta",
+    "Name": "Agbo",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Delta",
+    "Territory": "Delta",
+    "Name": "Asaba",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Delta",
+    "Territory": "Delta",
+    "Name": "Warri",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Delta",
+    "Territory": "Delta",
+    "Name": "Kwale",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Delta",
+    "Territory": "Delta",
+    "Name": "Oghara",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Delta",
+    "Territory": "Delta",
+    "Name": "Sapele",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Delta",
+    "Territory": "Delta",
+    "Name": "Ovivian",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Delta",
+    "Territory": "Delta",
+    "Name": "Bomadi",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Ebonyi",
+    "Territory": "Ebonyi",
+    "Name": "Abakaliki",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Ebonyi",
+    "Territory": "Ebonyi",
+    "Name": "Afikpo North",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Ebonyi",
+    "Territory": "Ebonyi",
+    "Name": "Afikpo South",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Ebonyi",
+    "Territory": "Ebonyi",
+    "Name": "Edda",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Ebonyi",
+    "Territory": "Ebonyi",
+    "Name": "Ishielu",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Ebonyi",
+    "Territory": "Ebonyi",
+    "Name": "Ezza North",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Ebonyi",
+    "Territory": "Ebonyi",
+    "Name": "Ezza South",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Ebonyi",
+    "Territory": "Ebonyi",
+    "Name": "Ikwo",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Ebonyi",
+    "Territory": "Ebonyi",
+    "Name": "Ishielu",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Ebonyi",
+    "Territory": "Ebonyi",
+    "Name": "Ohaozara",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Ebonyi",
+    "Territory": "Ebonyi",
+    "Name": "Onicha",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Enugu",
+    "Territory": "Enugu",
+    "Name": "Aninri",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Enugu",
+    "Territory": "Enugu",
+    "Name": "Awgu",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Enugu",
+    "Territory": "Enugu",
+    "Name": "Udi",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Enugu",
+    "Territory": "Enugu",
+    "Name": "Uzo-uwani",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Enugu",
+    "Territory": "Enugu",
+    "Name": "Enugu East",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Enugu",
+    "Territory": "Enugu",
+    "Name": "Enugu South",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Enugu",
+    "Territory": "Enugu",
+    "Name": "Ezeagu",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Enugu",
+    "Territory": "Enugu",
+    "Name": "Nkanu East",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Enugu",
+    "Territory": "Enugu",
+    "Name": "Nkanu West",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Enugu",
+    "Territory": "Enugu",
+    "Name": "Nsukka",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Enugu",
+    "Territory": "Enugu",
+    "Name": "Oji River. ETC",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Imo",
+    "Territory": "Imo",
+    "Name": "Aboh Mbaise",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Imo",
+    "Territory": "Imo",
+    "Name": "Ahiazu Mbaise",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Imo",
+    "Territory": "Imo",
+    "Name": "Ikeduru",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Imo",
+    "Territory": "Imo",
+    "Name": "Ideato North",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Imo",
+    "Territory": "Imo",
+    "Name": "Ideato South",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Imo",
+    "Territory": "Imo",
+    "Name": "Okigwe",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Imo",
+    "Territory": "Imo",
+    "Name": "Owerri NORTH",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Imo",
+    "Territory": "Imo",
+    "Name": "Owerri West",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Imo",
+    "Territory": "Imo",
+    "Name": "Oguta",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Imo",
+    "Territory": "Imo",
+    "Name": "Owerri Municipal",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Imo",
+    "Territory": "Imo",
+    "Name": "Ehime Mbnano ETC",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Imo",
+    "Territory": "Imo",
+    "Name": "Ezinihiitte Mbaise",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Imo",
+    "Territory": "Imo",
+    "Name": "Orlu ETC",
+    "Region": "Sout East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Demsa",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Fufore",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Ganye",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Girei",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Gombi",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Guyuk",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Hong",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Jada",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Lamurde",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Madagali",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Maiha",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Mayo Belwa",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Michika",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Mubi North",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Mubi South",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Numan",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Shelleng",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Song",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Toungo",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Yola North",
+    "Region": "North East"
+  },
+  {
+    "State": "Adamawa",
+    "Territory": "Adamawa",
+    "Name": "Yola South",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Alkaleri",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Bauchi",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Bogoro",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Damban",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Darazo",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Dass",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Ganjuwa",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Giade",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Itas/Gadau",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Jama'are",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Katagun",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "kirfi",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Misau",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Ningi",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Shira",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Tafawa-Balewa",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Toro",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Warji",
+    "Region": "North East"
+  },
+  {
+    "State": "Bauchi",
+    "Territory": "Bauchi",
+    "Name": "Zaki",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Hawul",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Jere",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Kaga",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Kala/Balge",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Konduga",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Kukawa",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Kwaya Kusar",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Mafa",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Magumeri",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Maiduguri",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Marte",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Mobbar",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Monguno",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Ngala",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Nganzai",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Shani",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Abadam",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Askira/Uba",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Bama",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Bayo",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Biu",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Chibok",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Damboa",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Dikwa",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Gubio",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Guzamala",
+    "Region": "North East"
+  },
+  {
+    "State": "Borno",
+    "Territory": "Borno",
+    "Name": "Gwoza",
+    "Region": "North East"
+  },
+  {
+    "State": "Gombe",
+    "Territory": "Gombe",
+    "Name": "Akko",
+    "Region": "North East"
+  },
+  {
+    "State": "Gombe",
+    "Territory": "Gombe",
+    "Name": "Balanga",
+    "Region": "North East"
+  },
+  {
+    "State": "Gombe",
+    "Territory": "Gombe",
+    "Name": "Biliri",
+    "Region": "North East"
+  },
+  {
+    "State": "Gombe",
+    "Territory": "Gombe",
+    "Name": "Dukku",
+    "Region": "North East"
+  },
+  {
+    "State": "Gombe",
+    "Territory": "Gombe",
+    "Name": "Funakaye",
+    "Region": "North East"
+  },
+  {
+    "State": "Gombe",
+    "Territory": "Gombe",
+    "Name": "Gombe",
+    "Region": "North East"
+  },
+  {
+    "State": "Gombe",
+    "Territory": "Gombe",
+    "Name": "Kaltungo",
+    "Region": "North East"
+  },
+  {
+    "State": "Gombe",
+    "Territory": "Gombe",
+    "Name": "Kwami",
+    "Region": "North East"
+  },
+  {
+    "State": "Gombe",
+    "Territory": "Gombe",
+    "Name": "Nafada",
+    "Region": "North East"
+  },
+  {
+    "State": "Gombe",
+    "Territory": "Gombe",
+    "Name": "Shomgom",
+    "Region": "North East"
+  },
+  {
+    "State": "Gombe",
+    "Territory": "Gombe",
+    "Name": "Yamaltu/Deba",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Jalingo",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Yoro",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Zing",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Lau",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Karim Lamido",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Ardo Kola",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Gassol",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Bali",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Gashaka",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Sardauna",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Takum",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Wukari",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Ibi",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Donga",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Baissa",
+    "Region": "North East"
+  },
+  {
+    "State": "Taraba",
+    "Territory": "Taraba",
+    "Name": "Ussa",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Damaturu",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Bursari",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Bade",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Geidam",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Gujba",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Gulani",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Fika",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Fune",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Jakusko",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Karasuwa",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Machina",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Nangere",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Nguru",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Potiskum",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Tarmuwa",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Yunusari",
+    "Region": "North East"
+  },
+  {
+    "State": "Yobe",
+    "Territory": "Yobe",
+    "Name": "Yusufari",
+    "Region": "North East"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Katsina",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Batagarawa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Ajiwa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Dutsinma",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Danmusa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Kaita",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Musawa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Matazu",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Sabuwa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Funtuwa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Kusada",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Kafur",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Danja",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Rimi",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Dandume",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Faskari",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Kankara",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Jibia",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Batsari",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Kurfi",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Kankia",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Charanchi",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Bindawa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Ingawa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Daura",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Safana",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Sandamu",
+    "Region": "North west"
+  },
+  {
+    "State": "Kastina",
+    "Territory": "Kastina",
+    "Name": "Zango",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Kaduna South",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Birnin Gwari",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Chikun",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Giwa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Igabi",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Ikara",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Jaba",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Jaba",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Jema'a",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Kachia",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Sanga",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Zangon Kataf",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Kaduna North",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Kagarko",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Kajuru",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Kaura",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Kauru",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Kubau",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Kudan",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Lere",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Makarfi",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Sabon Gari",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Soba",
+    "Region": "North west"
+  },
+  {
+    "State": "Kaduna",
+    "Territory": "Kaduna",
+    "Name": "Zaria",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Binji",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Bodinga",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Dange Shuni",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Gada",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Goronyo",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Gudu",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Gwadabawa",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Illela",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Isa",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Kebbe",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Kware",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Rabah",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Sabon Birni",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Shagari",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Silame",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Sokoto North",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Sokoto South",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Tambuwal",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Tangaza",
+    "Region": "North west"
+  },
+  {
+    "State": "Sokoto",
+    "Territory": "Sokoto",
+    "Name": "Tureta",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Dandi",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Fakai",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Ngaski",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Sakaba",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Suru",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Danko/Wassagu",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Yauri",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Zuru",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Arewa Dandi",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Bagudo",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Aleiru",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Argungu",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Gwandu",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Shanga",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Maiyama",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Jega",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Kalgo",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Bunza",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Koko/Besse",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Augie",
+    "Region": "North west"
+  },
+  {
+    "State": "Kebbi",
+    "Territory": "Kebbi",
+    "Name": "Birnin kebbi",
+    "Region": "North west"
+  },
+  {
+    "State": "Zanfara",
+    "Territory": "Zanfara",
+    "Name": "Gusau",
+    "Region": "North west"
+  },
+  {
+    "State": "Zanfara",
+    "Territory": "Zanfara",
+    "Name": "Anka",
+    "Region": "North west"
+  },
+  {
+    "State": "Zanfara",
+    "Territory": "Zanfara",
+    "Name": "Talata Mafara",
+    "Region": "North west"
+  },
+  {
+    "State": "Zanfara",
+    "Territory": "Zanfara",
+    "Name": "Gunmmi",
+    "Region": "North west"
+  },
+  {
+    "State": "Zanfara",
+    "Territory": "Zanfara",
+    "Name": "Bungudu",
+    "Region": "North west"
+  },
+  {
+    "State": "Zanfara",
+    "Territory": "Zanfara",
+    "Name": "Birnin Magaji",
+    "Region": "North west"
+  },
+  {
+    "State": "Zanfara",
+    "Territory": "Zanfara",
+    "Name": "Tsafe",
+    "Region": "North west"
+  },
+  {
+    "State": "Zanfara",
+    "Territory": "Zanfara",
+    "Name": "Kaura Namoda",
+    "Region": "North west"
+  },
+  {
+    "State": "Zanfara",
+    "Territory": "Zanfara",
+    "Name": "Bukkuyum",
+    "Region": "North west"
+  },
+  {
+    "State": "Zanfara",
+    "Territory": "Zanfara",
+    "Name": "Maradun",
+    "Region": "North west"
+  },
+  {
+    "State": "Zanfara",
+    "Territory": "Zanfara",
+    "Name": "Maru",
+    "Region": "North west"
+  },
+  {
+    "State": "Zanfara",
+    "Territory": "Zanfara",
+    "Name": "Zurmi",
+    "Region": "North west"
+  },
+  {
+    "State": "Zanfara",
+    "Territory": "Zanfara",
+    "Name": "Bakura",
+    "Region": "North west"
+  },
+  {
+    "State": "Zanfara",
+    "Territory": "Zanfara",
+    "Name": "Shinkaffi",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 1",
+    "Name": "GWALE",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 1",
+    "Name": "MUNICIPAL",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 1",
+    "Name": "Ajingi",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 1",
+    "Name": "Albassu",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 1",
+    "Name": "Bagwai",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 1",
+    "Name": "Bunkure",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 1",
+    "Name": "Dawakin kudu",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 1",
+    "Name": "D/tofa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 1",
+    "Name": "Doguwa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 1",
+    "Name": "Danbatta",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 1",
+    "Name": "Bichi",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 2",
+    "Name": "KUMBOTSO",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 2",
+    "Name": "TARAUNI",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 2",
+    "Name": "Gabasawa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 2",
+    "Name": "Gezawa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 2",
+    "Name": "Munjibir",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 2",
+    "Name": "Garin babba",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 2",
+    "Name": "Wudil",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 2",
+    "Name": "Takai",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 2",
+    "Name": "Rano",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 2",
+    "Name": "Rimin Gado",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 2",
+    "Name": "Gaya",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 3",
+    "Name": "NASSARAWA",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 3",
+    "Name": "FAGGE",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 3",
+    "Name": "Kabo",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 3",
+    "Name": "Kura",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 3",
+    "Name": "Garko",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 3",
+    "Name": "Madobi",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 3",
+    "Name": "Karaye",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 3",
+    "Name": "Garin mallam",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 3",
+    "Name": "Gwarzo",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 3",
+    "Name": "Bebeji",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 3",
+    "Name": "Rogo",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 4",
+    "Name": "UNGOGO",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 4",
+    "Name": "DALA",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 4",
+    "Name": "Kunchi",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 4",
+    "Name": "Makoda",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 4",
+    "Name": "Tudun wada",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 4",
+    "Name": "Tsanyawa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 4",
+    "Name": "Kibiya",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 4",
+    "Name": "Kiru",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 4",
+    "Name": "Sumaila",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 4",
+    "Name": "Warawa",
+    "Region": "North west"
+  },
+  {
+    "State": "Kano",
+    "Territory": "Kano 4",
+    "Name": "Shanono",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Hadejia",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Jahun",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Kafin Hausa",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Kaugama",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Kazaure",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Kiri Kasama",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Kiyawa",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Maigatari",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Malam Madori",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Miga",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Ringim",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Roni",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Sule Tankarkar",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Taura",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Auyo",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Babura",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Biriniwa",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Birnin Kudu",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Buji",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Dutse",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Gagarawa",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Garki",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Gumel",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Guri",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Gwaram",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Gwiwa",
+    "Region": "North west"
+  },
+  {
+    "State": "Jigawa",
+    "Territory": "Jigawa 1",
+    "Name": "Yankwashi",
+    "Region": "North west"
+  }
+]

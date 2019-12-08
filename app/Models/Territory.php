@@ -55,7 +55,9 @@ class Territory extends Model
 
     public $fillable = [
         'name',
-        'state_id'
+        'state_id',
+        'territory',
+        'region'
     ];
 
     /**
@@ -66,7 +68,9 @@ class Territory extends Model
     protected $casts = [
         'id' => 'integer',
         'state_id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
+        'territory' => 'string',
+        'region' => 'string',
     ];
 
     /**

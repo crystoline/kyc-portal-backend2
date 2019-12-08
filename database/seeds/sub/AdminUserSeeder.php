@@ -19,7 +19,9 @@ class AdminUserSeeder extends Seeder
             'group_id' => 2,
             'first_name' => 'Upperlink',
             'last_name' => 'Upperlink',
+            'password' => 'password',
             'gender' => 'male',
         ]);
+
     }
 }

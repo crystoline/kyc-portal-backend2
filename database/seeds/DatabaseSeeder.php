@@ -17,12 +17,15 @@ class DatabaseSeeder extends Seeder
         print 'seeding groups';
         $this->call(GroupSeeder::class);
         print 'seeding admin user';
-        $this->call(UserSeeder::class);
+        $this->call(AdminUserSeeder::class);
         print 'seeding state data';
         $this->call(StateSeeder::class);
         print 'seeding bank data';
         $this->call(BankSeeder::class);
         print 'seeding agent types';
         $this->call(AgentTypeSeeder::class);
+        print 'seeding territories';
+        $this->call(TerritoriesSeeder::class);
+
     }
 }

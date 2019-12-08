@@ -52,27 +52,6 @@ class VerificationController extends AppBaseController
     }
 
     /**
-     * @param Verification $verification
-     */
-    private static function verificationLoadRelations(Verification $verification): void
-    {
-        $verification->load([
-            'agent', 'parentAgent', 'verifiedBy', 'approvedBy',
-            'deviceOwner', 'territory', 'verificationPeriod',
-            'personalInformation.bank', 'personalInformation.lga',
-            'guarantorInformation',
-            'verificationApprovals' => static function (HasMany $hasMany) {
-                return $hasMany->orderBy('created_at', 'DESC');
-            },
-
-            'documents' => static function(HasMany $hasMany){
-                 $hasMany->orderBy('title', 'ASC');
-                return $hasMany->orderBy('created_at', 'DESC');
-            }
-        ])->append(['telephone_verification_status', 'bvn_verification_status', 'bvn_is_for_linked_agent']);
-    }
-
-    /**
      * @param Request $request
      * @return JsonResponse
      *
@@ -192,20 +171,20 @@ class VerificationController extends AppBaseController
             //Get verification periods
             /** @var VerificationPeriod $verificationPeriod */
             $verificationPeriod = VerificationPeriod::any($request, $agent)
-                ->whereDoesntHave('verifications.agent', static function (Builder $builder) use($agent){
+                ->whereDoesntHave('verifications.agent', static function (Builder $builder) use ($agent) {
                     $builder->where('id', $agent->id);
                 })
                 ->multipleOrderBy([
                     'verification_periods.date_start' => 'DESC',
                     'territory_id' => 'DESC',
-                'lga_id' => 'DESC',
-                'state_id' => 'DESC',
-            ])->first();
+                    'lga_id' => 'DESC',
+                    'state_id' => 'DESC',
+                ])->first();
 
-            if($verificationPeriod === null){
+            if ($verificationPeriod === null) {
                 return $this->sendError('Verification period not opened or completed', 405);
             }
-            if(empty($input['verification_period_id'] )){
+            if (empty($input['verification_period_id'])) {
                 $input['verification_period_id'] = $verificationPeriod->id;
             }
 
@@ -220,7 +199,7 @@ class VerificationController extends AppBaseController
 
             /** @var Verification $verification */
             $verification = $this->verificationRepository->create($input);
-            if($verification === null) {
+            if ($verification === null) {
                 return $this->sendError('Could not create verification data', 405);
             }
 
@@ -244,6 +223,27 @@ class VerificationController extends AppBaseController
             return $this->sendError('Could not create verification data' . $exception->getMessage(), 405);
         }
 
+    }
+
+    /**
+     * @param Verification $verification
+     */
+    private static function verificationLoadRelations(Verification $verification): void
+    {
+        $verification->load([
+            'agent', 'parentAgent', 'verifiedBy', 'approvedBy',
+            'deviceOwner', 'territory', 'verificationPeriod',
+            'personalInformation.bank', 'personalInformation.lga',
+            'guarantorInformation',
+            'verificationApprovals' => static function (HasMany $hasMany) {
+                return $hasMany->orderBy('created_at', 'DESC');
+            },
+
+            'documents' => static function (HasMany $hasMany) {
+                $hasMany->orderBy('title', 'ASC');
+                return $hasMany->orderBy('created_at', 'DESC');
+            }
+        ])->append(['telephone_verification_status', 'bvn_verification_status', 'bvn_is_for_linked_agent']);
     }
 
     /**
@@ -698,7 +698,7 @@ class VerificationController extends AppBaseController
             return $this->sendResponse($approval->toArray(), 'Verification approval update was successful');
         } catch (Exception $exception) {
             DB::rollBack();
-            return $this->sendResponse($exception->getMessage().$exception->getTraceAsString(), '');
+            return $this->sendResponse($exception->getMessage() . $exception->getTraceAsString(), '');
         }
 
         return $this->sendError('Verification approval update was not successful', 403);
@@ -792,13 +792,13 @@ class VerificationController extends AppBaseController
                 //TODO Send Verification code to number
                 //$telephone_verification
                 //send_sms_infobip('CAPRICON', '')
-                $from = 'CAPRICON';//config('app.name');
+                $from = 'BAXI';//config('app.name');
 
                 $sms_user_id = 'CapricornD';//setting('sms_user_id', 'CapricornD');
                 $sms_password = 'P@$$w0rd2';//setting('sms_secret_key', 'P@$$w0rd2');
-                $token = base64_encode($sms_user_id.':'.$sms_password);
-               // die($token);
-                $response = send_sms_infobip($from, $telephone, "This is your verification code {$telephone_verification->code}", $token);
+                $token = base64_encode($sms_user_id . ':' . $sms_password);
+                // die($token);
+                $response = send_sms_infobip($from, $telephone, "This is your verification code\n{$telephone_verification->code}", $token);
                 //die($response);
                 $data = config('app.env') === 'local' ? $telephone_verification->only(['code']) : null;
                 return $this->sendResponse($data, 'Verification code was sent');
@@ -812,62 +812,62 @@ class VerificationController extends AppBaseController
     }
 
     /**
- * @SWG\Post(
- *      path="/verifications/{id}/telephone/verify",
- *      summary="Confirm Verification code",
- *      tags={"Agents Verification"},
- *      description="Verification approval",
- *      produces={"application/json"},
- *      @SWG\Parameter(
- *          type="string",
- *          name="Authorization",
- *          description="bearer token",
- *          in="header",
- *          required=true
- *     ),
- *      @SWG\Parameter(
- *          name="id",
- *          description="id of Verification",
- *          type="integer",
- *          required=true,
- *          in="path"
- *      ),
- *      @SWG\Parameter(
- *          name="body",
- *          in="body",
- *          description="Verification data",
- *          @SWG\Schema(
- *              @SWG\Property(
- *                  property="code",
- *                  description="Verification Code",
- *                  type="string"
- *              ),
- *          ),
- *     ),
- *      @SWG\Response(
- *          response=200,
- *          description="successful operation",
- *          @SWG\Schema(
- *              type="object",
- *              @SWG\Property(
- *                  property="success",
- *                  type="boolean"
- *              ),
- *              @SWG\Property(
- *                  property="data",
- *              ),
- *              @SWG\Property(
- *                  property="message",
- *                  type="string"
- *              )
- *          )
- *      )
- * )
- * @param $id
- * @param Request $request
- * @return JsonResponse
- * @throws ValidationException
- */
+     * @SWG\Post(
+     *      path="/verifications/{id}/telephone/verify",
+     *      summary="Confirm Verification code",
+     *      tags={"Agents Verification"},
+     *      description="Verification approval",
+     *      produces={"application/json"},
+     *      @SWG\Parameter(
+     *          type="string",
+     *          name="Authorization",
+     *          description="bearer token",
+     *          in="header",
+     *          required=true
+     *     ),
+     *      @SWG\Parameter(
+     *          name="id",
+     *          description="id of Verification",
+     *          type="integer",
+     *          required=true,
+     *          in="path"
+     *      ),
+     *      @SWG\Parameter(
+     *          name="body",
+     *          in="body",
+     *          description="Verification data",
+     *          @SWG\Schema(
+     *              @SWG\Property(
+     *                  property="code",
+     *                  description="Verification Code",
+     *                  type="string"
+     *              ),
+     *          ),
+     *     ),
+     *      @SWG\Response(
+     *          response=200,
+     *          description="successful operation",
+     *          @SWG\Schema(
+     *              type="object",
+     *              @SWG\Property(
+     *                  property="success",
+     *                  type="boolean"
+     *              ),
+     *              @SWG\Property(
+     *                  property="data",
+     *              ),
+     *              @SWG\Property(
+     *                  property="message",
+     *                  type="string"
+     *              )
+     *          )
+     *      )
+     * )
+     * @param $id
+     * @param Request $request
+     * @return JsonResponse
+     * @throws ValidationException
+     */
     public function verifyTelephoneConfirmation($id, Request $request): JsonResponse
     {
         $this->validate($request, [
@@ -902,7 +902,7 @@ class VerificationController extends AppBaseController
                     return $this->sendError('Telephone Already verified by this agent', 403);
                 }
             }
-            if($phone_verification->code  === $request->input('code')){
+            if ($phone_verification->code === $request->input('code')) {
                 $phone_verification->status = 1;
                 $phone_verification->save();
                 return $this->sendResponse(null, 'Telephone number was successfully verified');
@@ -915,6 +915,7 @@ class VerificationController extends AppBaseController
 
         return $this->sendError('Could complete telephone number verification', 500);
     }
+
     /**
      * @SWG\Post(
      *      path="/verifications/{id}/bvn_data",
@@ -985,12 +986,12 @@ class VerificationController extends AppBaseController
                 if ($bvn_verification->status === 1) {
                     return $this->sendError('BVN already verified by this agent', 403);
                 }
-                return $this->sendResponse($bvn_verification,'BVN data is available');
+                return $this->sendResponse($bvn_verification, 'BVN data is available');
             }
 
             // todo Fetch BVN Data
             $bvn_data = [];
-            if($bvn_data) {
+            if ($bvn_data) {
                 /** @var BvnVerification $telephone_verification */
                 $bvn_verification = BvnVerification::query()->updateOrCreate([
                     'agent_id' => $verification->agent_id, 'bvn' => $bvn], [
@@ -1052,7 +1053,7 @@ class VerificationController extends AppBaseController
     {
         /** @var User $user */
         $user = auth()->user();
-        if($user === null){
+        if ($user === null) {
             return $this->sendError('Unauthorized', 401);
         }
 
@@ -1071,7 +1072,7 @@ class VerificationController extends AppBaseController
         $bvn_verification->user_id = $user->id;
         $bvn_verification->save();
 
-        return $this->sendResponse($bvn_verification,'BVN data has been verified');
+        return $this->sendResponse($bvn_verification, 'BVN data has been verified');
 
     }
 
@@ -1140,17 +1141,17 @@ class VerificationController extends AppBaseController
             if ($verification === null) {
                 return $this->sendError('Verification data not found');
             }
-            $bank = $verification->personalInformation->bank??null;
+            $bank = $verification->personalInformation->bank ?? null;
             ///$bank_account_name = $verification->personalInformation->bank_account_name??null;
-            $bank_account_number = $verification->personalInformation->bank_account_number??null;
-            if($bank === null || $bank_account_number === null  /*|| $bank_account_name === null */){
+            $bank_account_number = $verification->personalInformation->bank_account_number ?? null;
+            if ($bank === null || $bank_account_number === null  /*|| $bank_account_name === null */) {
                 return $this->sendError('Account information is not complete', 403);
             }
             $response = self::doNameEnquiry($bank, $bank_account_number);
 
-            return $this->sendResponse($response,'');
+            return $this->sendResponse($response, '');
 
-        }catch (Exception $exception){
+        } catch (Exception $exception) {
 
         }
         return $this->sendError('Could not fetch data');
@@ -1167,8 +1168,8 @@ class VerificationController extends AppBaseController
 
         // $wsdl = 'http://css.ng/v1prod/name_enquiry';
         // $method = 'doNameEnquiry';
-        $client_id = setting('css_name_enquiry_client_id','LHV5P67658');
-        $secret_key = setting('css_name_enquiry_secret_key','_u3_-HGR3gP3j97dazt35CHE96__GD');   //Secret key issued to the merchant by Upperlink
+        $client_id = setting('css_name_enquiry_client_id', 'LHV5P67658');
+        $secret_key = setting('css_name_enquiry_secret_key', '_u3_-HGR3gP3j97dazt35CHE96__GD');   //Secret key issued to the merchant by Upperlink
         $salt = random_int(100000, 1000000000);   //Unique salt to be generated by the client for each request (10 - 50 alphanumeric characters)
         $str2hash = "{$client_id}-{$secret_key}-{$salt}";
         $mac = hash('sha512', $str2hash);
@@ -1202,11 +1203,11 @@ class VerificationController extends AppBaseController
                 $content = $response->getBody()->getContents();
                 return json_decode($content, true);
             }
-            throw new Exception('Error '.$response_code);
+            throw new Exception('Error ' . $response_code);
 
         } catch (GuzzleException $e) {
 
-        }catch (Exception $e) {
+        } catch (Exception $e) {
             //die($e->getMessage());
             //return ('EXCEPTION: --' . $e->getLine() . ' -- ' . $e->getMessage());
         }

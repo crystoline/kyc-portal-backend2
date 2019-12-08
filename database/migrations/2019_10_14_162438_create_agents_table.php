@@ -20,14 +20,15 @@ class CreateAgentsTable extends Migration
             $table->unsignedBigInteger('territory_id')->nullable();
             $table->unsignedBigInteger('device_owner_id')->nullable();
 
+            $table->string('device_serial_no', 100)->unique();
             $table->string('code', 30)->unique();
             $table->string('type', 50)->default('agent')->comment('principal-agent, sole-agent');
             $table->unsignedTinyInteger('is_app_only')->default(0)->comment('0=No,1=Yes');
-            $table->string('first_name', 180);
-            $table->string('last_name', 180);
+            $table->string('first_name', 180)->nullable();
+            $table->string('last_name', 180)->nullable();
             $table->string('user_name', 180);
-            $table->string('gender', 20)->comment('male, female');
-            $table->date('date_of_birth');
+            $table->string('gender', 20)->nullable()->comment('male, female');
+            $table->date('date_of_birth')->nullable();
             $table->string('email', 255)->nullable();
             $table->string('phone_number', 255)->nullable();
             $table->string('passport', 255)->nullable();

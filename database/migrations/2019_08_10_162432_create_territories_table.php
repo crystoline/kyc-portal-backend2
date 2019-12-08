@@ -16,6 +16,8 @@ class CreateTerritoriesTable extends Migration
         Schema::create('territories', static function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 100);
+            $table->string('territory', 100)->nullable();
+            $table->string('region', 100)->nullable();
             $table->unsignedBigInteger('state_id')->nullable();
             $table->timestamps();
 
