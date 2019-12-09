@@ -35,12 +35,14 @@ class AgentController extends AppBaseController
     }
 
     /**
-     * @param  string $input_key Request Key
+     * @param string $input_key Request Key
      * @param string $upload_path Relative path
      * @param null $old
+     * @param array $request_data
+     * @return array
      * @throws Exception
      */
-    public static function uploadBase64Image($input_key, $upload_path='',  $old = null): void
+    public static function uploadBase64Image($input_key, $upload_path='',  $old = null, $request_data = array()): ?array
     {
         $base64_image = request()->input($input_key);
         if ($base64_image && $upload_path) {
@@ -64,7 +66,13 @@ class AgentController extends AppBaseController
             }
             //die($path);
             Storage::disk('local')->put($path, $data);
-            request()->merge([(string)$input_key => $image_link]); //todo
+            if(empty($request_data)){
+                request()->merge([(string)$input_key => $image_link]); //todo
+            }else{
+                $request_data =array_merge($request_data, [(string)$input_key => $image_link]);
+            }
+
+            return $request_data;
         }
     }
 

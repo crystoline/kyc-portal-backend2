@@ -245,7 +245,7 @@ class Verification extends  Model
             'parent_agent_id' => 'required|exists:agents,id', // TODO validation for parent agent code
             'territory_id' => 'sometimes|exists:territories,id',
             'device_owner_id' => 'sometimes|exists:device_owners,id',
-            'verification_period_id' => 'required|exists:verification_periods,id', // TODO validation for parent agent code
+            // 'verification_period_id' => 'required|exists:verification_periods,id', // TODO validation for parent agent code
             'code' => 'sometimes|exists:agents,code',
             'date' => 'required',
 

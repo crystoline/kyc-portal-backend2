@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="675d336a-24a6-4598-a54f-4ebb6436d124" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/seeds/sub/extra/territories.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Util/Bvn.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AgentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AgentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Agent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Agent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/State.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/State.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Territory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Territory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_10_162432_create_territories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_10_162432_create_territories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_14_162438_create_agents_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_14_162438_create_agents_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/sub/AdminUserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/sub/AdminUserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/sub/AgentSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/sub/AgentSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/sub/TerritoriesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/sub/TerritoriesSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Verification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Verification.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +52,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="384">
               <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
             </state>
           </provider>
@@ -78,50 +70,58 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="207" column="46" selection-start-line="207" selection-start-column="46" selection-end-line="207" selection-end-column="46" />
+            <state relative-caret-position="1537">
+              <caret line="994" column="13" lean-forward="true" selection-start-line="994" selection-start-column="13" selection-end-line="994" selection-end-column="13" />
               <folding>
                 <element signature="e#44#87#0#PHP" expanded="true" />
-                <element signature="e#4366#5821#0#PHP" />
-                <element signature="e#9301#10686#0#PHP" />
-                <element signature="e#10691#11125#0#PHP" />
-                <element signature="e#11131#12880#0#PHP" />
-                <element signature="e#12885#14771#0#PHP" />
-                <element signature="e#14777#16175#0#PHP" />
-                <element signature="e#16180#16866#0#PHP" />
-                <element signature="e#16873#18855#0#PHP" />
-                <element signature="e#18860#19792#0#PHP" />
-                <element signature="e#19798#21269#0#PHP" />
-                <element signature="e#21274#22001#0#PHP" />
-                <element signature="e#22007#24060#0#PHP" />
-                <element signature="e#24065#25377#0#PHP" />
-                <element signature="e#25383#26761#0#PHP" />
-                <element signature="e#26766#29662#0#PHP" />
-                <element signature="e#29668#31230#0#PHP" />
-                <element signature="e#31235#33191#0#PHP" />
-                <element signature="e#33196#34557#0#PHP" />
-                <element signature="e#34562#36573#0#PHP" />
-                <element signature="e#36579#37828#0#PHP" />
-                <element signature="e#37833#38679#0#PHP" />
-                <element signature="e#38685#40522#0#PHP" />
-                <element signature="e#40527#41551#0#PHP" />
-                <element signature="e#41557#41672#0#PHP" />
+                <element signature="e#34007#35368#0#PHP" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Util/Bvn.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="32" column="72" selection-start-line="32" selection-start-column="72" selection-end-line="32" selection-end-column="72" />
+              <folding>
+                <element signature="e#30#48#0#PHP" expanded="true" />
+                <element signature="e#248#2037#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/settings.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="80" column="39" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="39" />
+              <folding>
+                <element signature="e#19#1672#0#PHP" />
+                <element signature="e#3727#4771#1#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/API/UpdateVerificationAPIRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AgentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+            <state relative-caret-position="178">
+              <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
               <folding>
                 <element signature="e#827#939#0#PHP" />
-                <element signature="e#945#1098#0#PHP" />
-                <element signature="e#2360#3722#0#PHP" />
-                <element signature="e#4065#5488#0#PHP" />
-                <element signature="e#5493#6069#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -130,17 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
+            <state relative-caret-position="7152">
               <caret line="306" column="35" selection-start-line="306" selection-start-column="35" selection-end-line="306" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/a.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="15" selection-end-line="614" />
             </state>
           </provider>
         </entry>
@@ -148,8 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Verification.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1195">
-              <caret line="160" column="23" selection-start-line="160" selection-start-column="23" selection-end-line="160" selection-end-column="23" />
+            <state relative-caret-position="408">
+              <caret line="258" column="37" lean-forward="true" selection-start-line="258" selection-start-column="37" selection-end-line="258" selection-end-column="37" />
               <folding>
                 <element signature="e#30#78#0#PHP" expanded="true" />
               </folding>
@@ -160,7 +151,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/VerificationApproval.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-457">
+            <state relative-caret-position="1296">
               <caret line="56" column="3" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
             </state>
           </provider>
@@ -170,8 +161,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>download-template</find>
-      <find>all_monthly_verifications</find>
       <find>-&gt;load</find>
       <find>terri</find>
       <find>verificationPeriod</find>
@@ -200,6 +189,8 @@
       <find>'(.*)', '(.*), '(.*)', '(.*)'</find>
       <find>( '([0-9\/a-z]+)', '([0-9\/a-z]+)', '([0-9\/a-z]+)', '([0-9\/a-z]+)', '([0-9\/a-z]+)')</find>
       <find>status</find>
+      <find>get</find>
+      <find>bvn</find>
     </findStrings>
     <replaceStrings>
       <replace>// use SoftDeletes;</replace>
@@ -214,7 +205,6 @@
       <replace>'dashboard.all-agents'</replace>
       <replace>date_start</replace>
       <replace>/verification_periods</replace>
-      <replace />
       <replace>/device_owners</replace>
     </replaceStrings>
     <dirStrings>
@@ -233,7 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2019_08_10_162432_create_regions_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_14_162441_create_device_owners_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/app/Models/DeviceOwner.php" />
@@ -250,7 +239,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_10_14_162440_create_verification_periods_table.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/TerritoryAPIController.php" />
-        <option value="$PROJECT_DIR$/app/Models/Verification.php" />
         <option value="$PROJECT_DIR$/app/Observers/VerificationApprovalObserver.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_01_14_063439_create_groups_table.php" />
         <option value="$PROJECT_DIR$/config/settings.php" />
@@ -282,8 +270,10 @@
         <option value="$PROJECT_DIR$/a.json" />
         <option value="$PROJECT_DIR$/a.txt" />
         <option value="$PROJECT_DIR$/a.sql" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/AgentController.php" />
+        <option value="$PROJECT_DIR$/app/Models/Verification.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php" />
+        <option value="$PROJECT_DIR$/app/Util/Bvn.php" />
       </list>
     </option>
   </component>
@@ -406,9 +396,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-14" />
-    <option name="width" value="1600" />
-    <option name="height" value="870" />
+    <option name="x" value="1592" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="1036" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -416,45 +407,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
               <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kyc-portal" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kyc-portal" type="b2602c69:ProjectViewProjectNode" />
@@ -506,6 +464,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -574,12 +533,13 @@
       <workItem from="1571827996566" duration="191320000" />
       <workItem from="1573545686850" duration="60634000" />
       <workItem from="1574255873912" duration="41610000" />
-      <workItem from="1574760804801" duration="63940000" />
+      <workItem from="1574760804801" duration="66746000" />
+      <workItem from="1575844884873" duration="7667000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="420749000" />
+    <option name="totallyTimeSpent" value="431222000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -591,23 +551,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <frame x="1592" y="-8" width="1696" height="1036" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="DB Browser" order="2" weight="0.32969153" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.21465296" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.10452323" />
       <window_info id="Structure" order="4" weight="0.18337408" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="0" weight="0.11081442" />
-      <window_info anchor="bottom" id="File Transfer" order="1" sideWeight="0.49871466" weight="0.3471295" />
+      <window_info anchor="bottom" id="File Transfer" order="1" sideWeight="0.49871466" weight="0.28921023" />
       <window_info anchor="bottom" id="Tail" order="2" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
       <window_info anchor="bottom" id="DB Execution Console" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5012854" side_tool="true" weight="0.3471295" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.32925472" />
       <window_info anchor="bottom" id="Code Review" order="7" weight="0.32977304" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4974293" visible="true" weight="0.1989319" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4974293" visible="true" weight="0.22024472" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="10" />
       <window_info anchor="bottom" id="Find" order="11" weight="0.32925472" />
@@ -616,7 +576,7 @@
       <window_info anchor="bottom" id="Cvs" order="14" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="15" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="16" weight="0.5461624" />
-      <window_info anchor="right" id="Remote Host" order="0" visible="true" weight="0.102827765" />
+      <window_info anchor="right" id="Remote Host" order="0" visible="true" weight="0.09779951" />
       <window_info anchor="right" id="Database" order="1" />
       <window_info anchor="right" id="Commander" order="2" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
@@ -638,33 +598,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/BaseModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding>
-            <element signature="e#25#66#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_14_162535_create_verifications_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-620">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_14_162622_create_personal_information_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-480">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
@@ -836,17 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="57" column="41" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="41" />
-          <folding>
-            <element signature="e#19#1672#0#PHP" />
-            <element signature="e#2705#3708#1#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="936">
@@ -923,13 +845,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/sub/extra/agents.json">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="432">
           <caret line="21" column="19" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="21" selection-end-column="19" />
         </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Agent.php">
@@ -974,85 +896,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_14_162438_create_agents_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="22" column="44" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/VerificationApproval.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-457">
-          <caret line="56" column="3" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/a.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-end-line="614" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Verification.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1195">
-          <caret line="160" column="23" selection-start-line="160" selection-start-column="23" selection-end-line="160" selection-end-column="23" />
-          <folding>
-            <element signature="e#30#78#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="207" column="46" selection-start-line="207" selection-start-column="46" selection-end-line="207" selection-end-column="46" />
-          <folding>
-            <element signature="e#44#87#0#PHP" expanded="true" />
-            <element signature="e#4366#5821#0#PHP" />
-            <element signature="e#9301#10686#0#PHP" />
-            <element signature="e#10691#11125#0#PHP" />
-            <element signature="e#11131#12880#0#PHP" />
-            <element signature="e#12885#14771#0#PHP" />
-            <element signature="e#14777#16175#0#PHP" />
-            <element signature="e#16180#16866#0#PHP" />
-            <element signature="e#16873#18855#0#PHP" />
-            <element signature="e#18860#19792#0#PHP" />
-            <element signature="e#19798#21269#0#PHP" />
-            <element signature="e#21274#22001#0#PHP" />
-            <element signature="e#22007#24060#0#PHP" />
-            <element signature="e#24065#25377#0#PHP" />
-            <element signature="e#25383#26761#0#PHP" />
-            <element signature="e#26766#29662#0#PHP" />
-            <element signature="e#29668#31230#0#PHP" />
-            <element signature="e#31235#33191#0#PHP" />
-            <element signature="e#33196#34557#0#PHP" />
-            <element signature="e#34562#36573#0#PHP" />
-            <element signature="e#36579#37828#0#PHP" />
-            <element signature="e#37833#38679#0#PHP" />
-            <element signature="e#38685#40522#0#PHP" />
-            <element signature="e#40527#41551#0#PHP" />
-            <element signature="e#41557#41672#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/a.json" />
+    <entry file="file://$PROJECT_DIR$/a.sql" />
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_9.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -1067,23 +912,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_10_14_162438_create_agents_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
+        <state relative-caret-position="7152">
           <caret line="306" column="35" selection-start-line="306" selection-start-column="35" selection-end-line="306" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/VerificationApproval.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="56" column="3" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AgentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+        <state relative-caret-position="178">
+          <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
           <folding>
             <element signature="e#827#939#0#PHP" />
-            <element signature="e#945#1098#0#PHP" />
-            <element signature="e#2360#3722#0#PHP" />
-            <element signature="e#4065#5488#0#PHP" />
-            <element signature="e#5493#6069#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/API/UpdateVerificationAPIRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Verification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="258" column="37" lean-forward="true" selection-start-line="258" selection-start-column="37" selection-end-line="258" selection-end-column="37" />
+          <folding>
+            <element signature="e#30#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Cache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Filesystem/Cache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="51" column="42" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="80" column="39" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="39" />
+          <folding>
+            <element signature="e#19#1672#0#PHP" />
+            <element signature="e#3727#4771#1#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1537">
+          <caret line="994" column="13" lean-forward="true" selection-start-line="994" selection-start-column="13" selection-end-line="994" selection-end-column="13" />
+          <folding>
+            <element signature="e#44#87#0#PHP" expanded="true" />
+            <element signature="e#34007#35368#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Util/Bvn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="32" column="72" selection-start-line="32" selection-start-column="72" selection-end-line="32" selection-end-column="72" />
+          <folding>
+            <element signature="e#30#48#0#PHP" expanded="true" />
+            <element signature="e#248#2037#0#PHP" />
           </folding>
         </state>
       </provider>

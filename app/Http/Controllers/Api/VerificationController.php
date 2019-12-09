@@ -18,6 +18,7 @@ use App\Models\VerificationPeriod;
 use App\Repositories\AgentRepository;
 use App\Repositories\DocumentRepository;
 use App\Repositories\VerificationRepository;
+use App\Util\Bvn;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
@@ -205,15 +206,17 @@ class VerificationController extends AppBaseController
 
             //create personal information
             if ($request->input('personal_information')) {
-                AgentController::uploadBase64Image('personal_information.signature', 'verifications/signature');
-                $verification->personalInformation()->create($request->input('personal_information'));
+                $personal_information =  $request->input('personal_information');
+                $personal_information = AgentController::uploadBase64Image('personal_information.signature', 'verifications/signature', null, $personal_information);
+                $verification->personalInformation()->create($personal_information);
             }
             //create guarantor information
             if ($request->input('guarantor_information')) {
-                AgentController::uploadBase64Image('guarantor_information.signature', 'guarantor_information/signature');
-                AgentController::uploadBase64Image('guarantor_information.witness_signature', 'witness/signature');
+                $guarantor_information = $request->input('guarantor_information');
+                $guarantor_information =  AgentController::uploadBase64Image('guarantor_information.signature', 'guarantor_information/signature', null, $guarantor_information);
+                $guarantor_information = AgentController::uploadBase64Image('guarantor_information.witness_signature', 'witness/signature', null , $guarantor_information);
 
-                $verification->guarantorInformation()->create($request->input('guarantor_information'));
+                $verification->guarantorInformation()->create($guarantor_information);
             }
             DB::commit();
             self::verificationLoadRelations($verification);
@@ -379,15 +382,17 @@ class VerificationController extends AppBaseController
         $verification = $this->verificationRepository->update($input, $id);
         //create personal information
         if ($request->input('personal_information')) {
-            AgentController::uploadBase64Image('personal_information.signature', 'verifications/signature', $verification->personalInformation->signature ?? null);
-            $verification->personalInformation()->updateOrCreate($request->input('personal_information'));
+            $personal_information = $request->input('personal_information');
+            $personal_information = AgentController::uploadBase64Image('personal_information.signature', 'verifications/signature', $verification->personalInformation->signature ?? null, $personal_information);
+            $verification->personalInformation()->updateOrCreate($personal_information);
         }
         //create guarantor information
         if ($request->input('guarantor_information')) {
-            AgentController::uploadBase64Image('guarantor_information.signature', 'guarantor_information/signature', $verification->guarantorInformation->signature ?? null);
-            AgentController::uploadBase64Image('guarantor_information.witness_signature', 'witness/signature', $verification->guarantorInformation->witness_signature ?? null);
+            $guarantor_information = $request->input('guarantor_information');
+            $guarantor_information = AgentController::uploadBase64Image('guarantor_information.signature', 'guarantor_information/signature', $verification->guarantorInformation->signature ?? null, $guarantor_information);
+            $guarantor_information = AgentController::uploadBase64Image('guarantor_information.witness_signature', 'witness/signature', $verification->guarantorInformation->witness_signature ?? null, $guarantor_information);
 
-            $verification->guarantorInformation()->updateOrCreate($request->input('guarantor_information'));
+            $verification->guarantorInformation()->updateOrCreate($guarantor_information);
         }
         self::verificationLoadRelations($verification);
         return $this->sendResponse($verification->toArray(), 'Verification updated successfully');
@@ -990,7 +995,8 @@ class VerificationController extends AppBaseController
             }
 
             // todo Fetch BVN Data
-            $bvn_data = [];
+            $bvnClient = new Bvn();
+            $bvn_data = $bvnClient->otherPartiesSingle($bvn);
             if ($bvn_data) {
                 /** @var BvnVerification $telephone_verification */
                 $bvn_verification = BvnVerification::query()->updateOrCreate([
