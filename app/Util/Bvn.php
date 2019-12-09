@@ -31,7 +31,7 @@ class Bvn
     {
         $this->bvn_url = 'https://uplbc.com/bvn/api';
         $this->user_name = setting('bvn_user_id', 'capricon@upperlink.ng');
-        $this->password = setting('bvn_password');
+        $this->password = setting('bvn_password', 'test');
     }
     public static function post($url, array $data, $action_name, $headers = array())
     {
