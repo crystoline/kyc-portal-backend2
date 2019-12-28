@@ -31,7 +31,7 @@ class DeviceOwnerAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/device_owners",
+     *      path="/api/v1/device_owners",
      *      summary="Get a listing of the DeviceOwners.",
      *      tags={"DeviceOwner"},
      *      description="Get all DeviceOwners",
@@ -80,7 +80,7 @@ class DeviceOwnerAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/device_owners",
+     *      path="/api/v1/device_owners",
      *      summary="Store a newly created DeviceOwner in storage",
      *      tags={"DeviceOwner"},
      *      description="Store DeviceOwner",
@@ -133,7 +133,7 @@ class DeviceOwnerAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/device_owners/{id}",
+     *      path="/api/v1/device_owners/{id}",
      *      summary="Display the specified DeviceOwner",
      *      tags={"DeviceOwner"},
      *      description="Get DeviceOwner",
@@ -190,7 +190,7 @@ class DeviceOwnerAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Put(
-     *      path="/device_owners/{id}",
+     *      path="/api/v1/device_owners/{id}",
      *      summary="Update the specified DeviceOwner in storage",
      *      tags={"DeviceOwner"},
      *      description="Update DeviceOwner",
@@ -257,7 +257,7 @@ class DeviceOwnerAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Delete(
-     *      path="/device_owners/{id}",
+     *      path="/api/v1/device_owners/{id}",
      *      summary="Remove the specified DeviceOwner from storage",
      *      tags={"DeviceOwner"},
      *      description="Delete DeviceOwner",

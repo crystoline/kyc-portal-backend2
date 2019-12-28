@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Models\VerificationApproval;
+use App\Models\VerificationPeriod;
 use App\Observers\VerificationApprovalObserver;
+use App\Observers\VerificationPeriodObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         VerificationApproval::observe(VerificationApprovalObserver::class);
+        VerificationPeriod::observe(VerificationPeriodObserver::class);
     }
 }

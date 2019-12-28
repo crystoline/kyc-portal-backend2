@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\BaseModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
+ * @property string signature
+ * @property string witness_signature
  * @SWG\Definition(
  *      definition="GaurantorsInformation",
  *      required={""},
@@ -131,7 +134,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *      )
  * )
  */
-class GuarantorsInformation extends Model
+class GuarantorsInformation extends BaseModel
 {
     // use SoftDeletes;
 

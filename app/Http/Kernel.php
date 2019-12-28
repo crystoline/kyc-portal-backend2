@@ -67,7 +67,8 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
         'create-verification' => CreateVerificationMiddleware::class,
-        'filter-null' => FilterNullMiddleware::class
+        'filter-null' => FilterNullMiddleware::class,
+        'task.permitted' => \App\Http\Middleware\TaskPermitted::class,
     ];
 
     /**

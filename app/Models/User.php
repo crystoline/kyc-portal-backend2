@@ -18,6 +18,7 @@ use Laravel\Passport\HasApiTokens;
  * @property string email
  * @property string first_name
  * @property string last_name
+ * @property Group group
  * @SWG\Definition(
  *      definition="User",
  *      required={""},
@@ -34,13 +35,24 @@ use Laravel\Passport\HasApiTokens;
  *          format="int32"
  *      ),
  *      @SWG\Property(
+ *          property="territory_id",
+ *          description="territory_id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
  *          property="first_name",
- *          description="first_name",
+ *          description="First name",
  *          type="string"
  *      ),
  *      @SWG\Property(
  *          property="last_name",
- *          description="last_name",
+ *          description="Last name",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="telephone",
+ *          description="telephone",
  *          type="string"
  *      ),
  *      @SWG\Property(
@@ -89,54 +101,10 @@ use Laravel\Passport\HasApiTokens;
  *      )
  * )
  */
-class User extends  Authenticatable
+class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;
     // use SoftDeletes;
-
-    private static $stringPassword;
-    public $table = 'users';
-    /*  const CREATED_AT = 'created_at';
-      const UPDATED_AT = 'updated_at';*/
-
-    protected $dates = ['deleted_at'];
-    protected $appends = [ 'status_text'];
-    protected $hidden = [
-        'email_verified_at',
-        'password',
-        'remember_token',
-    ];
-
-    public $fillable = [
-        'group_id',
-        'first_name',
-        'last_name',
-        'gender',
-        'email',
-        'status',
-        'email_verified_at',
-        'password',
-        'remember_token'
-    ];
-
-
-    /**
-     * The attributes that should be casted to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'id' => 'integer',
-        'status' => 'integer',
-        'group_id' => 'integer',
-        'first_name' => 'string',
-        'last_name' => 'string',
-        'gender' => 'string',
-        'email' => 'string',
-        'email_verified_at' => 'datetime',
-        'password' => 'string',
-        'remember_token' => 'string'
-    ];
 
     /**
      * Validation rules
@@ -151,6 +119,48 @@ class User extends  Authenticatable
         'email' => 'required|unique:users,email',
         'password' => 'sometimes'
     ];
+    private static $stringPassword;
+    /*  const CREATED_AT = 'created_at';
+      const UPDATED_AT = 'updated_at';*/
+    public $table = 'users';
+    public $fillable = [
+        'group_id',
+        'first_name',
+        'last_name',
+        'telephone',
+        'gender',
+        'email',
+        'status',
+        'email_verified_at',
+        'password',
+        'remember_token'
+    ];
+    protected $dates = ['deleted_at'];
+    protected $appends = ['status_text'];
+    protected $hidden = [
+        'email_verified_at',
+        'password',
+        'remember_token',
+    ];
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'id' => 'integer',
+        'territory_id' => 'integer',
+        'status' => 'integer',
+        'group_id' => 'integer',
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'telephone' => 'string',
+        'gender' => 'string',
+        'email' => 'string',
+        'email_verified_at' => 'datetime',
+        'password' => 'string',
+        'remember_token' => 'string'
+    ];
 
     /**
      * @return mixed
@@ -158,11 +168,6 @@ class User extends  Authenticatable
     public static function getStringPassword()
     {
         return self::$stringPassword;
-    }
-
-    public function authAccessToken(): HasMany
-    {
-        return $this->hasMany(OauthAccessToken::class);
     }
 
     /**
@@ -173,11 +178,17 @@ class User extends  Authenticatable
     {
         return [
             'group_id' => 'required|exists:groups,id',
+            'territory_id' => 'sometimes|exists:territories,id',
             'first_name' => 'required',
             'last_name' => 'required',
             'gender' => 'required',
-            'email' => 'required|unique:users,email,'.$request->route()->parameter('user', 0),
+            'email' => 'required|unique:users,email,' . $request->route()->parameter('user', 0),
         ];
+    }
+
+    public function authAccessToken(): HasMany
+    {
+        return $this->hasMany(OauthAccessToken::class);
     }
 
     /**
@@ -211,14 +222,36 @@ class User extends  Authenticatable
     {
         return $this->hasMany(Verification::class, 'verified_by');
     }
+
     public function getStatusTextAttribute()
     {
-        return $this->status === 0? 'Disabled': 'Enabled';
+        switch($this->status){
+            case 0: return 'Disabled';
+            case 1: return 'Enabled';
+            case 2: return 'New User';
+        }
+        return '';
     }
 
-    public function setPasswordAttribute($value): void {
-        if(!$value) $value = config('app.default_password');
+    public function setPasswordAttribute($value): void
+    {
+        if (!$value) $value = config('app.default_password');
         $this->attributes['password'] = bcrypt($value);
         self::$stringPassword = $value;
+    }
+    public function territory(): BelongsTo
+    {
+        return $this->belongsTo(Territory::class);
+    }
+    /**
+     * @param $route
+     * @return bool
+     */
+    public function hasPermission($route): bool
+    {
+        if ($this->group->tasks->contains('route', $route)) {
+            return true;
+        }
+        return false;
     }
 }

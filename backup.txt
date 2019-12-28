@@ -1,0 +1,106 @@
+
+Deprecated: Directive 'track_errors' is deprecated in Unknown on line 0
+
+Deprecated: Directive 'track_errors' is deprecated in Unknown on line 0
+array:1 [
+  0 => "./data.txt"
+]
+Illuminate\Support\Collection {#1341
+  #items: array:2 [
+    0 => array:9 [
+      "name" => "Initial-Verification"
+      "type" => "dir"
+      "path" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+      "filename" => "Initial-Verification"
+      "extension" => ""
+      "timestamp" => 1577542582
+      "size" => 0
+      "dirname" => ""
+      "basename" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+    ]
+    1 => array:9 [
+      "name" => "Initial-Verification"
+      "type" => "dir"
+      "path" => "1Szrr6aXjKMY_cirrwesvawomNZ3WEm2a"
+      "filename" => "Initial-Verification"
+      "extension" => ""
+      "timestamp" => 1577543632
+      "size" => 0
+      "dirname" => ""
+      "basename" => "1Szrr6aXjKMY_cirrwesvawomNZ3WEm2a"
+    ]
+  ]
+}
+array:9 [
+  "name" => "Initial-Verification"
+  "type" => "dir"
+  "path" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+  "filename" => "Initial-Verification"
+  "extension" => ""
+  "timestamp" => 1577542582
+  "size" => 0
+  "dirname" => ""
+  "basename" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+]
+
+Deprecated: Directive 'track_errors' is deprecated in Unknown on line 0
+array:1 [
+  0 => "./data.txt"
+]
+Illuminate\Support\Collection {#1341
+  #items: array:2 [
+    0 => array:9 [
+      "name" => "Initial-Verification"
+      "type" => "dir"
+      "path" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+      "filename" => "Initial-Verification"
+      "extension" => ""
+      "timestamp" => 1577542582
+      "size" => 0
+      "dirname" => ""
+      "basename" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+    ]
+    1 => array:9 [
+      "name" => "Initial-Verification"
+      "type" => "dir"
+      "path" => "1MlGRQP4H7cYfkpFdVoIeHdICbgayuiGo"
+      "filename" => "Initial-Verification"
+      "extension" => ""
+      "timestamp" => 1577543756
+      "size" => 0
+      "dirname" => ""
+      "basename" => "1MlGRQP4H7cYfkpFdVoIeHdICbgayuiGo"
+    ]
+  ]
+}
+array:9 [
+  "name" => "Initial-Verification"
+  "type" => "dir"
+  "path" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+  "filename" => "Initial-Verification"
+  "extension" => ""
+  "timestamp" => 1577542582
+  "size" => 0
+  "dirname" => ""
+  "basename" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+]
+
+Deprecated: Directive 'track_errors' is deprecated in Unknown on line 0
+array:1 [
+  0 => "./data.txt"
+]
+Illuminate\Support\Collection {#1310
+  #items: array:1 [
+    0 => array:9 [
+      "name" => "Initial-Verification"
+      "type" => "dir"
+      "path" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+      "filename" => "Initial-Verification"
+      "extension" => ""
+      "timestamp" => 1577542582
+      "size" => 0
+      "dirname" => ""
+      "basename" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+    ]
+  ]
+}

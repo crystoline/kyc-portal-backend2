@@ -30,7 +30,7 @@ class AgentTypeController extends AppBaseController
      * @return Response
      *
      * @SWG\Get(
-     *      path="/agentTypes",
+     *      path="/api/v1/agentTypes",
      *      summary="Get a listing of the AgentTypes.",
      *      tags={"AgentType"},
      *      description="Get all AgentTypes",
@@ -73,7 +73,7 @@ class AgentTypeController extends AppBaseController
      * @return Response
      *
      * @SWG\Post(
-     *      path="/agentTypes",
+     *      path="/api/v1/agentTypes",
      *      summary="Store a newly created AgentType in storage",
      *      tags={"AgentType"},
      *      description="Store AgentType",
@@ -120,7 +120,7 @@ class AgentTypeController extends AppBaseController
      * @return Response
      *
      * @SWG\Get(
-     *      path="/agentTypes/{id}",
+     *      path="/api/v1/agentTypes/{id}",
      *      summary="Display the specified AgentType",
      *      tags={"AgentType"},
      *      description="Get AgentType",
@@ -171,7 +171,7 @@ class AgentTypeController extends AppBaseController
      * @return Response
      *
      * @SWG\Put(
-     *      path="/agentTypes/{id}",
+     *      path="/api/v1/agentTypes/{id}",
      *      summary="Update the specified AgentType in storage",
      *      tags={"AgentType"},
      *      description="Update AgentType",
@@ -232,7 +232,7 @@ class AgentTypeController extends AppBaseController
      * @return Response
      *
      * @SWG\Delete(
-     *      path="/agentTypes/{id}",
+     *      path="/api/v1/agentTypes/{id}",
      *      summary="Remove the specified AgentType from storage",
      *      tags={"AgentType"},
      *      description="Delete AgentType",

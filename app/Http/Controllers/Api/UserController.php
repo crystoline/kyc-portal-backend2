@@ -38,7 +38,7 @@ class UserController extends AppBaseController
      * @return Response
      *
      * @SWG\Get(
-     *      path="/users",
+     *      path="/api/v1/users",
      *      summary="Get a listing of the Users.",
      *      tags={"User Management"},
      *      description="Get all Users",
@@ -88,7 +88,7 @@ class UserController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/users",
+     *      path="/api/v1/users",
      *      summary="Store a newly created User in Database",
      *      tags={"User Management"},
      *      description="Create new user",
@@ -133,8 +133,8 @@ class UserController extends AppBaseController
         try {
             $input = $request->except(['password', 'status']);
             /** @var User $user */
-            $user = $this->userRepository->create(array_merge($input, ['password' => random_int(10000, 99999)]));
-            $host = $request->getHost();
+            $user = $this->userRepository->create(array_merge($input, ['password' => random_int(10000, 99999), 'status' => 2]));
+            $host = 'http://uplkyc.customz.ng/dashboard/main';//$request->getHost();
 
                   Mail::to($user->email)
                       ->send(new UserProfileCreated($user, $host));
@@ -150,7 +150,7 @@ class UserController extends AppBaseController
      * @return Response
      *
      * @SWG\Get(
-     *      path="/users/{id}",
+     *      path="/api/v1/users/{id}",
      *      summary="Display the specified User",
      *      tags={"User Management"},
      *      description="Get User",
@@ -208,7 +208,7 @@ class UserController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Put(
-     *      path="/users/{id}",
+     *      path="/api/v1/users/{id}",
      *      summary="Update the specified User in storage",
      *      tags={"User Management"},
      *      description="Update User",
@@ -276,7 +276,7 @@ class UserController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/users/{id}/toggle-status",
+     *      path="/api/v1/users/{id}/toggle-status",
      *      summary="Toggle user status",
      *      tags={"User Management"},
      *      description="",
@@ -322,7 +322,7 @@ class UserController extends AppBaseController
             return $this->sendError('User not found');
         }
         try{
-            $user = $this->userRepository->update(['status' => $user->status? 0: 1], $id);
+            $user = $this->userRepository->update(['status' => $user->status !== 1? 0: 1], $id);
             return $this->sendResponse($user->toArray(),  'User account has been '.($user->status? 'enabled': 'disabled'));
         }catch (\Exception $exception){
         }
@@ -332,7 +332,7 @@ class UserController extends AppBaseController
 
     /**
      * @SWG\Post(
-     *      path="/users/assign-agents",
+     *      path="/api/v1/users/assign-agents",
      *      summary="Assign Agents to a field officer",
      *      tags={"User Management"},
      *      description="",

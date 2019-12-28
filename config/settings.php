@@ -1,13 +1,13 @@
 <?php
 
 return [
-   /* 'basic' => [
+    'basic' => [
         'title' => 'Basic Setting',
         'desc' => 'Basic Setting',
         'icon' => 'glyphicon glyphicon-sunglasses',
 
         'elements' => [
-            [
+           /* [
                 'type' => 'text', // input fields type
                 'data' => 'string', // data type, string, int, boolean
                 'name' => 're_verification_period', // unique name for field
@@ -26,7 +26,7 @@ return [
                     ['value' => 1, 'name' => 'Yes'],
                 ],
                 'value' => 1
-            ],
+            ],*/
             [
                 'type' => 'select', // input fields type
                 'data' => 'string', // data type, string, int, boolean
@@ -38,7 +38,7 @@ return [
             ]
         ],
 
-    ],*/
+    ],
     'sms' => [
         'title' => 'SMS Setting',
         'desc' => 'SMS API Settings',

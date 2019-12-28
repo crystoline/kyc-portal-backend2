@@ -31,7 +31,7 @@ class TerritoryAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/territories",
+     *      path="/api/v1/territories",
      *      summary="Get a listing of the Territories.",
      *      tags={"Territory"},
      *      description="Get all Territories",
@@ -80,7 +80,7 @@ class TerritoryAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/territories",
+     *      path="/api/v1/territories",
      *      summary="Store a newly created Territory in storage",
      *      tags={"Territory"},
      *      description="Store Territory",
@@ -133,7 +133,7 @@ class TerritoryAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/territories/{id}",
+     *      path="/api/v1/territories/{id}",
      *      summary="Display the specified Territory",
      *      tags={"Territory"},
      *      description="Get Territory",
@@ -190,7 +190,7 @@ class TerritoryAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Put(
-     *      path="/territories/{id}",
+     *      path="/api/v1/territories/{id}",
      *      summary="Update the specified Territory in storage",
      *      tags={"Territory"},
      *      description="Update Territory",
@@ -258,7 +258,7 @@ class TerritoryAPIController extends AppBaseController
      *
      * @throws \Exception
      * @SWG\Delete(
-     *      path="/territories/{id}",
+     *      path="/api/v1/territories/{id}",
      *      summary="Remove the specified Territory from storage",
      *      tags={"Territory"},
      *      description="Delete Territory",

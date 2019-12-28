@@ -30,7 +30,7 @@ class BankController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/banks",
+     *      path="/api/v1/banks",
      *      summary="Get a listing of the Banks.",
      *      tags={"Bank"},
      *      description="Get all Banks",
@@ -74,7 +74,7 @@ class BankController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/banks/{id}",
+     *      path="/api/v1/banks/{id}",
      *      summary="Display the specified Bank",
      *      tags={"Bank"},
      *      description="Get Bank",

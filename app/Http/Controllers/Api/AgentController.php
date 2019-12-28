@@ -42,7 +42,7 @@ class AgentController extends AppBaseController
      * @return array
      * @throws Exception
      */
-    public static function uploadBase64Image($input_key, $upload_path='',  $old = null, $request_data = array()): ?array
+    public static function uploadBase64Image($input_key, $upload_path='',  $old = '', $request_data = array())
     {
         $base64_image = request()->input($input_key);
         if ($base64_image && $upload_path) {
@@ -57,19 +57,21 @@ class AgentController extends AppBaseController
                 Storage::makeDirectory("public/{$upload_path}", 0775, true); //creates directory
             }
 
-            if($old !== null ){ //remove old passport
+            Storage::disk('local')->put($path, $data);
+            if(empty($old)){ //remove old passport
                 $public_pos =  strpos($old, 'storage/');
                 if($public_pos !== false){
                     $old_image_path = 'public/'.substr($old, $public_pos+8);//include storage/ string
                     Storage::delete($old_image_path);
                 }
             }
-            //die($path);
-            Storage::disk('local')->put($path, $data);
             if(empty($request_data)){
-                request()->merge([(string)$input_key => $image_link]); //todo
+                request()->merge([ $input_key => $image_link]); //todo
             }else{
-                $request_data =array_merge($request_data, [(string)$input_key => $image_link]);
+                $keys = explode('.',$input_key);
+                $key = $keys[count($keys)-1]??0 ;
+                $request_data = array_replace($request_data, [$key => $image_link]);
+                //die(json_encode([$key => $request_data]));
             }
 
             return $request_data;
@@ -81,7 +83,7 @@ class AgentController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/agents",
+     *      path="/api/v1/agents",
      *      summary="Get a listing of the Agents.",
      *      tags={"Agent"},
      *      description="Get all Agents",
@@ -137,7 +139,7 @@ class AgentController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/agents",
+     *      path="/api/v1/agents",
      *      summary="Store a newly created Agent in storage",
      *      tags={"Agent"},
      *      description="Store Agent",
@@ -196,7 +198,7 @@ class AgentController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/agents/{id}",
+     *      path="/api/v1/agents/{id}",
      *      summary="Display the specified Agent",
      *      tags={"Agent"},
      *      description="Get Agent",
@@ -255,7 +257,7 @@ class AgentController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Put(
-     *      path="/agents/{id}",
+     *      path="/api/v1/agents/{id}",
      *      summary="Update the specified Agent in storage",
      *      tags={"Agent"},
      *      description="Update Agent",
@@ -328,7 +330,7 @@ class AgentController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/agents/{id}/mark-as-created",
+     *      path="/api/v1/agents/{id}/mark-as-created",
      *      summary="Mark agent as created",
      *      tags={"Agent"},
      *      description="",
@@ -387,7 +389,7 @@ class AgentController extends AppBaseController
 
     /**
      * @SWG\Get(
-     *      path="/agents/bulk-upload/download-template",
+     *      path="/api/v1/agents/bulk-upload/download-template",
      *      summary="Download agent template",
      *      tags={"Agent"},
      *      description="",
@@ -426,7 +428,7 @@ class AgentController extends AppBaseController
 
     /**
      * @SWG\Post(
-     *      path="/agents/bulk-upload",
+     *      path="/api/v1/agents/bulk-upload",
      *      summary="Upload agents",
      *      tags={"Agent"},
      *      description="",

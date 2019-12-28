@@ -31,7 +31,7 @@ class VerificationPeriodAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/verification_periods",
+     *      path="/api/v1/verification_periods",
      *      summary="Get a listing of the VerificationPeriods.",
      *      tags={"VerificationPeriod"},
      *      description="Get all VerificationPeriods",
@@ -80,7 +80,7 @@ class VerificationPeriodAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/verification_periods",
+     *      path="/api/v1/verification_periods",
      *      summary="Store a newly created VerificationPeriod in storage",
      *      tags={"VerificationPeriod"},
      *      description="Store VerificationPeriod",
@@ -131,7 +131,7 @@ class VerificationPeriodAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/verification_periods/{id}",
+     *      path="/api/v1/verification_periods/{id}",
      *      summary="Display the specified VerificationPeriod",
      *      tags={"VerificationPeriod"},
      *      description="Get VerificationPeriod",
@@ -188,7 +188,7 @@ class VerificationPeriodAPIController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Put(
-     *      path="/verification_periods/{id}",
+     *      path="/api/v1/verification_periods/{id}",
      *      summary="Update the specified VerificationPeriod in storage",
      *      tags={"VerificationPeriod"},
      *      description="Update VerificationPeriod",
@@ -255,7 +255,7 @@ class VerificationPeriodAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Delete(
-     *      path="/verification_periods/{id}",
+     *      path="/api/v1/verification_periods/{id}",
      *      summary="Remove the specified VerificationPeriod from storage",
      *      tags={"VerificationPeriod"},
      *      description="Delete VerificationPeriod",

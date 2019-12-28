@@ -57,7 +57,7 @@ class VerificationController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/verifications",
+     *      path="/api/v1/verifications",
      *      summary="Get a listing of the Verifications.",
      *      tags={"Agents Verification"},
      *      description="Get all Verifications",
@@ -114,7 +114,7 @@ class VerificationController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/verifications",
+     *      path="/api/v1/verifications",
      *      summary="Store a newly created Verification in storage",
      *      tags={"Agents Verification"},
      *      description="Store Verification",
@@ -161,7 +161,7 @@ class VerificationController extends AppBaseController
             /** @var Agent $agent */
             $agent = $this->agentRepository->findOrCreate($input);
             if ($agent !== null) {
-                $input['agent_id'] = $agent->id;
+                $request->merge(['agent_id'=> $agent->id]);
             }
             // check if verification is required
             $pending = $agent->verifications()->whereIn('status', [0, 2, 9])->first(); //pending verification
@@ -185,19 +185,21 @@ class VerificationController extends AppBaseController
             if ($verificationPeriod === null) {
                 return $this->sendError('Verification period not opened or completed', 405);
             }
-            if (empty($input['verification_period_id'])) {
-                $input['verification_period_id'] = $verificationPeriod->id;
+            if (!$request->input('verification_period_id')) {
+                $request->merge(['verification_period_id' => $verificationPeriod->id]);
             }
 
 
             /** @var User $user */
             $user = Auth::user();
             if ($user !== null) {
-                $input['user_id'] = $user->id; //field officer id
+                $request->merge(['user_id' => $user->id]); //field officer id
             }
 
-            AgentController::uploadBase64Image('passport', 'verifications/passport');
+            $input = $request->except(['personal_information', 'guarantor_information']);
+            $input = AgentController::uploadBase64Image('passport', 'verifications/passport', null, $input);
 
+            //die(json_encode($input));
             /** @var Verification $verification */
             $verification = $this->verificationRepository->create($input);
             if ($verification === null) {
@@ -208,6 +210,7 @@ class VerificationController extends AppBaseController
             if ($request->input('personal_information')) {
                 $personal_information =  $request->input('personal_information');
                 $personal_information = AgentController::uploadBase64Image('personal_information.signature', 'verifications/signature', null, $personal_information);
+               //    die(json_encode($personal_information));
                 $verification->personalInformation()->create($personal_information);
             }
             //create guarantor information
@@ -254,7 +257,7 @@ class VerificationController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/verifications/{id}",
+     *      path="/api/v1/verifications/{id}",
      *      summary="Display the specified Verification",
      *      tags={"Agents Verification"},
      *      description="Get Verification",
@@ -314,7 +317,7 @@ class VerificationController extends AppBaseController
      *
      * @throws Exception
      * @SWG\Put(
-     *      path="/verifications/{id}",
+     *      path="/api/v1/verifications/{id}",
      *      summary="Update the specified Verification in storage",
      *      tags={"Agents Verification"},
      *      description="Update Verification",
@@ -378,21 +381,22 @@ class VerificationController extends AppBaseController
 
         AgentController::uploadBase64Image('passport', 'verifications/passport', $verification->passport);
 
-        $input = $request->except(['personal_information', 'guarantor_information']);
+        $input = $request->except(['personal_information', 'guarantor_information', 'status']);
         $verification = $this->verificationRepository->update($input, $id);
         //create personal information
+        //die(print_r($request->all(), 1));
         if ($request->input('personal_information')) {
             $personal_information = $request->input('personal_information');
-            $personal_information = AgentController::uploadBase64Image('personal_information.signature', 'verifications/signature', $verification->personalInformation->signature ?? null, $personal_information);
-            $verification->personalInformation()->updateOrCreate($personal_information);
+            $personal_information = AgentController::uploadBase64Image('personal_information.signature', 'verifications/signature', $verification->personalInformation->signature ?? '', $personal_information);
+            $verification->personalInformation()->updateOrCreate(['verification_id' => $id],$personal_information);
         }
         //create guarantor information
         if ($request->input('guarantor_information')) {
             $guarantor_information = $request->input('guarantor_information');
-            $guarantor_information = AgentController::uploadBase64Image('guarantor_information.signature', 'guarantor_information/signature', $verification->guarantorInformation->signature ?? null, $guarantor_information);
-            $guarantor_information = AgentController::uploadBase64Image('guarantor_information.witness_signature', 'witness/signature', $verification->guarantorInformation->witness_signature ?? null, $guarantor_information);
+            $guarantor_information = AgentController::uploadBase64Image('guarantor_information.signature', 'guarantor_information/signature', $verification->guarantorInformation->signature ?? '', $guarantor_information);
+            $guarantor_information = AgentController::uploadBase64Image('guarantor_information.witness_signature', 'witness/signature', $verification->guarantorInformation->witness_signature ?? '', $guarantor_information);
 
-            $verification->guarantorInformation()->updateOrCreate($guarantor_information);
+            $verification->guarantorInformation()->updateOrCreate(['verification_id' => $id], $guarantor_information);
         }
         self::verificationLoadRelations($verification);
         return $this->sendResponse($verification->toArray(), 'Verification updated successfully');
@@ -403,7 +407,7 @@ class VerificationController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/verifications/{id}/publish",
+     *      path="/api/v1/verifications/{id}/publish",
      *      summary="Publish the specified Verification",
      *      tags={"Agents Verification"},
      *      description="Publish Verification",
@@ -471,7 +475,7 @@ class VerificationController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/verifications/{id}/upload-single-document",
+     *      path="/api/v1/verifications/{id}/upload-single-document",
      *      summary="Store a newly created Document in storage",
      *      tags={"Agents Verification"},
      *      description="Store Document",
@@ -554,7 +558,7 @@ class VerificationController extends AppBaseController
      *
      * @throws Exception
      * @SWG\Post(
-     *      path="/verifications/delete-single-document/{document_id}",
+     *      path="/api/v1/verifications/delete-single-document/{document_id}",
      *      summary="Delete a document",
      *      tags={"Agents Verification"},
      *      description="Delete Document",
@@ -617,7 +621,7 @@ class VerificationController extends AppBaseController
 
     /**
      * @SWG\Post(
-     *      path="/verifications/{id}/approval",
+     *      path="/api/v1/verifications/{id}/approval",
      *      summary="Verification approval",
      *      tags={"Agents Verification"},
      *      description="Verification approval",
@@ -711,7 +715,7 @@ class VerificationController extends AppBaseController
 
     /**
      * @SWG\Post(
-     *      path="/verifications/{id}/telephone/send-code",
+     *      path="/api/v1/verifications/{id}/telephone/send-code",
      *      summary="Send SMS Verification Code",
      *      tags={"Agents Verification"},
      *      description="Verification approval",
@@ -818,7 +822,7 @@ class VerificationController extends AppBaseController
 
     /**
      * @SWG\Post(
-     *      path="/verifications/{id}/telephone/verify",
+     *      path="/api/v1/verifications/{id}/telephone/verify",
      *      summary="Confirm Verification code",
      *      tags={"Agents Verification"},
      *      description="Verification approval",
@@ -923,7 +927,7 @@ class VerificationController extends AppBaseController
 
     /**
      * @SWG\Post(
-     *      path="/verifications/{id}/bvn_data",
+     *      path="/api/v1/verifications/{id}/bvn_data",
      *      summary="BVN Verification",
      *      tags={"Agents Verification"},
      *      description="BVN data",
@@ -991,16 +995,17 @@ class VerificationController extends AppBaseController
                 if ($bvn_verification->status === 1) {
                     return $this->sendError('BVN already verified by this agent', 403);
                 }
-                return $this->sendResponse($bvn_verification, 'BVN data is available');
+                //return $this->sendResponse($bvn_verification, 'BVN data is available');
             }
 
             // todo Fetch BVN Data
             $bvnClient = new Bvn();
             $bvn_data = $bvnClient->otherPartiesSingle($bvn);
-            if ($bvn_data) {
+            if ($bvn_data /*&& isset( $bvn_data['code']) && $bvn_data['code'] == '00'*/) {
                 /** @var BvnVerification $telephone_verification */
                 $bvn_verification = BvnVerification::query()->updateOrCreate([
-                    'agent_id' => $verification->agent_id, 'bvn' => $bvn], [
+                    'agent_id' => $verification->agent_id, 'bvn' => $bvn
+                ], [
                     'data' => $bvn_data
                 ]);
                 if ($bvn_verification) {
@@ -1017,7 +1022,7 @@ class VerificationController extends AppBaseController
 
     /**
      * @SWG\Post(
-     *      path="/verifications/{bvn_verification_id}/verify_bvn",
+     *      path="/api/v1/verifications/{bvn_verification_id}/verify_bvn",
      *      summary="BVN Verification approve",
      *      tags={"Agents Verification"},
      *      description="BVN data",
@@ -1084,7 +1089,7 @@ class VerificationController extends AppBaseController
 
     /**
      * @SWG\Post(
-     *      path="/verifications/{id}/account_name_enquiry",
+     *      path="/api/v1/verifications/{id}/account_name_enquiry",
      *      summary="Account name enquiry",
      *      tags={"Agents Verification"},
      *      description="Account name enquiry",

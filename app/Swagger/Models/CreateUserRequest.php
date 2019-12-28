@@ -14,6 +14,12 @@ namespace App\Swagger\Models;
  *          format="int32"
  *      ),
  *      @SWG\Property(
+ *          property="territory_id",
+ *          description="territory_id",
+ *          type="integer",
+ *          format="int32"
+ *      ),
+ *      @SWG\Property(
  *          property="first_name",
  *          description="first_name",
  *          type="string"
@@ -21,6 +27,11 @@ namespace App\Swagger\Models;
  *      @SWG\Property(
  *          property="last_name",
  *          description="last_name",
+ *          type="string"
+ *      ),
+ *      @SWG\Property(
+ *          property="telephone",
+ *          description="telephone",
  *          type="string"
  *      ),
  *      @SWG\Property(

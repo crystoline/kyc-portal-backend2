@@ -9,7 +9,10 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "ext-curl": "*",
         "ext-json": "*",
+        "alchemy/zippy": "^0.4.9",
+        "cache/filesystem-adapter": "^1.0",
         "doctrine/dbal": "~2.3",
         "fideloper/proxy": "^4.0",
         "infyomlabs/laravel-generator": "6.0.x-dev",
@@ -18,7 +21,8 @@
         "laravel/passport": "^7.5",
         "laravel/tinker": "^1.0",
         "maatwebsite/excel": "^3.1",
-      "ext-curl": "*"
+        "nao-pon/flysystem-google-drive": "^1.1",
+        "zanysoft/laravel-zip": "^1.0"
     },
     "require-dev": {
         "appointer/swaggervel": "^2.5",

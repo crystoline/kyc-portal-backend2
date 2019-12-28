@@ -31,7 +31,7 @@ class StateController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/states",
+     *      path="/api/v1/states",
      *      summary="Get a listing of the States.",
      *      tags={"State"},
      *      description="Get all States",
@@ -75,7 +75,7 @@ class StateController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/states/{id}",
+     *      path="/api/v1/states/{id}",
      *      summary="Display the specified State",
      *      tags={"State"},
      *      description="Get State",

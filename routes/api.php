@@ -30,7 +30,7 @@ Route::group(['prefix'=> '/auth'], static function (){
 
 
 
-Route::group(['middleware' => 'auth:api'/*, 'filter-null'*/], static  function(){
+Route::group(['middleware' => ['auth:api','task.permitted']], static  function(){
     Route::post('/users/{id}/toggle-status', 'UserController@toggleStatus')->name('user.toggle-status');
     Route::post('users/assign-agents', 'UserController@assignAgents')->name('user.assign-agents');
     Route::resource('users', 'UserController')->except('delete');

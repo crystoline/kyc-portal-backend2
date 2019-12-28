@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
+ * @property integer state_id
  * @SWG\Definition(
  *      definition="Territory",
  *      required={""},

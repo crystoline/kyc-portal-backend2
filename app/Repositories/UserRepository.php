@@ -25,6 +25,7 @@ class UserRepository extends BaseRepository
             'group_id',
             'first_name',
             'last_name',
+            'telephone',
             'gender',
             'email',
             'email_verified_at',

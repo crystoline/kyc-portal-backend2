@@ -17,6 +17,7 @@ class FilterNullMiddleware
     {
         $all = $request->all() ;
         self::filterNullInput($all);
+        //die(json_encode($request->all()));
         return $next($request);
     }
     private static function filterNullInput(array $data, $parent = null): void

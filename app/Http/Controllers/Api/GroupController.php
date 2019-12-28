@@ -31,7 +31,7 @@ class GroupController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/groups",
+     *      path="/api/v1/groups",
      *      summary="Get a listing of the Groups.",
      *      tags={"Group"},
      *      description="Get all Groups",
@@ -81,7 +81,7 @@ class GroupController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Post(
-     *      path="/groups",
+     *      path="/api/v1/groups",
      *      summary="Store a newly created Group in storage",
      *      tags={"Group"},
      *      description="Store Group",
@@ -135,7 +135,7 @@ class GroupController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/groups/{id}",
+     *      path="/api/v1/groups/{id}",
      *      summary="Display the specified Group",
      *      tags={"Group"},
      *      description="Get Group",
@@ -193,7 +193,7 @@ class GroupController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Put(
-     *      path="/groups/{id}",
+     *      path="/api/v1/groups/{id}",
      *      summary="Update the specified Group in storage",
      *      tags={"Group"},
      *      description="Update Group",

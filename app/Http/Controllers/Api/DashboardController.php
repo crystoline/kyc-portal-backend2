@@ -17,7 +17,7 @@ class DashboardController extends AppBaseController
 {
     /**
      * @SWG\Get(
-     *      path="/dashboard/all_users",
+     *      path="/api/v1/dashboard/all_users",
      *      summary="Total users",
      *      tags={"Dashboard"},
      *      description="Total users",
@@ -62,7 +62,7 @@ class DashboardController extends AppBaseController
     }
     /**
      * @SWG\Get(
-     *      path="/dashboard/all_users_by_group",
+     *      path="/api/v1/dashboard/all_users_by_group",
      *      summary="Total users by group",
      *      tags={"Dashboard"},
      *      description="Total users by group",
@@ -115,7 +115,7 @@ class DashboardController extends AppBaseController
     }
     /**
      * @SWG\Get(
-     *      path="/dashboard/all_agents",
+     *      path="/api/v1/dashboard/all_agents",
      *      summary="Total Agents",
      *      tags={"Dashboard"},
      *      description="Total Agents",
@@ -160,7 +160,7 @@ class DashboardController extends AppBaseController
     }
     /**
      * @SWG\Get(
-     *      path="/dashboard/all_principal_agents",
+     *      path="/api/v1/dashboard/all_principal_agents",
      *      summary="Total users",
      *      tags={"Dashboard"},
      *      description="Total principal agents",
@@ -205,7 +205,7 @@ class DashboardController extends AppBaseController
     }
     /**
      * @SWG\Get(
-     *      path="/dashboard/all_sole_agents",
+     *      path="/api/v1/dashboard/all_sole_agents",
      *      summary="Total sole agents",
      *      tags={"Dashboard"},
      *      description="Total sole agents",
@@ -250,7 +250,7 @@ class DashboardController extends AppBaseController
     }
     /**
      * @SWG\Get(
-     *      path="/dashboard/pending_verification",
+     *      path="/api/v1/dashboard/pending_verification",
      *      summary="Total pending verifications",
      *      tags={"Dashboard"},
      *      description="Total pending verifications",
@@ -296,7 +296,7 @@ class DashboardController extends AppBaseController
 
     /**
      * @SWG\Get(
-     *      path="/dashboard/monthly_verifications",
+     *      path="/api/v1/dashboard/monthly_verifications",
      *      summary="monthly verifications",
      *      tags={"Dashboard"},
      *      description="monthly verifications",
@@ -357,7 +357,7 @@ class DashboardController extends AppBaseController
     }
     /**
      * @SWG\Get(
-     *      path="/dashboard/all_monthly_verifications",
+     *      path="/api/v1/dashboard/all_monthly_verifications",
      *      summary="all monthly verifications",
      *      tags={"Dashboard"},
      *      description="all monthly verifications",
@@ -456,7 +456,7 @@ class DashboardController extends AppBaseController
 
     /**
      * @SWG\Get(
-     *      path="/dashboard/all_verification_periods",
+     *      path="/api/v1/dashboard/all_verification_periods",
      *      summary="all verification Periods",
      *      tags={"Dashboard"},
      *      description="all verifications Period",

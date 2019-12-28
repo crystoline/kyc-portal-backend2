@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\BaseModel;
 use App\Http\Requests\API\CreateVerificationAPIRequest;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -15,6 +16,14 @@ use InfyOm\Generator\Request\APIRequest;
 
 /**
  * @property integer id
+ * @property string title
+ * @property Carbon date_start
+ * @property integer territory_id
+ * @property integer state_id
+ * @property State state
+ * @property integer lga_id
+ * @property Territory territory
+ * @property Lga lga
  * @SWG\Definition(
  *      definition="VerificationPeriod",
  *      required={""},

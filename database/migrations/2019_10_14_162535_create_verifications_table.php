@@ -36,6 +36,8 @@ class CreateVerificationsTable extends Migration
             $table->unsignedBigInteger('approved_by')->nullable();
             $table->date('date')->nullable();
             $table->unsignedTinyInteger('status')->default('2')->comment('2=Pending, 1=Approved, 0=Declined,3=discarded, 9=Awaiting Approval');
+            //ALTER TABLE `verifications` ADD `backup` INT(1) NOT NULL AFTER `status`;
+            $table->unsignedTinyInteger('backup')->default('0');
             $table->timestamps();
 
             $table->foreign('territory_id')->references('id')->on('territories');

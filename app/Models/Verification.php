@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use App\BaseModel;
 use App\Http\Requests\API\UpdateAgentAPIRequest;
 use App\Http\Requests\API\UpdateVerificationAPIRequest;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -36,6 +38,10 @@ use Illuminate\Support\Carbon;
  * @property string gender
  * @property Carbon date_of_birth
  * @property string home_address
+ * @property GuarantorsInformation guarantorInformation
+ * @property Collection documents
+ * @property int backup
+ * @property VerificationPeriod verificationPeriod
  * @SWG\Definition(
  *      definition="Verification",
  *      required={""},
@@ -145,7 +151,7 @@ use Illuminate\Support\Carbon;
  *      )
  * )
  */
-class Verification extends  Model
+class Verification extends  BaseModel
 {
     // use SoftDeletes;
 
@@ -155,7 +161,7 @@ class Verification extends  Model
 //    const UPDATED_AT = 'updated_at';
 
     protected $dates = ['deleted_at'];
-
+    protected $hidden =[ 'backup'];
     public $fillable = [
         'agent_id',
         'territory_id',
@@ -242,7 +248,7 @@ class Verification extends  Model
     public static function getValidationRulesForUpdate(UpdateVerificationAPIRequest $request): array
     {
         return [
-            'parent_agent_id' => 'required|exists:agents,id', // TODO validation for parent agent code
+            'parent_agent_id' => 'sometimes|exists:agents,id', // TODO validation for parent agent code
             'territory_id' => 'sometimes|exists:territories,id',
             'device_owner_id' => 'sometimes|exists:device_owners,id',
             // 'verification_period_id' => 'required|exists:verification_periods,id', // TODO validation for parent agent code

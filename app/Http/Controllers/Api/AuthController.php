@@ -29,7 +29,7 @@ class AuthController extends AccessTokenController
      * @param Request $request
      * @return JsonResponse
      * @SWG\Post(
-     *      path="/auth/token",
+     *      path="/api/v1/auth/token",
      *      summary="Login",
      *      tags={"Authentication"},
      *      description="Login with username and password , return auth token",
@@ -86,7 +86,7 @@ class AuthController extends AccessTokenController
      * @param Request $request
      * @return Response
      * @SWG\Post(
-     *      path="/auth/token?",
+     *      path="/api/v1/auth/token?",
      *      summary="Refresh Token",
      *      tags={"Authentication"},
      *      description="Refresh previous token, return auth token",
@@ -117,7 +117,7 @@ class AuthController extends AccessTokenController
 
     /**
      * @SWG\Get(
-     *      path="/auth/logout",
+     *      path="/api/v1/auth/logout",
      *      summary="Logout",
      *      tags={"Authentication"},
      *      description="Log out from device",
@@ -165,7 +165,7 @@ class AuthController extends AccessTokenController
 
     /**
      * @SWG\Get(
-     *      path="/auth/logout-all",
+     *      path="/api/v1/auth/logout-all",
      *      summary="Logout from all devices",
      *      tags={"Authentication"},
      *      description="Log out from all device",
@@ -212,7 +212,7 @@ class AuthController extends AccessTokenController
 
     /**
      * @SWG\Post(
-     *      path="/auth/reset-password",
+     *      path="/api/v1/auth/reset-password",
      *      summary="Reset password",
      *      tags={"Authentication"},
      *      description="Sent password reset email",
@@ -258,7 +258,7 @@ class AuthController extends AccessTokenController
     {
         $code = null;
         $email = $request->input('email');
-        $return_url = $request->input('return_url');
+        $return_url = $request->input('return_url', '');
         try {
             /** @var User $user */
             $user = User::query()->where('email', $email)->firstOrFail();
@@ -281,7 +281,7 @@ class AuthController extends AccessTokenController
 
     /**
      * @SWG\Post(
-     *      path="/auth/complete-password-reset",
+     *      path="/api/v1/auth/complete-password-reset",
      *      summary="Complete password reset",
      *      tags={"Authentication"},
      *      description="",
@@ -338,7 +338,7 @@ class AuthController extends AccessTokenController
             //send password successful
             Mail::to($user->email)
                 ->send(new PasswordResetSuccessful($user ));
-            $user->update(['password' => $password]);
+            $user->update(['password' => $password, 'status' => $user->status !==2 ? $user->status: 1]);
         } catch (Exception $exception) {
             return Response::json(ResponseUtil::makeError('Could not reset password'), 400);
         }

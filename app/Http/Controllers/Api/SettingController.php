@@ -35,7 +35,7 @@ class SettingController extends AppBaseController
 
     /**
      * @SWG\Get(
-     *      path="/setting",
+     *      path="/api/v1/setting",
      *      summary="All setting data",
      *      tags={"Settings"},
      *      description="All setting data",
@@ -119,7 +119,7 @@ class SettingController extends AppBaseController
      * @return JsonResponse
      * @throws ValidationException
      * @SWG\Post(
-     *      path="/setting",
+     *      path="/api/v1/setting",
      *      summary="Setting",
      *      tags={"Settings"},
      *      description="Store Setting",

@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('territory_id')->nullable();
             $table->string('first_name', 180);
             $table->string('last_name', 180);
+            $table->string('telephone', 180);
             $table->string('gender', 20);
             $table->string('email', 180)->unique();
             $table->timestamp('email_verified_at')->nullable();

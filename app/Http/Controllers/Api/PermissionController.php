@@ -22,7 +22,7 @@ class PermissionController extends AppBaseController
 {
     /**
      * @SWG\Get(
-     *      path="/permissions",
+     *      path="/api/v1/permissions",
      *      summary="Get all permission.",
      *      tags={"Permissions"},
      *      description="Get all permissions",
@@ -65,7 +65,7 @@ class PermissionController extends AppBaseController
 
     /**
      * @SWG\Put(
-     *      path="/permissions/{group}",
+     *      path="/api/v1/permissions/{group}",
      *      summary="Update permissions",
      *      tags={"Permissions"},
      *      description="Update permissions",
@@ -138,7 +138,7 @@ class PermissionController extends AppBaseController
 
     /**
      * @SWG\Post(
-     *      path="/permissions/tasks",
+     *      path="/api/v1/permissions/tasks",
      *      summary="Get all tasks.",
      *      tags={"Permissions"},
      *      description="Get all tasks",
@@ -180,7 +180,7 @@ class PermissionController extends AppBaseController
 
     /**
      * @SWG\Post(
-     *      path="/permissions/generate-tasks",
+     *      path="/api/v1/permissions/generate-tasks",
      *      summary="Re-generate tasks.",
      *      tags={"Permissions"},
      *      description="Re-generate tasks",
@@ -223,7 +223,7 @@ class PermissionController extends AppBaseController
 
     /**
      * @SWG\Post(
-     *      path="/permissions/default",
+     *      path="/api/v1/permissions/default",
      *      summary="Set default permission.",
      *      tags={"Permissions"},
      *      description="Set default permission",

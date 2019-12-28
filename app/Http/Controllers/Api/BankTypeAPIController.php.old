@@ -30,7 +30,7 @@ class BankTypeAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Get(
-     *      path="/bankTypes",
+     *      path="/api/v1/bankTypes",
      *      summary="Get a listing of the BankTypes.",
      *      tags={"BankType"},
      *      description="Get all BankTypes",
@@ -73,7 +73,7 @@ class BankTypeAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Post(
-     *      path="/bankTypes",
+     *      path="/api/v1/bankTypes",
      *      summary="Store a newly created BankType in storage",
      *      tags={"BankType"},
      *      description="Store BankType",
@@ -120,7 +120,7 @@ class BankTypeAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Get(
-     *      path="/bankTypes/{id}",
+     *      path="/api/v1/bankTypes/{id}",
      *      summary="Display the specified BankType",
      *      tags={"BankType"},
      *      description="Get BankType",
@@ -171,7 +171,7 @@ class BankTypeAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Put(
-     *      path="/bankTypes/{id}",
+     *      path="/api/v1/bankTypes/{id}",
      *      summary="Update the specified BankType in storage",
      *      tags={"BankType"},
      *      description="Update BankType",
@@ -232,7 +232,7 @@ class BankTypeAPIController extends AppBaseController
      * @return Response
      *
      * @SWG\Delete(
-     *      path="/bankTypes/{id}",
+     *      path="/api/v1/bankTypes/{id}",
      *      summary="Remove the specified BankType from storage",
      *      tags={"BankType"},
      *      description="Delete BankType",

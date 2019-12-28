@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Http\Requests\API\UpdateGroupAPIRequest;
 use App\Http\Requests\API\UpdateUserAPIRequest;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -14,6 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Permission permissions
  * @property string role
  * @property string name
+ * @property Collection tasks
  * @SWG\Definition(
  *      definition="Group",
  *      required={""},

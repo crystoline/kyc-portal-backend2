@@ -31,7 +31,7 @@ class LgaController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/lgas",
+     *      path="/api/v1/lgas",
      *      summary="Get a listing of the Lgas.",
      *      tags={"Lga"},
      *      description="Get all Lgas",
@@ -75,7 +75,7 @@ class LgaController extends AppBaseController
      * @return JsonResponse
      *
      * @SWG\Get(
-     *      path="/lgas/{id}",
+     *      path="/api/v1/lgas/{id}",
      *      summary="Display the specified Lga",
      *      tags={"Lga"},
      *      description="Get Lga",

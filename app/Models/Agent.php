@@ -33,6 +33,7 @@ use Illuminate\Support\Carbon;
  * @property string email
  * @property string address
  * @property int state_id
+ * @property string code
  * @SWG\Definition(
  *      definition="Agent",
  *      required={""},

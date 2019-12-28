@@ -8,9 +8,8 @@ use InfyOm\Generator\Utils\ResponseUtil;
 
 /**
  * @SWG\Swagger(
- *   basePath="/api/v1",
  *   @SWG\Info(
- *     title="Laravel Generator APIs",
+ *     title="KYC APIs",
  *     version="1.0.0",
  *   ),
  *      produces={"application/json", "application/xml"},
