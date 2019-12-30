@@ -57,7 +57,7 @@ class ExportVerification
            @$content = file_get_contents( $this->verification->passport);
            if($content){
                $passport_path =  $personal_file = $temp_dir.'/passport.jpg';
-               file_put_contents($content, $passport_path);
+               file_put_contents($passport_path, $content);
                $files[] =$passport_path;
            }
 
@@ -69,15 +69,15 @@ class ExportVerification
                if($content){
                    $title = !$document->page_number? $document->title : $document->title.'Page : '.$document->page_number;
                    $document_path =  $personal_file = "{$temp_dir}/{$title}.jpg";
-                   file_put_contents($content, $document_path);
+                   file_put_contents($document_path, $content);
                    $files[] =$document_path;
                }
            }
-           if( $this->verification->guarantorInformation->signature){
+           if( @$this->verification->guarantorInformation->signature){
                @$content = file_get_contents( $this->verification->guarantorInformation->signature);
                if($content){
                    $signature_path =  $personal_file = $temp_dir.'/guarantor-signature.jpg';
-                   file_put_contents($content, $signature_path);
+                   file_put_contents($signature_path, $content);
                    $files[] =$signature_path;
                }
            }
@@ -85,7 +85,7 @@ class ExportVerification
                 @$content = file_get_contents( $this->verification->guarantorInformation->witness_signature);
                 if($content){
                     $witness_signature =  $personal_file = $temp_dir.'/witness-signature.jpg';
-                    file_put_contents($content, $witness_signature);
+                    file_put_contents($witness_signature, $content);
                     $files[] =$witness_signature;
                 }
             }

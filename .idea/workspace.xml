@@ -2,52 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="675d336a-24a6-4598-a54f-4ebb6436d124" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/TaskPermitted.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Util/ExportVerification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kyc-portal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kyc-portal.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/BaseModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/BaseModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AgentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AgentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AgentTypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AgentTypeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/BankController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/BankController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/BankTypeAPIController.php.old" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/BankTypeAPIController.php.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/DeviceOwnerAPIController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/GroupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/GroupController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/LgaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/LgaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/PermissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/PermissionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/SettingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/StateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/StateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TerritoryAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TerritoryAPIController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/VerificationPeriodAPIController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AppBaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppBaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/FilterNullMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/FilterNullMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Agent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Agent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Group.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Group.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/GuarantorsInformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/GuarantorsInformation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Lga.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Lga.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/PersonalInformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/PersonalInformation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Territory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Territory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Verification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Verification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/VerificationPeriod.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/VerificationPeriod.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Swagger/Models/CreateUserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Swagger/Models/CreateUserRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Util/Bvn.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Util/Bvn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_14_162535_create_verifications_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_14_162535_create_verifications_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/BackUpVerifiactions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/BackUpVerifiactions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Util/ExportVerification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Util/ExportVerification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,11 +49,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Util/ExportVerification.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="123" column="90" selection-start-line="123" selection-start-column="90" selection-end-line="123" selection-end-column="90" />
+            <state relative-caret-position="137">
+              <caret line="55" column="11" lean-forward="true" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
               <folding>
                 <element signature="e#30#54#0#PHP" expanded="true" />
                 <element signature="e#3368#4262#0#PHP" />
@@ -102,6 +61,15 @@
                 <element signature="e#5535#6190#0#PHP" />
                 <element signature="e#6258#6695#0#PHP" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-12-28.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider">
+            <state relative-caret-position="99">
+              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -125,17 +93,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/BackUpVerifiactions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="58" column="55" lean-forward="true" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
+              <folding>
+                <element signature="e#40#68#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="53" column="16" selection-start-line="53" selection-end-line="53" selection-end-column="16" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-12-28.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -163,7 +138,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/deviceOwners</find>
       <find>/verificationPeriods</find>
       <find>device_owner_id</find>
       <find>bank_id</find>
@@ -193,6 +167,7 @@
       <find>upload</find>
       <find>FILESYSTEM_CLOUD</find>
       <find>getDirectory</find>
+      <find>signature</find>
     </findStrings>
     <replaceStrings>
       <replace>// use SoftDeletes;</replace>
@@ -268,7 +243,6 @@
         <option value="$PROJECT_DIR$/app/Models/Agent.php" />
         <option value="$PROJECT_DIR$/app/Models/GuarantorsInformation.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_10_14_162535_create_verifications_table.php" />
-        <option value="$PROJECT_DIR$/app/Console/Commands/BackUpVerifiactions.php" />
         <option value="$PROJECT_DIR$/app/Models/VerificationPeriod.php" />
         <option value="$PROJECT_DIR$/app/Models/Lga.php" />
         <option value="$PROJECT_DIR$/resources/views/email/verification_period.blade.php" />
@@ -278,6 +252,7 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2019-12-28.log" />
         <option value="$PROJECT_DIR$/backup.txt" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/BackUpVerifiactions.php" />
         <option value="$PROJECT_DIR$/app/Util/ExportVerification.php" />
       </list>
     </option>
@@ -545,12 +520,12 @@
       <workItem from="1574760804801" duration="66746000" />
       <workItem from="1575844884873" duration="40405000" />
       <workItem from="1576760767842" duration="22221000" />
-      <workItem from="1577529747327" duration="8553000" />
+      <workItem from="1577529747327" duration="10714000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="494734000" />
+    <option name="totallyTimeSpent" value="496895000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -563,7 +538,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -958,16 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Console/Commands/BackUpVerifiactions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/google/apiclient/src/Google/Client.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1032">
@@ -1003,9 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-12-28.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/backup.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-759">
@@ -1020,10 +981,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/BackUpVerifiactions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="58" column="55" lean-forward="true" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Util/ExportVerification.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="123" column="90" selection-start-line="123" selection-start-column="90" selection-end-line="123" selection-end-column="90" />
+        <state relative-caret-position="137">
+          <caret line="55" column="11" lean-forward="true" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
           <folding>
             <element signature="e#30#54#0#PHP" expanded="true" />
             <element signature="e#3368#4262#0#PHP" />
@@ -1031,6 +1002,13 @@
             <element signature="e#5535#6190#0#PHP" />
             <element signature="e#6258#6695#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-12-28.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="99">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
         </state>
       </provider>
     </entry>

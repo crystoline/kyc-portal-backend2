@@ -104,3 +104,180 @@ Illuminate\Support\Collection {#1310
     ]
   ]
 }
+
+Deprecated: Directive 'track_errors' is deprecated in Unknown on line 0
+
+Deprecated: Directive 'track_errors' is deprecated in Unknown on line 0
+
+Deprecated: Directive 'track_errors' is deprecated in Unknown on line 0
+array:2 [
+  0 => "./data.txt"
+  1 => "./passport.jpg"
+]
+Illuminate\Support\Collection {#1310
+  #items: array:1 [
+    0 => array:9 [
+      "name" => "Initial-Verification"
+      "type" => "dir"
+      "path" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+      "filename" => "Initial-Verification"
+      "extension" => ""
+      "timestamp" => 1577542582
+      "size" => 0
+      "dirname" => ""
+      "basename" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+    ]
+  ]
+}
+array:1 [
+  0 => "./data.txt"
+]
+Illuminate\Support\Collection {#1332
+  #items: array:1 [
+    0 => array:9 [
+      "name" => "Initial-Verification"
+      "type" => "dir"
+      "path" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+      "filename" => "Initial-Verification"
+      "extension" => ""
+      "timestamp" => 1577542582
+      "size" => 0
+      "dirname" => ""
+      "basename" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+    ]
+  ]
+}
+array:1 [
+  0 => "./data.txt"
+]
+Illuminate\Support\Collection {#1313
+  #items: array:1 [
+    0 => array:9 [
+      "name" => "Initial-Verification"
+      "type" => "dir"
+      "path" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+      "filename" => "Initial-Verification"
+      "extension" => ""
+      "timestamp" => 1577542582
+      "size" => 0
+      "dirname" => ""
+      "basename" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+    ]
+  ]
+}
+
+Deprecated: Directive 'track_errors' is deprecated in Unknown on line 0
+array:2 [
+  0 => "./data.txt"
+  1 => "./passport.jpg"
+]
+Illuminate\Support\Collection {#1310
+  #items: array:1 [
+    0 => array:9 [
+      "name" => "Initial-Verification"
+      "type" => "dir"
+      "path" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+      "filename" => "Initial-Verification"
+      "extension" => ""
+      "timestamp" => 1577542582
+      "size" => 0
+      "dirname" => ""
+      "basename" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+    ]
+  ]
+}
+array:1 [
+  0 => "./data.txt"
+]
+Illuminate\Support\Collection {#1332
+  #items: array:1 [
+    0 => array:9 [
+      "name" => "Initial-Verification"
+      "type" => "dir"
+      "path" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+      "filename" => "Initial-Verification"
+      "extension" => ""
+      "timestamp" => 1577542582
+      "size" => 0
+      "dirname" => ""
+      "basename" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+    ]
+  ]
+}
+array:1 [
+  0 => "./data.txt"
+]
+Illuminate\Support\Collection {#1313
+  #items: array:1 [
+    0 => array:9 [
+      "name" => "Initial-Verification"
+      "type" => "dir"
+      "path" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+      "filename" => "Initial-Verification"
+      "extension" => ""
+      "timestamp" => 1577542582
+      "size" => 0
+      "dirname" => ""
+      "basename" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+    ]
+  ]
+}
+
+Deprecated: Directive 'track_errors' is deprecated in Unknown on line 0
+array:2 [
+  0 => "./data.txt"
+  1 => "./passport.jpg"
+]
+Illuminate\Support\Collection {#1310
+  #items: array:1 [
+    0 => array:9 [
+      "name" => "Initial-Verification"
+      "type" => "dir"
+      "path" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+      "filename" => "Initial-Verification"
+      "extension" => ""
+      "timestamp" => 1577542582
+      "size" => 0
+      "dirname" => ""
+      "basename" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+    ]
+  ]
+}
+array:2 [
+  0 => "./data.txt"
+  1 => "./passport.jpg"
+]
+Illuminate\Support\Collection {#1332
+  #items: array:1 [
+    0 => array:9 [
+      "name" => "Initial-Verification"
+      "type" => "dir"
+      "path" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+      "filename" => "Initial-Verification"
+      "extension" => ""
+      "timestamp" => 1577542582
+      "size" => 0
+      "dirname" => ""
+      "basename" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+    ]
+  ]
+}
+array:2 [
+  0 => "./data.txt"
+  1 => "./passport.jpg"
+]
+Illuminate\Support\Collection {#1313
+  #items: array:1 [
+    0 => array:9 [
+      "name" => "Initial-Verification"
+      "type" => "dir"
+      "path" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+      "filename" => "Initial-Verification"
+      "extension" => ""
+      "timestamp" => 1577542582
+      "size" => 0
+      "dirname" => ""
+      "basename" => "1-aMVwA9Sr9NuWHUkrmmGC6j9cN7CqAtt"
+    ]
+  ]
+}

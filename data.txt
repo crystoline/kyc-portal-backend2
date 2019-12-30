@@ -5,7 +5,7 @@ LAST NAME: Adekoya
 USER NAME: crystoline
 GENDER: male
 DATE OF BIRTH: 2019-10-28 00:00:00
-PASSPORT: string
+PASSPORT: https://cdn.hasselblad.com/6cb604081ef3086569319ddb5adcae66298a28c5_x1d-ii-sample-01-web.jpg
 VERIFIED BY: 
 APPROVED BY: 
 DATE: 2019-10-28 00:00:00

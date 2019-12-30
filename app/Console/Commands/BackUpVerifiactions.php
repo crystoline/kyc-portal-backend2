@@ -53,7 +53,11 @@ class BackUpVerifiactions extends Command
             try{
                 $export->generateFilesFromData();
             }catch (\Exception $exception){
-                Log::error('Export: '.$exception->getMessage());
+                Log::error("Export: \n".
+                    'Message: '.$exception->getMessage()."\n".
+                    'File: '.$exception->getFile()."\n".
+                    'Line: '.$exception->getLine()."\n"
+                );
             }
         }
     }
